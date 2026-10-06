@@ -7,15 +7,15 @@ const path = require('path');
 const SUPABASE_URL = process.env.SUPABASE_URL || 'https://ktepilhhldgtayetjmzv.supabase.co';
 const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_KEY || process.env.SUPABASE_ANON_KEY;
 
+let defaultPricing = {};
+try {
+    defaultPricing = require('../pricing.json');
+} catch (e) {
+    defaultPricing = {};
+}
+
 function getLocalFallback() {
-    try {
-        const filePath = path.join(process.cwd(), 'pricing.json');
-        const content = fs.readFileSync(filePath, 'utf8');
-        return JSON.parse(content);
-    } catch (e) {
-        console.error('Gagal membaca fallback pricing.json:', e);
-        return {};
-    }
+    return defaultPricing;
 }
 
 module.exports = async (req, res) => {
