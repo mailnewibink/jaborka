@@ -2,9 +2,8 @@
   "name": "jaborka-cargo",
   "version": "1.0.0",
   "description": "jaborka Door to Door International Cargo Website & Admin Portal",
-  "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node dev-server.js"
   },
   "keywords": [
     "cargo",
