@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Kelola Tarif | jaborka Cargo</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0b1a30',
+                            orange: '#ff5500',
+                            electricBlue: '#1ca3f4',
+                            darkBlue: '#071222'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col selection:bg-blue-100 selection:text-brand-navy">
+
+    <!-- Top Admin Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-4">
+            <!-- Brand & Badge -->
+            <div class="flex items-center gap-3">
+                <a href="/" class="flex items-center gap-1.5 group" title="Kembali ke Beranda">
+                    <span class="text-brand-orange text-2xl sm:text-3xl leading-none select-none">★</span>
+                    <span class="font-extrabold text-xl sm:text-2xl tracking-tight text-brand-navy">jaborka</span>
+                </a>
+                <div class="h-5 w-[1px] bg-slate-300"></div>
+                <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-bold text-slate-700">
+                    <i class="fa-solid fa-lock text-brand-orange text-[10px]"></i>
+                    <span>Admin Panel</span>
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-2 sm:gap-3">
+                <a href="/" target="_blank" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 hover:text-brand-navy hover:bg-slate-100 transition-all flex items-center gap-1.5 border border-slate-200">
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    <span class="hidden sm:inline">Lihat Website</span>
+                </a>
+                <button onclick="saveAllChanges()" id="btn-save-header" class="px-5 py-2.5 bg-brand-orange hover:bg-orange-600 text-white text-xs sm:text-sm font-bold rounded-xl shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer active:scale-95">
+                    <i class="fa-solid fa-floppy-disk"></i>
+                    <span>Simpan Perubahan</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Welcome & Breadcrumb Banner -->
+        <div class="mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4 bg-gradient-to-r from-brand-navy to-[#122848] text-white p-6 sm:p-8 rounded-3xl shadow-sm relative overflow-hidden">
+            <div class="absolute -right-10 -bottom-10 opacity-10 pointer-events-none select-none">
+                <i class="fa-solid fa-ship text-9xl"></i>
+            </div>
+            <div class="relative z-10">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-semibold text-sky-200 mb-2 border border-white/15">
+                    <i class="fa-solid fa-tag text-brand-orange"></i> Manajemen Katalog Tarif
+                </div>
+                <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Kelola Tarif & Kalkulator Kargo</h1>
+                <p class="text-xs sm:text-sm text-slate-300 mt-1 max-w-xl">
+                    Pilih negara asal di bawah untuk mengedit harga, estimasi pengiriman, atau menambahkan rincian kategori barang. Perubahan akan langsung tampil di website.
+                </p>
+            </div>
+            <div class="relative z-10 flex items-center gap-3 self-start md:self-auto">
+                <button onclick="reloadPricingData()" class="px-4 py-2.5 bg-white/10 hover:bg-white/20 text-white text-xs font-bold rounded-xl transition-all border border-white/20 flex items-center gap-2">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                    <span>Muat Ulang Data</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Country Navigation Tabs (Wrapped so Taiwan & Australia are always 100% visible) -->
+        <div class="bg-white p-4 rounded-3xl border border-slate-200 mb-8 shadow-xs">
+            <div class="flex items-center justify-between gap-3 mb-3 pb-2 border-b border-slate-100">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
+                    <i class="fa-solid fa-earth-asia text-brand-orange"></i> Pilih Rute Negara Asal:
+                </span>
+                <span class="text-[11px] font-semibold text-slate-400">Total: 9 Rute Kargo (Semua Terbuka)</span>
+            </div>
+            <div class="flex flex-wrap gap-2 sm:gap-2.5" id="country-tabs-nav">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+
+        <!-- Country Editor Card -->
+        <div id="editor-container" class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-10 mb-20 transition-all">
+            <!-- Loading placeholder -->
+            <div class="text-center py-20 text-slate-400">
+                <i class="fa-solid fa-spinner fa-spin text-3xl mb-3 text-brand-orange"></i>
+                <p class="text-sm font-medium">Memuat data tarif...</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Bottom Sticky Floating Bar for Easy Saving -->
+    <div class="fixed bottom-0 left-0 right-0 z-30 bg-white/95 backdrop-blur-md border-t border-slate-200 py-3.5 px-4 shadow-[0_-8px_25px_rgba(0,0,0,0.06)]">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span class="text-xs sm:text-sm font-semibold text-slate-600">
+                    Sedang mengedit: <strong id="active-country-label" class="text-brand-navy">-</strong>
+                </span>
+            </div>
+            <div class="flex items-center gap-3">
+                <button onclick="saveAllChanges()" id="btn-save-bottom" class="px-6 py-2.5 bg-brand-orange hover:bg-orange-600 text-white text-xs sm:text-sm font-bold rounded-xl shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer active:scale-95">
+                    <i class="fa-solid fa-floppy-disk"></i>
+                    <span>Simpan Perubahan</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed top-6 right-6 z-50 transform translate-y-[-150%] opacity-0 transition-all duration-300 pointer-events-none">
+        <div id="toast-content" class="px-5 py-3.5 rounded-2xl shadow-xl flex items-center gap-3 text-sm font-bold text-white bg-slate-900 border border-slate-700">
+            <i id="toast-icon" class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+            <span id="toast-message">Perubahan berhasil disimpan!</span>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        let currentPricingDB = {};
+        let activeCountryKey = 'guangzhou';
+
+        // Load data on start
+        window.addEventListener('DOMContentLoaded', () => {
+            loadPricingData();
+        });
+
+        // Fetch data from server
+        async function loadPricingData() {
+            try {
+                const res = await fetch('/api/pricing');
+                if (!res.ok) throw new Error('Status server: ' + res.status);
+                currentPricingDB = await res.json();
+                renderTabs();
+                renderEditor(activeCountryKey);
+            } catch (err) {
+                console.error('Gagal memuat data harga:', err);
+                showToast('Gagal memuat data: ' + err.message, 'error');
+            }
+        }
+
+        function reloadPricingData() {
+            if (confirm('Muat ulang data dari server? Perubahan yang belum disimpan akan hilang.')) {
+                loadPricingData();
+            }
+        }
+
+        // Render Country Tabs
+        function renderTabs() {
+            const tabsNav = document.getElementById('country-tabs-nav');
+            const countries = Object.keys(currentPricingDB);
+            
+            let html = '';
+            countries.forEach(key => {
+                const c = currentPricingDB[key];
+                const isActive = key === activeCountryKey;
+                const activeClass = isActive 
+                    ? 'bg-brand-navy text-white font-bold border-brand-navy shadow-sm ring-2 ring-brand-navy/20' 
+                    : 'bg-white text-slate-700 hover:text-brand-navy hover:bg-slate-50 border-slate-200 font-semibold';
+
+                html += `
+                    <button onclick="switchAdminTab('${key}')" class="px-4 py-2.5 rounded-xl text-xs sm:text-sm whitespace-nowrap transition-all flex items-center gap-2 cursor-pointer border ${activeClass}">
+                        <i class="fa-solid fa-location-dot ${isActive ? 'text-brand-orange' : 'text-slate-400'} text-xs"></i>
+                        <span>${c.title}</span>
+                        <span class="text-[10px] px-1.5 py-0.5 rounded-md ${isActive ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-500'}">${c.items?.length || 0}</span>
+                    </button>
+                `;
+            });
+            tabsNav.innerHTML = html;
+        }
+
+        function switchAdminTab(countryKey) {
+            // Save current form inputs into currentPricingDB before switching
+            syncCurrentEditorToMemory();
+            activeCountryKey = countryKey;
+            renderTabs();
+            renderEditor(countryKey);
+            // Scroll smoothly to top of editor if needed
+            document.getElementById('editor-container').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // Render Editor for active country
+        function renderEditor(countryKey) {
+            const container = document.getElementById('editor-container');
+            const data = currentPricingDB[countryKey];
+            if (!data) return;
+
+            const countries = Object.keys(currentPricingDB);
+            const currentIndex = countries.indexOf(countryKey);
+            const prevKey = countries[(currentIndex - 1 + countries.length) % countries.length];
+            const nextKey = countries[(currentIndex + 1) % countries.length];
+
+            document.getElementById('active-country-label').innerText = data.title;
+
+            let itemsHTML = '';
+            (data.items || []).forEach((item, index) => {
+                const isAir = (item.name || '').toLowerCase().includes('udara');
+                const badgeClass = isAir ? 'bg-sky-50 text-sky-700 border-sky-200' : 'bg-blue-50 text-blue-800 border-blue-200';
+                const badgeIcon = isAir ? 'fa-plane' : 'fa-ship';
+                const markupLabel = isAir ? '+Rp 20.000 / Kg' : '+Rp 1.000.000 / m³';
+
+                const realPriceVal = item.realPrice || item.price || '';
+                let publishPriceVal = item.publishPrice || item.price || '';
+                if (!item.publishPrice && item.realPrice) {
+                    publishPriceVal = calculatePublishPrice(item.name, item.realPrice);
+                }
+
+                itemsHTML += `
+                    <tr class="border-b border-slate-100 hover:bg-slate-50/80 transition-colors group">
+                        <td class="py-3 px-2 text-center text-xs font-bold text-slate-400 w-10">
+                            ${index + 1}
+                        </td>
+                        <td class="py-3 px-3">
+                            <div class="flex items-center gap-2">
+                                <span class="hidden sm:inline-flex items-center justify-center w-7 h-7 rounded-lg border ${badgeClass} text-xs shrink-0">
+                                    <i class="fa-solid ${badgeIcon}"></i>
+                                </span>
+                                <input type="text" value="${escapeHtml(item.name)}" 
+                                    onchange="handleNameChange(${index}, this.value)"
+                                    class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-orange" 
+                                    placeholder="Nama layanan / jenis kargo">
+                            </div>
+                        </td>
+                        <!-- 1. Real Rate (Modal / Tarif Dasar) -->
+                        <td class="py-3 px-3 w-44 sm:w-52">
+                            <input type="text" value="${escapeHtml(realPriceVal)}" 
+                                oninput="handleRealPriceInput(${index}, this.value)"
+                                onchange="updateItemField(${index}, 'realPrice', this.value)"
+                                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold text-slate-700 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-navy" 
+                                placeholder="Rp 0 / m³ atau Kg">
+                            <span class="text-[10px] text-slate-400 font-medium block mt-0.5">Tarif dasar / modal</span>
+                        </td>
+                        <!-- 2. PUBLISH RATE (Tayang di Web) -->
+                        <td class="py-3 px-3 w-48 sm:w-60 bg-emerald-50/40 border-x border-emerald-100/70">
+                            <input type="text" value="${escapeHtml(publishPriceVal)}" 
+                                id="item-publish-${index}"
+                                oninput="handlePublishPriceInput(${index}, this.value)"
+                                onchange="updateItemField(${index}, 'publishPrice', this.value)"
+                                class="w-full bg-white border border-emerald-300 rounded-xl px-3 py-2 text-xs sm:text-sm font-black text-emerald-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 shadow-xs" 
+                                placeholder="Publish Rate">
+                            <div class="flex items-center justify-between mt-0.5">
+                                <span class="text-[10px] text-emerald-700 font-bold flex items-center gap-1">
+                                    <i class="fa-solid fa-arrow-trend-up text-[9px]"></i> ${markupLabel}
+                                </span>
+                                <span class="text-[9px] text-emerald-600 font-semibold uppercase">Tayang Web</span>
+                            </div>
+                        </td>
+                        <!-- 3. Min. Pengiriman -->
+                        <td class="py-3 px-3 w-32 sm:w-36">
+                            <input type="text" value="${escapeHtml(item.min)}" 
+                                id="item-min-${index}"
+                                onchange="updateItemField(${index}, 'min', this.value)"
+                                class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs sm:text-sm font-medium text-slate-600 focus:outline-none focus:ring-2 focus:ring-brand-orange" 
+                                placeholder="0,1 M³ / 2 KG">
+                        </td>
+                        <!-- 4. Aksi -->
+                        <td class="py-3 px-2 text-center w-12">
+                            <button onclick="deleteItemRow(${index})" class="w-8 h-8 rounded-lg bg-rose-50 text-rose-600 hover:bg-rose-600 hover:text-white transition-all flex items-center justify-center cursor-pointer" title="Hapus baris">
+                                <i class="fa-solid fa-trash-can text-xs"></i>
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            });
+
+            container.innerHTML = `
+                <!-- Header Card with Country Quick Dropdown -->
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 border-b border-slate-100 pb-6">
+                    <div class="flex items-center gap-3">
+                        <span class="w-3 h-8 bg-brand-orange rounded-full"></span>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h2 class="text-xl sm:text-2xl font-black text-brand-navy">${escapeHtml(data.title)}</h2>
+                                <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-sky-50 text-sky-700 border border-sky-200">
+                                    ${currentIndex + 1} / ${countries.length}
+                                </span>
+                            </div>
+                            <p class="text-xs text-slate-400 mt-0.5">Kelola estimasi durasi dan rincian tarif untuk rute ini.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 self-start sm:self-auto bg-slate-50 p-1.5 rounded-2xl border border-slate-200">
+                        <label class="text-xs font-bold text-slate-500 uppercase tracking-wider pl-2 whitespace-nowrap">Pindah Rute:</label>
+                        <select onchange="switchAdminTab(this.value)" class="bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs sm:text-sm font-bold text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-orange cursor-pointer shadow-xs">
+                            ${countries.map(k => `<option value="${k}" ${k === countryKey ? 'selected' : ''}>${escapeHtml(currentPricingDB[k].title)}</option>`).join('')}
+                        </select>
+                    </div>
+                </div>
+
+                <!-- 1. Metadata Info & Estimasi -->
+                <div class="mb-8 border-b border-slate-100 pb-8">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="w-2.5 h-6 bg-brand-orange rounded-full"></span>
+                        <h3 class="text-sm sm:text-base font-bold text-brand-navy uppercase tracking-wider">1. Informasi Rute & Estimasi Waktu</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Nama Rute / Negara</label>
+                            <input type="text" id="input-title" value="${escapeHtml(data.title)}" 
+                                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm font-bold text-brand-navy focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-orange">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">
+                                <i class="fa-solid fa-plane text-sky-500 mr-1"></i> Estimasi Jalur Udara
+                            </label>
+                            <input type="text" id="input-est-udara" value="${escapeHtml(data.estUdara)}" 
+                                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm font-bold text-brand-navy focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-orange">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">
+                                <i class="fa-solid fa-ship text-blue-600 mr-1"></i> Estimasi Jalur Laut
+                            </label>
+                            <input type="text" id="input-est-laut" value="${escapeHtml(data.estLaut)}" 
+                                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm font-bold text-brand-navy focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-orange">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Parameter Kalkulator Estimasi Cepat -->
+                <div class="mb-8 border-b border-slate-100 pb-8">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="w-2.5 h-6 bg-brand-electricBlue rounded-full"></span>
+                        <h3 class="text-sm sm:text-base font-bold text-brand-navy uppercase tracking-wider">2. Acuan Tarif Kalkulator Beranda (Publish Rate)</h3>
+                    </div>
+                    <p class="text-xs text-slate-400 mb-4">Angka dasar kalkulator simulasi beranda. Otomatis tersinkronisasi dari Publish Rate termurah rute ini.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-2xl">
+                        <div class="bg-sky-50/60 p-4 rounded-2xl border border-sky-100">
+                            <label class="block text-xs font-bold text-sky-900 uppercase tracking-wider mb-2">
+                                <i class="fa-solid fa-plane text-sky-600 mr-1"></i> Tarif Acuan Udara (Per Kg)
+                            </label>
+                            <div class="relative">
+                                <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">Rp</span>
+                                <input type="number" id="input-calc-udara" value="${data.calcData?.udara || 0}" 
+                                    class="w-full bg-white border border-sky-200 rounded-xl pl-10 pr-4 py-2.5 text-sm font-bold text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-orange">
+                            </div>
+                            <span class="text-[11px] text-slate-400 mt-1 block">Isi 0 jika tidak ada layanan udara.</span>
+                        </div>
+                        <div class="bg-blue-50/60 p-4 rounded-2xl border border-blue-100">
+                            <label class="block text-xs font-bold text-blue-900 uppercase tracking-wider mb-2">
+                                <i class="fa-solid fa-ship text-blue-700 mr-1"></i> Tarif Acuan Laut (Per M³)
+                            </label>
+                            <div class="relative">
+                                <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">Rp</span>
+                                <input type="number" id="input-calc-laut" value="${data.calcData?.laut || 0}" 
+                                    class="w-full bg-white border border-blue-200 rounded-xl pl-10 pr-4 py-2.5 text-sm font-bold text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-orange">
+                            </div>
+                            <span class="text-[11px] text-slate-400 mt-1 block">Isi 0 jika tidak ada layanan laut.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Rincian Baris Tarif & Formula Markup -->
+                <div>
+                    <!-- Formula Banner -->
+                    <div class="mb-5 p-4 rounded-2xl bg-gradient-to-r from-emerald-50 via-teal-50 to-sky-50 border border-emerald-200 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-9 h-9 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                                <i class="fa-solid fa-calculator text-base"></i>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <h4 class="text-xs sm:text-sm font-black text-emerald-950">Aturan Markup Otomatis & Publish Rate</h4>
+                                    <span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-emerald-200 text-emerald-900 uppercase">Aktif</span>
+                                </div>
+                                <p class="text-xs text-emerald-900/90 mt-1 leading-relaxed">
+                                    • <strong>Via Laut:</strong> Mark up <span class="font-bold text-emerald-700">+Rp 1.000.000 / m³</span>.<br>
+                                    • <strong>Via Udara:</strong> Mark up <span class="font-bold text-emerald-700">+Rp 20.000 / Kg</span> (Min. pengiriman <strong>2 KG</strong>).<br>
+                                    Cukup ketik harga di kolom <strong>Harga Real</strong>, maka kolom <strong>PUBLISH RATE</strong> otomatis terhitung dan itulah yang akan tayang di website.
+                                </p>
+                            </div>
+                        </div>
+                        <button onclick="recalculateAllMarkups()" class="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl transition-all shadow-sm flex items-center gap-1.5 self-start md:self-auto whitespace-nowrap cursor-pointer active:scale-95">
+                            <i class="fa-solid fa-arrows-rotate text-xs"></i>
+                            <span>Hitung Ulang Formula</span>
+                        </button>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2.5 h-6 bg-emerald-500 rounded-full"></span>
+                            <h3 class="text-sm sm:text-base font-bold text-brand-navy uppercase tracking-wider">3. Daftar Kategori & Tarif Layanan</h3>
+                        </div>
+                        <button onclick="addNewItemRow()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl transition-all flex items-center gap-1.5 shadow-sm hover:shadow cursor-pointer self-start sm:self-auto active:scale-95">
+                            <i class="fa-solid fa-plus text-xs"></i>
+                            <span>Tambah Baris Tarif</span>
+                        </button>
+                    </div>
+
+                    <div class="overflow-x-auto border border-slate-200 rounded-2xl bg-white shadow-xs">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-slate-50 border-b border-slate-200 text-[11px] font-extrabold uppercase text-slate-500 tracking-wider">
+                                    <th class="py-3 px-2 text-center w-10">No</th>
+                                    <th class="py-3 px-3">Nama Layanan / Kategori</th>
+                                    <th class="py-3 px-3 w-44 sm:w-52">
+                                        <div class="flex items-center gap-1">
+                                            <span>Harga Real</span>
+                                            <span class="text-[9px] px-1.5 py-0.2 bg-slate-200 text-slate-700 rounded font-bold">Modal</span>
+                                        </div>
+                                    </th>
+                                    <th class="py-3 px-3 w-48 sm:w-60 bg-emerald-50/70 border-x border-emerald-100 text-emerald-800">
+                                        <div class="flex items-center gap-1.5">
+                                            <i class="fa-solid fa-globe text-emerald-600"></i>
+                                            <span>PUBLISH RATE</span>
+                                            <span class="text-[9px] px-1.5 py-0.2 bg-emerald-200 text-emerald-900 rounded font-bold">Tayang di Web</span>
+                                        </div>
+                                    </th>
+                                    <th class="py-3 px-3 w-32 sm:w-36">Min. Pengiriman</th>
+                                    <th class="py-3 px-2 text-center w-12">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${itemsHTML}
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="mt-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                        <p class="text-xs text-slate-400">*Kolom PUBLISH RATE adalah tarif final yang tampil di katalog website dan kalkulator simulator.</p>
+                        <button onclick="addNewItemRow()" class="text-xs font-bold text-emerald-700 hover:text-emerald-800 flex items-center gap-1">
+                            <i class="fa-solid fa-plus text-[10px]"></i> Tambah Baris Lagi
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 4. Next / Prev Country Navigation Bar -->
+                <div class="mt-10 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3">
+                    <button onclick="switchAdminTab('${prevKey}')" class="w-full sm:w-auto px-5 py-2.5 rounded-xl border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all cursor-pointer">
+                        <i class="fa-solid fa-arrow-left text-xs text-slate-400"></i>
+                        <span>Sebelumnya: ${escapeHtml(currentPricingDB[prevKey].title)}</span>
+                    </button>
+                    <div class="text-xs font-semibold text-slate-400">
+                        Rute ${currentIndex + 1} dari ${countries.length}
+                    </div>
+                    <button onclick="switchAdminTab('${nextKey}')" class="w-full sm:w-auto px-5 py-2.5 rounded-xl border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all cursor-pointer">
+                        <span>Selanjutnya: ${escapeHtml(currentPricingDB[nextKey].title)}</span>
+                        <i class="fa-solid fa-arrow-right text-xs text-slate-400"></i>
+                    </button>
+                </div>
+            `;
+        }
+
+        // Formula Calculation Logic
+        function calculatePublishPrice(name, realPriceStr) {
+            if (!realPriceStr) return '';
+            const trimmed = realPriceStr.trim();
+            if (trimmed.startsWith('+')) return trimmed; // Addon / surcharge tetap
+            const num = parseInt(trimmed.replace(/[^0-9]/g, ''), 10);
+            if (isNaN(num) || num <= 0) return trimmed;
+            const isAir = (name || '').toLowerCase().includes('udara');
+            const markup = isAir ? 20000 : 1000000;
+            const unit = isAir ? 'Kg' : 'm³';
+            const pub = num + markup;
+            return 'Rp ' + pub.toLocaleString('id-ID') + ' / ' + unit;
+        }
+
+        function handleRealPriceInput(index, val) {
+            const item = currentPricingDB[activeCountryKey]?.items[index];
+            if (!item) return;
+            item.realPrice = val;
+            const isAir = (item.name || '').toLowerCase().includes('udara');
+
+            const pub = calculatePublishPrice(item.name, val);
+            item.publishPrice = pub;
+            item.price = pub; // Always sync price for web
+
+            const pubInput = document.getElementById(`item-publish-${index}`);
+            if (pubInput) pubInput.value = pub;
+
+            // Set default min to 2 KG for air if still 1 KG
+            if (isAir && (!item.min || item.min.trim().toUpperCase() === '1 KG')) {
+                item.min = '2 KG';
+                const minInput = document.getElementById(`item-min-${index}`);
+                if (minInput) minInput.value = '2 KG';
+            }
+
+            autoUpdateCalcData();
+        }
+
+        function handlePublishPriceInput(index, val) {
+            const item = currentPricingDB[activeCountryKey]?.items[index];
+            if (!item) return;
+            item.publishPrice = val;
+            item.price = val; // Website displays item.price
+            autoUpdateCalcData();
+        }
+
+        function handleNameChange(index, val) {
+            const item = currentPricingDB[activeCountryKey]?.items[index];
+            if (!item) return;
+            item.name = val;
+            const isAir = val.toLowerCase().includes('udara');
+            if (isAir && (!item.min || item.min.includes('M³') || item.min.trim().toUpperCase() === '1 KG')) {
+                item.min = '2 KG';
+            }
+            if (item.realPrice) {
+                item.publishPrice = calculatePublishPrice(val, item.realPrice);
+                item.price = item.publishPrice;
+            }
+            renderEditor(activeCountryKey);
+        }
+
+        function recalculateAllMarkups() {
+            const data = currentPricingDB[activeCountryKey];
+            if (!data || !data.items) return;
+            data.items.forEach(item => {
+                if (item.realPrice) {
+                    item.publishPrice = calculatePublishPrice(item.name, item.realPrice);
+                    item.price = item.publishPrice;
+                    const isAir = (item.name || '').toLowerCase().includes('udara');
+                    if (isAir && (!item.min || item.min.trim().toUpperCase() === '1 KG')) {
+                        item.min = '2 KG';
+                    }
+                }
+            });
+            autoUpdateCalcData();
+            renderEditor(activeCountryKey);
+            showToast('Seluruh Publish Rate berhasil dihitung ulang!', 'success');
+        }
+
+        function autoUpdateCalcData() {
+            const data = currentPricingDB[activeCountryKey];
+            if (!data || !data.items) return;
+
+            let minLaut = null;
+            let minUdara = null;
+
+            data.items.forEach(item => {
+                const isAir = (item.name || '').toLowerCase().includes('udara');
+                const priceStr = item.publishPrice || item.price || '';
+                if (priceStr.trim().startsWith('+')) return;
+                const num = parseInt(priceStr.replace(/[^0-9]/g, ''), 10);
+                if (isNaN(num) || num <= 0) return;
+
+                if (isAir) {
+                    if (minUdara === null || num < minUdara) minUdara = num;
+                } else {
+                    if (minLaut === null || num < minLaut) minLaut = num;
+                }
+            });
+
+            if (!data.calcData) data.calcData = {};
+            if (minUdara !== null) {
+                data.calcData.udara = minUdara;
+                const calcUdaraEl = document.getElementById('input-calc-udara');
+                if (calcUdaraEl) calcUdaraEl.value = minUdara;
+            }
+            if (minLaut !== null) {
+                data.calcData.laut = minLaut;
+                const calcLautEl = document.getElementById('input-calc-laut');
+                if (calcLautEl) calcLautEl.value = minLaut;
+            }
+        }
+
+        // Helpers
+        function escapeHtml(str) {
+            if (!str) return '';
+            return String(str).replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        }
+
+        function updateItemField(index, field, value) {
+            if (!currentPricingDB[activeCountryKey]?.items[index]) return;
+            currentPricingDB[activeCountryKey].items[index][field] = value;
+            if (field === 'publishPrice') {
+                currentPricingDB[activeCountryKey].items[index].price = value;
+            }
+        }
+
+        function addNewItemRow() {
+            syncCurrentEditorToMemory();
+            if (!currentPricingDB[activeCountryKey].items) {
+                currentPricingDB[activeCountryKey].items = [];
+            }
+            currentPricingDB[activeCountryKey].items.push({
+                name: "Layanan Baru (Laut)",
+                realPrice: "Rp 5.000.000 / m³",
+                publishPrice: "Rp 6.000.000 / m³",
+                price: "Rp 6.000.000 / m³",
+                min: "0,1 M³"
+            });
+            autoUpdateCalcData();
+            renderEditor(activeCountryKey);
+            renderTabs();
+        }
+
+        function deleteItemRow(index) {
+            if (!confirm('Hapus baris tarif ini?')) return;
+            syncCurrentEditorToMemory();
+            currentPricingDB[activeCountryKey].items.splice(index, 1);
+            autoUpdateCalcData();
+            renderEditor(activeCountryKey);
+            renderTabs();
+        }
+
+        // Sync inputs from the form into memory
+        function syncCurrentEditorToMemory() {
+            const data = currentPricingDB[activeCountryKey];
+            if (!data) return;
+
+            const titleEl = document.getElementById('input-title');
+            const estUdaraEl = document.getElementById('input-est-udara');
+            const estLautEl = document.getElementById('input-est-laut');
+            const calcUdaraEl = document.getElementById('input-calc-udara');
+            const calcLautEl = document.getElementById('input-calc-laut');
+
+            if (titleEl) data.title = titleEl.value;
+            if (estUdaraEl) data.estUdara = estUdaraEl.value;
+            if (estLautEl) data.estLaut = estLautEl.value;
+            if (calcUdaraEl || calcLautEl) {
+                if (!data.calcData) data.calcData = {};
+                if (calcUdaraEl) data.calcData.udara = parseFloat(calcUdaraEl.value) || 0;
+                if (calcLautEl) data.calcData.laut = parseFloat(calcLautEl.value) || 0;
+            }
+
+            // Ensure every item has price synced with publishPrice
+            if (data.items) {
+                data.items.forEach(item => {
+                    if (item.publishPrice) {
+                        item.price = item.publishPrice;
+                    } else if (item.price) {
+                        item.publishPrice = item.price;
+                    }
+                });
+            }
+        }
+
+        // Save All Changes to Server
+        async function saveAllChanges() {
+            syncCurrentEditorToMemory();
+
+            const btnHeader = document.getElementById('btn-save-header');
+            const btnBottom = document.getElementById('btn-save-bottom');
+
+            setButtonLoading(btnHeader, true);
+            setButtonLoading(btnBottom, true);
+
+            try {
+                const res = await fetch('/api/pricing', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(currentPricingDB)
+                });
+
+                const result = await res.json();
+                if (!res.ok || result.error) {
+                    throw new Error(result.error || 'Gagal menyimpan');
+                }
+
+                showToast(result.message || 'Perubahan tarif berhasil disimpan ke server!', 'success');
+                renderTabs();
+            } catch (err) {
+                console.error('Error saving:', err);
+                showToast('Gagal menyimpan: ' + err.message, 'error');
+            } finally {
+                setButtonLoading(btnHeader, false);
+                setButtonLoading(btnBottom, false);
+            }
+        }
+
+        function setButtonLoading(btn, isLoading) {
+            if (!btn) return;
+            if (isLoading) {
+                btn.disabled = true;
+                btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <span>Menyimpan...</span>`;
+                btn.classList.add('opacity-75', 'cursor-not-allowed');
+            } else {
+                btn.disabled = false;
+                btn.innerHTML = `<i class="fa-solid fa-floppy-disk"></i> <span>Simpan Perubahan</span>`;
+                btn.classList.remove('opacity-75', 'cursor-not-allowed');
+            }
+        }
+
+        // Toast notification
+        let toastTimeout;
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            const toastContent = document.getElementById('toast-content');
+            const toastIcon = document.getElementById('toast-icon');
+            const toastMessage = document.getElementById('toast-message');
+
+            clearTimeout(toastTimeout);
+
+            toastMessage.innerText = message;
+            if (type === 'error') {
+                toastContent.className = 'px-5 py-3.5 rounded-2xl shadow-xl flex items-center gap-3 text-sm font-bold text-white bg-rose-900 border border-rose-700';
+                toastIcon.className = 'fa-solid fa-circle-exclamation text-rose-300 text-lg';
+            } else {
+                toastContent.className = 'px-5 py-3.5 rounded-2xl shadow-xl flex items-center gap-3 text-sm font-bold text-white bg-slate-900 border border-slate-700';
+                toastIcon.className = 'fa-solid fa-circle-check text-emerald-400 text-lg';
+            }
+
+            toast.classList.remove('translate-y-[-150%]', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            toastTimeout = setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-[-150%]', 'opacity-0');
+            }, 3500);
+        }
+    </script>
+</body>
+</html>

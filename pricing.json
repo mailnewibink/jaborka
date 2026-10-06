@@ -1,0 +1,395 @@
+{
+  "guangzhou": {
+    "title": "Guangzhou, China",
+    "estUdara": "± 7 Hari",
+    "estLaut": "3-4 Minggu",
+    "items": [
+      {
+        "name": "Laut Tas & Sepatu",
+        "realPrice": "Rp 4.000.000 / m³",
+        "publishPrice": "Rp 5.000.000 / m³",
+        "price": "Rp 5.000.000 / m³",
+        "min": "0,1 M³"
+      },
+      {
+        "name": "Laut Non Lartas / Umum",
+        "realPrice": "Rp 5.100.000 / m³",
+        "publishPrice": "Rp 6.100.000 / m³",
+        "price": "Rp 6.100.000 / m³",
+        "min": "0,1 M³"
+      },
+      {
+        "name": "Laut Lartas Ringan",
+        "realPrice": "Rp 5.500.000 / m³",
+        "publishPrice": "Rp 6.500.000 / m³",
+        "price": "Rp 6.500.000 / m³",
+        "min": "0,1 M³"
+      },
+      {
+        "name": "Laut Lartas Berat (Alkes/Obat/Chemical/Besi dll)",
+        "realPrice": "Rp 6.250.000 / m³",
+        "publishPrice": "Rp 7.250.000 / m³",
+        "price": "Rp 7.250.000 / m³",
+        "min": "0,1 M³"
+      },
+      {
+        "name": "Laut Benang / Pita Velcro",
+        "realPrice": "Rp 6.250.000 / m³",
+        "publishPrice": "Rp 7.250.000 / m³",
+        "price": "Rp 7.250.000 / m³",
+        "min": "1 M³"
+      },
+      {
+        "name": "Laut (Tax Refund)",
+        "realPrice": "Rp 6.000.000 / m³",
+        "publishPrice": "Rp 7.000.000 / m³",
+        "price": "Rp 7.000.000 / m³",
+        "min": "1 M³"
+      },
+      {
+        "name": "Laut Semi Garment",
+        "realPrice": "Rp 7.000.000 / m³",
+        "publishPrice": "Rp 8.000.000 / m³",
+        "price": "Rp 8.000.000 / m³",
+        "min": "0,1 M³"
+      },
+      {
+        "name": "Laut Semi Garment Plus / Scarf / Syal",
+        "realPrice": "Rp 7.500.000 / m³",
+        "publishPrice": "Rp 8.500.000 / m³",
+        "price": "Rp 8.500.000 / m³",
+        "min": "0,1 M³"
+      },
+      {
+        "name": "Laut Kosmetik / Makanan / Cairan / Bubuk",
+        "realPrice": "Rp 8.250.000 / m³",
+        "publishPrice": "Rp 9.250.000 / m³",
+        "price": "Rp 9.250.000 / m³",
+        "min": "0,1 M³"
+      },
+      {
+        "name": "Laut Textile",
+        "realPrice": "Rp 8.500.000 / m³",
+        "publishPrice": "Rp 9.500.000 / m³",
+        "price": "Rp 9.500.000 / m³",
+        "min": "0,1 M³"
+      },
+      {
+        "name": "Laut Garment",
+        "realPrice": "Rp 9.250.000 / m³",
+        "publishPrice": "Rp 10.250.000 / m³",
+        "price": "Rp 10.250.000 / m³",
+        "min": "0,1 M³"
+      },
+      {
+        "name": "Tambahan Barang Branded / Merek",
+        "realPrice": "+ Rp 250.000 / m³",
+        "publishPrice": "+ Rp 250.000 / m³",
+        "price": "+ Rp 250.000 / m³",
+        "min": "0,1 M³"
+      },
+      {
+        "name": "Udara Umum",
+        "realPrice": "Rp 195.000 / Kg",
+        "publishPrice": "Rp 215.000 / Kg",
+        "price": "Rp 215.000 / Kg",
+        "min": "2 KG"
+      },
+      {
+        "name": "Udara Branded",
+        "realPrice": "Rp 205.000 / Kg",
+        "publishPrice": "Rp 225.000 / Kg",
+        "price": "Rp 225.000 / Kg",
+        "min": "2 KG"
+      },
+      {
+        "name": "Udara (Garment, Semi, Elektronik, Alas Kaki)",
+        "realPrice": "Rp 210.000 / Kg",
+        "publishPrice": "Rp 230.000 / Kg",
+        "price": "Rp 230.000 / Kg",
+        "min": "2 KG"
+      },
+      {
+        "name": "Udara Baterai",
+        "realPrice": "Rp 225.000 / Kg",
+        "publishPrice": "Rp 245.000 / Kg",
+        "price": "Rp 245.000 / Kg",
+        "min": "2 KG"
+      }
+    ],
+    "calcData": {
+      "udara": 215000,
+      "laut": 5000000
+    }
+  },
+  "yiwu": {
+    "title": "Yiwu, China",
+    "estUdara": "-",
+    "estLaut": "3-4 Minggu",
+    "items": [
+      {
+        "name": "Laut Tas & Sepatu",
+        "realPrice": "Rp 4.000.000 / m³",
+        "publishPrice": "Rp 5.000.000 / m³",
+        "price": "Rp 5.000.000 / m³",
+        "min": "0,1 M³"
+      },
+      {
+        "name": "Laut Umum / Non Lartas",
+        "realPrice": "Rp 4.750.000 / m³",
+        "publishPrice": "Rp 5.750.000 / m³",
+        "price": "Rp 5.750.000 / m³",
+        "min": "0,1 M³"
+      },
+      {
+        "name": "Laut Lartas / Lartas Ringan",
+        "realPrice": "Rp 5.250.000 / m³",
+        "publishPrice": "Rp 6.250.000 / m³",
+        "price": "Rp 6.250.000 / m³",
+        "min": "0,1 M³"
+      },
+      {
+        "name": "Laut Alkes",
+        "realPrice": "Rp 6.000.000 / m³",
+        "publishPrice": "Rp 7.000.000 / m³",
+        "price": "Rp 7.000.000 / m³",
+        "min": "0,1 M³"
+      },
+      {
+        "name": "Laut Semi Garment Plus (Vitamin, F&B, Obat, Kaos Kaki)",
+        "realPrice": "Rp 6.500.000 / m³",
+        "publishPrice": "Rp 7.500.000 / m³",
+        "price": "Rp 7.500.000 / m³",
+        "min": "0,1 M³"
+      },
+      {
+        "name": "Laut Kosmetik",
+        "realPrice": "Rp 7.500.000 / m³",
+        "publishPrice": "Rp 8.500.000 / m³",
+        "price": "Rp 8.500.000 / m³",
+        "min": "0,1 M³"
+      },
+      {
+        "name": "Tambahan Barang Branded / Merek",
+        "realPrice": "+ Rp 250.000 / m³",
+        "publishPrice": "+ Rp 250.000 / m³",
+        "price": "+ Rp 250.000 / m³",
+        "min": "0,1 M³"
+      }
+    ],
+    "calcData": {
+      "udara": 0,
+      "laut": 5000000
+    }
+  },
+  "singapore": {
+    "title": "Singapore",
+    "estUdara": "± 3 Hari",
+    "estLaut": "2-3 Minggu",
+    "items": [
+      {
+        "name": "Udara Umum",
+        "realPrice": "Rp 160.000 / Kg",
+        "publishPrice": "Rp 180.000 / Kg",
+        "price": "Rp 180.000 / Kg",
+        "min": "2 KG"
+      },
+      {
+        "name": "Laut (Umum, Sparepart, Acc)",
+        "realPrice": "Rp 9.500.000 / m³",
+        "publishPrice": "Rp 10.500.000 / m³",
+        "price": "Rp 10.500.000 / m³",
+        "min": "0,1 M³"
+      },
+      {
+        "name": "Laut (Lartas Berat)",
+        "realPrice": "Rp 10.000.000 / m³",
+        "publishPrice": "Rp 11.000.000 / m³",
+        "price": "Rp 11.000.000 / m³",
+        "min": "0,1 M³"
+      }
+    ],
+    "calcData": {
+      "udara": 180000,
+      "laut": 10500000
+    }
+  },
+  "bangkok": {
+    "title": "Bangkok, Thailand",
+    "estUdara": "± 5-7 Hari",
+    "estLaut": "± 4-6 Minggu",
+    "items": [
+      {
+        "name": "Udara Umum",
+        "realPrice": "Rp 170.000 / Kg",
+        "publishPrice": "Rp 190.000 / Kg",
+        "price": "Rp 190.000 / Kg",
+        "min": "2 KG"
+      },
+      {
+        "name": "Udara Lartas",
+        "realPrice": "Rp 180.000 / Kg",
+        "publishPrice": "Rp 200.000 / Kg",
+        "price": "Rp 200.000 / Kg",
+        "min": "2 KG"
+      },
+      {
+        "name": "Laut Umum",
+        "realPrice": "Rp 9.000.000 / m³",
+        "publishPrice": "Rp 10.000.000 / m³",
+        "price": "Rp 10.000.000 / m³",
+        "min": "0,1 M³"
+      },
+      {
+        "name": "Laut Lartas",
+        "realPrice": "Rp 10.000.000 / m³",
+        "publishPrice": "Rp 11.000.000 / m³",
+        "price": "Rp 11.000.000 / m³",
+        "min": "0,1 M³"
+      }
+    ],
+    "calcData": {
+      "udara": 190000,
+      "laut": 10000000
+    }
+  },
+  "korea": {
+    "title": "Korea Selatan",
+    "estUdara": "± 5-7 Hari",
+    "estLaut": "± 4-6 Minggu",
+    "items": [
+      {
+        "name": "Udara Umum",
+        "realPrice": "Rp 250.000 / Kg",
+        "publishPrice": "Rp 270.000 / Kg",
+        "price": "Rp 270.000 / Kg",
+        "min": "2 KG"
+      },
+      {
+        "name": "Udara Lartas",
+        "realPrice": "Rp 255.000 / Kg",
+        "publishPrice": "Rp 275.000 / Kg",
+        "price": "Rp 275.000 / Kg",
+        "min": "2 KG"
+      },
+      {
+        "name": "Laut",
+        "realPrice": "Rp 16.000.000 / m³",
+        "publishPrice": "Rp 17.000.000 / m³",
+        "price": "Rp 17.000.000 / m³",
+        "min": "0.5 M³"
+      }
+    ],
+    "calcData": {
+      "udara": 270000,
+      "laut": 17000000
+    }
+  },
+  "hongkong": {
+    "title": "Hongkong",
+    "estUdara": "± 4-5 Hari",
+    "estLaut": "3-4 Minggu",
+    "items": [
+      {
+        "name": "Udara Umum",
+        "realPrice": "Rp 210.000 / Kg",
+        "publishPrice": "Rp 230.000 / Kg",
+        "price": "Rp 230.000 / Kg",
+        "min": "2 KG"
+      },
+      {
+        "name": "Udara (Garment, Kosmetik, Sepatu, Tas)",
+        "realPrice": "Rp 215.000 / Kg",
+        "publishPrice": "Rp 235.000 / Kg",
+        "price": "Rp 235.000 / Kg",
+        "min": "2 KG"
+      },
+      {
+        "name": "Laut (Umum)",
+        "realPrice": "Rp 12.250.000 / m³",
+        "publishPrice": "Rp 13.250.000 / m³",
+        "price": "Rp 13.250.000 / m³",
+        "min": "0,5 M³"
+      },
+      {
+        "name": "Laut (Alkes)",
+        "realPrice": "Rp 13.250.000 / m³",
+        "publishPrice": "Rp 14.250.000 / m³",
+        "price": "Rp 14.250.000 / m³",
+        "min": "0,5 M³"
+      }
+    ],
+    "calcData": {
+      "udara": 230000,
+      "laut": 13250000
+    }
+  },
+  "shanghai": {
+    "title": "Shanghai, China",
+    "estUdara": "± 7 Hari",
+    "estLaut": "3-4 Minggu",
+    "items": [
+      {
+        "name": "Udara",
+        "realPrice": "Rp 245.000 / Kg",
+        "publishPrice": "Rp 265.000 / Kg",
+        "price": "Rp 265.000 / Kg",
+        "min": "2 KG"
+      },
+      {
+        "name": "Laut",
+        "realPrice": "Rp 9.750.000 / m³",
+        "publishPrice": "Rp 10.750.000 / m³",
+        "price": "Rp 10.750.000 / m³",
+        "min": "0,5 M³"
+      }
+    ],
+    "calcData": {
+      "udara": 265000,
+      "laut": 10750000
+    }
+  },
+  "taiwan": {
+    "title": "Taiwan",
+    "estUdara": "± 4-5 Hari",
+    "estLaut": "3-4 Minggu",
+    "items": [
+      {
+        "name": "Udara",
+        "realPrice": "Rp 175.000 / Kg",
+        "publishPrice": "Rp 195.000 / Kg",
+        "price": "Rp 195.000 / Kg",
+        "min": "2 KG"
+      },
+      {
+        "name": "Laut",
+        "realPrice": "Rp 11.500.000 / m³",
+        "publishPrice": "Rp 12.500.000 / m³",
+        "price": "Rp 12.500.000 / m³",
+        "min": "0,5 M³"
+      }
+    ],
+    "calcData": {
+      "udara": 195000,
+      "laut": 12500000
+    }
+  },
+  "aussie": {
+    "title": "Australia",
+    "estUdara": "± 5-7 Hari",
+    "estLaut": "-",
+    "items": [
+      {
+        "name": "Udara",
+        "realPrice": "Rp 410.000 / Kg",
+        "publishPrice": "Rp 430.000 / Kg",
+        "price": "Rp 430.000 / Kg",
+        "min": "2 KG"
+      }
+    ],
+    "calcData": {
+      "udara": 430000,
+      "laut": 0
+    }
+  }
+}
