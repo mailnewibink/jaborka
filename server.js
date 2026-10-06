@@ -32,51 +32,36 @@ const server = http.createServer((req, res) => {
 
     let reqPath = req.url.split('?')[0];
 
-    // API: GET /api/pricing
-    if (reqPath === '/api/pricing' && req.method === 'GET') {
-        fs.readFile(DATA_FILE, 'utf8', (err, data) => {
-            if (err) {
-                res.writeHead(500, { 'Content-Type': 'application/json' });
-                res.end(JSON.stringify({ error: 'Gagal membaca data harga' }));
-                return;
-            }
-            res.writeHead(200, { 'Content-Type': 'application/json; charset=UTF-8' });
-            res.end(data);
-        });
-        return;
-    }
-
-    // API: POST /api/pricing
-    if (reqPath === '/api/pricing' && req.method === 'POST') {
+    // API: /api/pricing (Handled by api/pricing.js for both local and Vercel)
+    if (reqPath === '/api/pricing') {
+        const pricingHandler = require('./api/pricing');
         let body = '';
         req.on('data', chunk => {
             body += chunk.toString();
-            // Protect against very large payloads (> 5MB)
-            if (body.length > 5 * 1024 * 1024) {
-                req.connection.destroy();
-            }
         });
-
-        req.on('end', () => {
+        req.on('end', async () => {
             try {
-                const parsed = JSON.parse(body);
-                // Validate basic structure
-                if (!parsed || typeof parsed !== 'object') {
-                    throw new Error('Format JSON tidak valid');
-                }
-                const formatted = JSON.stringify(parsed, null, 2);
-                fs.writeFile(DATA_FILE, formatted, 'utf8', (err) => {
-                    if (err) {
-                        res.writeHead(500, { 'Content-Type': 'application/json' });
-                        res.end(JSON.stringify({ error: 'Gagal menyimpan perubahan ke file' }));
-                        return;
-                    }
-                    res.writeHead(200, { 'Content-Type': 'application/json; charset=UTF-8' });
-                    res.end(JSON.stringify({ success: true, message: 'Tarif berhasil disimpan!' }));
-                });
+                req.body = body ? JSON.parse(body) : null;
             } catch (e) {
-                res.writeHead(400, { 'Content-Type': 'application/json' });
-                res.end(JSON.stringify({ error: 'Data JSON tidak valid: ' + e.message }));
+                req.body = null;
+            }
+            res.status = function(code) {
+                res.statusCode = code;
+                return res;
+            };
+            res.json = function(data) {
+                res.writeHead(res.statusCode || 200, { 'Content-Type': 'application/json; charset=UTF-8' });
+                res.end(JSON.stringify(data));
+                return res;
+            };
+            try {
+                await pricingHandler(req, res);
+            } catch (err) {
+                console.error('API handler error:', err);
+                if (!res.headersSent) {
+                    res.writeHead(500, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ error: err.message }));
+                }
             }
         });
         return;
