@@ -114,12 +114,13 @@
                 <span class="font-extrabold text-2xl sm:text-3xl tracking-tight text-brand-navy">jaborka</span>
             </a>
             
-            <!-- Navigation Links: Layanan, Kalkulator, Tarif, Ketentuan -->
-            <nav class="flex items-center space-x-10 text-sm font-semibold text-slate-700">
-                <a href="#layanan" class="hover:text-brand-navy transition-colors">Layanan</a>
-                <a href="#kalkulator" class="hover:text-brand-navy transition-colors">Kalkulator</a>
-                <a href="#tarif" class="hover:text-brand-navy transition-colors">Tarif</a>
-                <a href="#ketentuan" class="hover:text-brand-navy transition-colors">Ketentuan</a>
+            <!-- Navigation Links: Services, Network, How It Works, Calculator, Import Routes -->
+            <nav class="flex items-center space-x-8 text-sm font-semibold text-slate-700">
+                <a href="#layanan" class="hover:text-brand-navy transition-colors">Services</a>
+                <a href="#jaringan" class="hover:text-brand-navy transition-colors">Network</a>
+                <a href="#cara-kerja" class="hover:text-brand-navy transition-colors">How It Works</a>
+                <a href="#kalkulator" class="hover:text-brand-navy transition-colors">Calculator</a>
+                <a href="#tarif" class="hover:text-brand-navy transition-colors">Import Routes</a>
             </nav>
         </div>
     </header>
@@ -159,7 +160,7 @@
                             <path id="badgePath" d="M 50,50 m -34,0 a 34,34 0 1,1 68,0 a 34,34 0 1,1 -68,0" fill="none" />
                             <text class="text-[9px] font-bold uppercase tracking-[0.14em] fill-slate-400">
                                 <textPath href="#badgePath">
-                                    • CARA KERJA • PENGIRIMAN KARGO •
+                                    • YOUR IMPORT • OUR NETWORK •
                                 </textPath>
                             </text>
                         </svg>
@@ -170,7 +171,7 @@
 
                     <!-- CTA Button -->
                     <a href="#tarif" class="inline-flex items-center gap-2 px-6 py-3.5 bg-brand-electricBlue hover:bg-sky-500 text-white text-xs sm:text-sm font-bold rounded-lg shadow-md hover:shadow-lg transition-all w-max">
-                        <span>Kirim Kargo Sekarang</span>
+                        <span>Get Import Quote</span>
                         <i class="fa-solid fa-chevron-right text-[10px]"></i>
                     </a>
                 </div>
@@ -182,12 +183,12 @@
                         <!-- Tag Terpercaya -->
                         <div class="absolute -top-2.5 left-3 bg-white border border-slate-100 rounded px-1 py-0.5 shadow-xs flex items-center gap-1">
                             <span class="w-1.5 h-1.5 rounded-full bg-brand-orange"></span>
-                            <span class="text-[8px] font-bold text-slate-600 uppercase">Terpercaya</span>
+                            <span class="text-[8px] font-bold text-slate-600 uppercase">Import Network</span>
                         </div>
 
                         <div class="flex flex-col flex-1 pl-1 pt-2">
-                            <span class="text-xs font-bold text-slate-800 leading-tight">Keunggulan<br>Logistik</span>
-                            <span class="text-[9px] text-slate-400 mt-1">Spesialis kepuasan<br>pelanggan</span>
+                            <span class="text-xs font-bold text-slate-800 leading-tight">YOUR IMPORT.<br>OUR NETWORK.</span>
+                            <span class="text-[9px] text-slate-400 mt-1">Import made simple<br>Asia to Indonesia</span>
                         </div>
 
                         <!-- Frame avatar oranye -->
@@ -242,7 +243,7 @@
                     </div>
 
                     <a href="#tarif" class="w-full py-3.5 sm:py-4 bg-[#0ea5e9] hover:bg-sky-500 text-white text-center text-sm sm:text-[15px] font-bold rounded-2xl shadow-[0_8px_20px_rgba(14,165,233,0.3)] transition-all flex items-center justify-center gap-2">
-                        <span>Kirim Kargo Sekarang</span>
+                        <span>Get Import Quote</span>
                         <i class="fa-solid fa-chevron-right text-xs"></i>
                     </a>
                     <div class="grid grid-cols-3 gap-2 w-full text-center bg-slate-100/90 backdrop-blur-sm py-3 px-3 rounded-2xl border border-slate-200 shadow-sm">
@@ -267,270 +268,933 @@
         <!-- RISING CONTENT LAYER: Slides UP over the sticky hero stage like a curtain -->
         <div class="relative z-20 w-full bg-transparent">
             
-            <!-- THE ORANGE CURTAIN SHEET (SCROLL REVEAL EFFECT) - Bahasa Indonesia -->
-            <section id="curtain-manifesto" class="relative w-full bg-brand-orange text-white rounded-t-[40px] sm:rounded-t-[60px] shadow-[0_-35px_80px_rgba(0,0,0,0.35)] pt-24 pb-32 sm:pt-32 sm:pb-40 px-6 sm:px-12 lg:px-16 transition-all">
-                
+            <!-- SECTION 1: TRANSITION / CURTAIN MANIFESTO (GSAP Parallax Target) -->
+            <section id="curtain-manifesto" class="relative w-full bg-[#0b1a30] text-white rounded-t-[40px] sm:rounded-t-[60px] shadow-[0_-35px_80px_rgba(0,0,0,0.5)] pt-24 pb-28 sm:pt-32 sm:pb-36 px-6 sm:px-12 lg:px-16 transition-all border-t border-slate-700/50">
                 <div class="max-w-5xl mx-auto text-center">
-                    <!-- Tag Bahasa Indonesia -->
-                    <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-black/15 text-xs font-bold text-white uppercase tracking-widest mb-10 border border-white/20">
-                        <i class="fa-solid fa-bolt text-yellow-300"></i>
-                        <span>TENTANG JABORKA</span>
+                    <!-- Brand Pill -->
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-xs font-bold text-brand-orange uppercase tracking-widest mb-8 border border-white/10">
+                        <span class="text-brand-orange">★</span>
+                        <span>ONE PARTNER. MULTIPLE ORIGINS.</span>
                     </div>
 
-                    <!-- Manifesto Headline Bahasa Indonesia -->
-                    <h2 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.15] max-w-4xl mx-auto mb-10 text-white">
-                        Fokus Kembangkan Bisnis Anda.<br class="hidden sm:block">
-                        Biarkan Kami yang Menangani Pengiriman Impor Anda.
+                    <!-- Headline -->
+                    <h2 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] max-w-4xl mx-auto mb-8 text-white uppercase font-display">
+                        ONE PARTNER.<br class="hidden sm:block">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500">MULTIPLE ORIGINS.</span>
                     </h2>
 
-                    <p class="text-base sm:text-xl text-white/90 font-light max-w-3xl mx-auto mb-12 leading-relaxed">
-                        Solusi kargo internasional terdepan dengan sistem impor borongan *all-in door-to-door*. Tarif transparan langsung sampai ke depan pintu gudang Anda tanpa kerumitan perizinan dan bea cukai.
+                    <!-- Supporting Idea -->
+                    <p class="text-lg sm:text-2xl text-slate-200 font-medium max-w-3xl mx-auto mb-6 leading-relaxed">
+                        One point of contact for your import needs across Asia-Pacific.
                     </p>
 
-                    <!-- Tombol Aksi -->
+                    <!-- Concept Explanation -->
+                    <p class="text-sm sm:text-base text-slate-400 font-normal max-w-2xl mx-auto mb-12 leading-relaxed">
+                        You source goods from suppliers in China, Korea, Taiwan, Thailand, Singapore, Hong Kong, or Australia. JABORKA orchestrates the routing, clearance, and door-to-door import through our unified partner network.
+                    </p>
+
+                    <!-- Quick Action Buttons -->
                     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <a href="#tarif" class="px-9 py-4 bg-black text-white text-sm font-bold rounded-full hover:bg-slate-900 transition-all shadow-xl hover:scale-105 flex items-center gap-2">
-                            <span>Lihat Perbandingan Tarif</span>
+                        <a href="#kalkulator" class="w-full sm:w-auto px-8 py-4 bg-brand-orange hover:bg-orange-600 text-white text-sm font-bold rounded-2xl shadow-lg hover:shadow-orange-500/30 transition-all flex items-center justify-center gap-2">
+                            <span>Simulasi Biaya Impor</span>
+                            <i class="fa-solid fa-calculator text-xs"></i>
+                        </a>
+                        <a href="#jaringan" class="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 text-white text-sm font-bold rounded-2xl border border-white/15 transition-all flex items-center justify-center gap-2">
+                            <span>Jelajahi Jaringan Rute</span>
                             <i class="fa-solid fa-arrow-right text-xs"></i>
                         </a>
-                        <a href="#kalkulator" class="px-9 py-4 bg-white text-brand-orange text-sm font-bold rounded-full hover:bg-slate-100 transition-all shadow-xl hover:scale-105 flex items-center gap-2">
-                            <i class="fa-solid fa-calculator"></i>
-                            <span>Hitung Estimasi Biaya</span>
-                        </a>
                     </div>
                 </div>
-
             </section>
 
-    <!-- LAYANAN / KEUNGGULAN SECTION (Translucent background with backdrop blur so hero scroll is visible) -->
-    <section id="layanan" class="py-24 bg-slate-50/75 backdrop-blur-md relative z-30 border-t border-slate-200/80">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-100/80 bg-white/90 backdrop-blur-sm text-xs font-bold text-brand-navy uppercase tracking-wider mb-3">
-                    <i class="fa-solid fa-star text-brand-orange"></i> Keunggulan Layanan
-                </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy tracking-tight mb-4">Mengapa Menggunakan jaborka?</h2>
-                <p class="text-sm sm:text-base text-slate-600 font-normal">Standardisasi pengiriman internasional door-to-door dengan jaminan kepastian dan kemudahan tanpa biaya siluman.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-white/80 backdrop-blur-sm p-8 sm:p-10 rounded-3xl border border-white/80 shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
-                    <div class="w-14 h-14 bg-blue-50/90 text-brand-navy rounded-2xl flex items-center justify-center mb-6 border border-blue-100 text-2xl font-bold">
-                        <i class="fa-solid fa-tags"></i>
+            <!-- SECTION 2: PROBLEM / SOLUTION (YOU SOURCE THE GOODS. WE HANDLE THE IMPORT.) -->
+            <section class="py-24 sm:py-28 bg-[#071222] text-white relative z-30 border-t border-slate-800">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-16">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-slate-700 bg-slate-800/80 text-xs font-bold text-slate-300 uppercase tracking-wider mb-4">
+                            <i class="fa-solid fa-arrows-split-up-and-left text-brand-orange"></i> Simplicity By Design
+                        </div>
+                        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4 uppercase font-display">
+                            YOU SOURCE THE GOODS.<br>
+                            <span class="text-brand-orange">WE HANDLE THE IMPORT.</span>
+                        </h2>
+                        <p class="text-sm sm:text-base text-slate-400">
+                            Importers often have strong suppliers and products, but get overwhelmed by logistics complexity. JABORKA bridges that gap.
+                        </p>
                     </div>
-                    <h3 class="text-xl font-bold text-brand-navy mb-3">Tarif Terkurasi & Termurah</h3>
-                    <p class="text-sm text-slate-600 leading-relaxed">
-                        Kami mengkurasi dan memberikan opsi harga paling efisien per Kg maupun per M³ dari konsolidasi kargo terpercaya.
-                    </p>
-                </div>
 
-                <!-- Card 2 -->
-                <div class="bg-white/80 backdrop-blur-sm p-8 sm:p-10 rounded-3xl border border-white/80 shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
-                    <div class="w-14 h-14 bg-orange-50/90 text-brand-orange rounded-2xl flex items-center justify-center mb-6 border border-orange-100 text-2xl font-bold">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-brand-navy mb-3">Spesialis Penanganan Lartas</h3>
-                    <p class="text-sm text-slate-600 leading-relaxed">
-                        Keahlian menangani barang lartas ringan hingga berat: kosmetik, alkes, suplemen, tekstil, mesin, sparepart, hingga baterai.
-                    </p>
-                </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                        <!-- What You Do -->
+                        <div class="bg-gradient-to-b from-slate-900 to-[#0c1f38] p-8 sm:p-10 rounded-3xl border border-slate-800 flex flex-col justify-between">
+                            <div>
+                                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-500/10 text-blue-400 text-xs font-bold uppercase tracking-wider mb-6 border border-blue-500/20">
+                                    <i class="fa-solid fa-user-check"></i> What You Already Know
+                                </div>
+                                <h3 class="text-2xl font-bold text-white mb-4">You Focus on Sourcing</h3>
+                                <p class="text-sm text-slate-400 leading-relaxed mb-6">
+                                    Finding winning products and securing factory deals is where your time creates the most value:
+                                </p>
+                                <ul class="space-y-4 text-sm text-slate-300">
+                                    <li class="flex items-start gap-3">
+                                        <div class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-xs shrink-0 mt-0.5"><i class="fa-solid fa-check"></i></div>
+                                        <span><strong>What you want to buy</strong> — Choosing product catalogs, quantities, and variations.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <div class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-xs shrink-0 mt-0.5"><i class="fa-solid fa-check"></i></div>
+                                        <span><strong>Who your supplier is</strong> — Direct factory contacts on 1688, Alibaba, or domestic markets.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <div class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-xs shrink-0 mt-0.5"><i class="fa-solid fa-check"></i></div>
+                                        <span><strong>Where the goods are located</strong> — City origins across China and Asia-Pacific.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="mt-8 pt-6 border-t border-slate-800/80 text-xs text-slate-500 font-medium">
+                                *No need to spend weeks learning freight forwarder jargon or customs regulations.
+                            </div>
+                        </div>
 
-                <!-- Card 3 -->
-                <div class="bg-white/80 backdrop-blur-sm p-8 sm:p-10 rounded-3xl border border-white/80 shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
-                    <div class="w-14 h-14 bg-slate-100/90 text-brand-navy rounded-2xl flex items-center justify-center mb-6 border border-slate-200 text-2xl font-bold">
-                        <i class="fa-solid fa-truck-ramp-box"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-brand-navy mb-3">All-in Door-to-Door</h3>
-                    <p class="text-sm text-slate-600 leading-relaxed">
-                        Barang diantar langsung sampai alamat penerima di Indonesia. Semua urusan clearance bea cukai dan pajak kargo sudah tuntas.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CALCULATOR SECTION -->
-    <section id="kalkulator" class="py-24 bg-white relative z-30 border-y border-slate-200">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-100 bg-blue-50 text-xs font-bold text-brand-navy uppercase tracking-wider mb-3">
-                    <i class="fa-solid fa-calculator text-brand-orange"></i> Simulasi Biaya Cepat
-                </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy tracking-tight mb-2">Kalkulator Estimasi Biaya Impor</h2>
-                <p class="text-sm text-slate-500">Hitung estimasi biaya pengiriman kargo Anda secara transparan.</p>
-            </div>
-            
-            <div class="bg-[#0b1a30] text-white rounded-3xl border border-blue-900/60 shadow-[0_20px_50px_rgba(11,26,48,0.25)] p-6 sm:p-10 relative overflow-hidden">
-                <!-- Aksen Bintang Orange di Pojok Kanan Bawah (Sengaja Terpotong) -->
-                <div class="absolute -bottom-14 -right-14 sm:-bottom-16 sm:-right-16 pointer-events-none select-none z-0">
-                    <svg class="w-48 h-48 sm:w-56 sm:h-56 text-brand-orange opacity-35 transform rotate-12 filter drop-shadow-[0_0_20px_rgba(255,85,0,0.3)]" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                    </svg>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 relative z-10">
-                    <div class="space-y-2">
-                        <label class="text-xs font-bold text-slate-300 uppercase tracking-wider">Negara / Kota Asal</label>
-                        <select id="calc-origin" class="w-full bg-[#122848] border border-blue-700/60 rounded-xl px-4 py-3.5 text-sm font-semibold text-white focus:outline-none focus:ring-2 focus:ring-brand-orange transition-all shadow-inner">
-                            <option class="bg-[#0b1a30] text-white" value="guangzhou" selected>Guangzhou, China</option>
-                            <option class="bg-[#0b1a30] text-white" value="yiwu">Yiwu, China</option>
-                            <option class="bg-[#0b1a30] text-white" value="singapore">Singapore</option>
-                            <option class="bg-[#0b1a30] text-white" value="bangkok">Bangkok, Thailand</option>
-                            <option class="bg-[#0b1a30] text-white" value="korea">Korea Selatan</option>
-                            <option class="bg-[#0b1a30] text-white" value="hongkong">Hongkong</option>
-                            <option class="bg-[#0b1a30] text-white" value="shanghai">Shanghai, China</option>
-                            <option class="bg-[#0b1a30] text-white" value="taiwan">Taiwan</option>
-                            <option class="bg-[#0b1a30] text-white" value="aussie">Australia</option>
-                        </select>
-                    </div>
-                    <div class="space-y-2">
-                        <label class="text-xs font-bold text-slate-300 uppercase tracking-wider">Jalur Pengiriman</label>
-                        <select id="calc-mode" class="w-full bg-[#122848] border border-blue-700/60 rounded-xl px-4 py-3.5 text-sm font-semibold text-white focus:outline-none focus:ring-2 focus:ring-brand-orange transition-all shadow-inner">
-                            <option class="bg-[#0b1a30] text-white" value="laut" selected>Laut / Sea Freight (Per M³)</option>
-                            <option class="bg-[#0b1a30] text-white" value="udara">Udara / Air Freight (Per Kg)</option>
-                        </select>
-                    </div>
-                    <div class="space-y-2">
-                        <label class="text-xs font-bold text-slate-300 uppercase tracking-wider">Jumlah / Kuantitas</label>
-                        <div class="relative">
-                            <input type="number" id="calc-amount" value="1" min="0.1" step="0.1" class="w-full bg-[#122848] border border-blue-700/60 rounded-xl px-4 py-3.5 text-sm font-semibold text-white focus:outline-none focus:ring-2 focus:ring-brand-orange transition-all shadow-inner">
-                            <span id="calc-unit-label" class="absolute right-4 top-1/2 -translate-y-1/2 text-sm text-blue-300 font-bold">M³</span>
+                        <!-- What JABORKA Handles -->
+                        <div class="bg-gradient-to-b from-[#132846] to-[#0b1a30] p-8 sm:p-10 rounded-3xl border border-blue-600/30 shadow-[0_15px_40px_rgba(0,0,0,0.3)] flex flex-col justify-between relative overflow-hidden">
+                            <div class="absolute -top-12 -right-12 w-36 h-36 bg-brand-orange/10 rounded-full blur-2xl pointer-events-none"></div>
+                            <div>
+                                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-orange-500/10 text-orange-400 text-xs font-bold uppercase tracking-wider mb-6 border border-orange-500/20">
+                                    <i class="fa-solid fa-network-wired"></i> What JABORKA Solves
+                                </div>
+                                <h3 class="text-2xl font-bold text-white mb-4">We Handle The Import Engine</h3>
+                                <p class="text-sm text-slate-300 leading-relaxed mb-6">
+                                    We absorb the logistical and regulatory complexities from origin warehouse to destination:
+                                </p>
+                                <ul class="space-y-3.5 text-sm text-slate-200">
+                                    <li class="flex items-start gap-3">
+                                        <div class="w-6 h-6 rounded-full bg-orange-500/20 text-brand-orange flex items-center justify-center text-xs shrink-0 mt-0.5"><i class="fa-solid fa-route"></i></div>
+                                        <span><strong>Selecting the right route</strong> — Route matching based on speed, volume, and budget.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <div class="w-6 h-6 rounded-full bg-orange-500/20 text-brand-orange flex items-center justify-center text-xs shrink-0 mt-0.5"><i class="fa-solid fa-box-archive"></i></div>
+                                        <span><strong>Coordinating shipment</strong> — Origin hub consolidation, marking, and palletizing.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <div class="w-6 h-6 rounded-full bg-orange-500/20 text-brand-orange flex items-center justify-center text-xs shrink-0 mt-0.5"><i class="fa-solid fa-calculator"></i></div>
+                                        <span><strong>Calculating import costs</strong> — All-in transparent quote with no surprise fees.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <div class="w-6 h-6 rounded-full bg-orange-500/20 text-brand-orange flex items-center justify-center text-xs shrink-0 mt-0.5"><i class="fa-solid fa-file-shield"></i></div>
+                                        <span><strong>Handling documentation & customs</strong> — Compliant clearance and tax settlement.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <div class="w-6 h-6 rounded-full bg-orange-500/20 text-brand-orange flex items-center justify-center text-xs shrink-0 mt-0.5"><i class="fa-solid fa-truck-ramp-box"></i></div>
+                                        <span><strong>Door-to-door delivery</strong> — Final delivery to your warehouse address in Indonesia.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="mt-8 pt-6 border-t border-slate-700/60 text-xs text-orange-300/80 font-medium">
+                                *Single point of contact for tracking, updates, and customer support.
+                            </div>
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <div class="pt-8 border-t border-blue-900/60 flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
-                    <div>
-                        <p class="text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">Perkiraan Biaya Impor</p>
-                        <div id="calc-result" class="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-orange tracking-tight drop-shadow-[0_2px_12px_rgba(255,85,0,0.25)]">Rp 0</div>
-                        <p class="text-xs text-slate-400 mt-1 font-normal">*Berdasarkan tarif termurah. Kategori barang lartas disesuaikan.</p>
+            <!-- SECTION 3: SERVICES (IMPORT, WITHOUT THE COMPLEXITY.) -->
+            <section id="layanan" class="py-24 sm:py-28 bg-white relative z-30 border-t border-slate-200">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-16">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-100 bg-blue-50 text-xs font-bold text-brand-navy uppercase tracking-wider mb-3">
+                            <i class="fa-solid fa-layer-group text-brand-orange"></i> Core Services
+                        </div>
+                        <h2 class="text-3xl sm:text-5xl font-extrabold text-brand-navy tracking-tight mb-4 uppercase font-display">
+                            IMPORT, WITHOUT THE COMPLEXITY.
+                        </h2>
+                        <p class="text-sm sm:text-base text-slate-600">
+                            End-to-end import capabilities tailored to your shipment volume and operational requirements.
+                        </p>
                     </div>
-                    <a id="calc-whatsapp" href="https://wa.me/6283170641208" target="_blank" class="w-full md:w-auto px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-bold rounded-2xl transition-all shadow-lg hover:shadow-emerald-900/50 flex items-center justify-center gap-2 whitespace-nowrap">
-                        <i class="fa-brands fa-whatsapp text-lg"></i> Booking via WhatsApp
-                    </a>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- 1. IMPORT ALL-IN -->
+                        <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200/80 hover:border-slate-300 hover:shadow-lg transition-all group flex flex-col justify-between">
+                            <div>
+                                <div class="w-12 h-12 rounded-2xl bg-white shadow-xs border border-slate-200 flex items-center justify-center text-brand-navy text-xl mb-6 group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-receipt text-brand-orange"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-brand-navy mb-2">IMPORT ALL-IN</h3>
+                                <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                    A simplified import quotation based on actual shipment requirements. Freight, duty, tax, and customs clearance consolidated into one transparent quote.
+                                </p>
+                            </div>
+                            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center gap-1.5 pt-4 border-t border-slate-200/60">
+                                <span>All-inclusive pricing</span>
+                            </div>
+                        </div>
+
+                        <!-- 2. DOOR-TO-DOOR -->
+                        <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200/80 hover:border-slate-300 hover:shadow-lg transition-all group flex flex-col justify-between">
+                            <div>
+                                <div class="w-12 h-12 rounded-2xl bg-white shadow-xs border border-slate-200 flex items-center justify-center text-brand-navy text-xl mb-6 group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-door-open text-blue-600"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-brand-navy mb-2">DOOR-TO-DOOR</h3>
+                                <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                    From origin supplier pickup or warehouse consolidation directly to your destination facility in Indonesia, executed according to your selected route.
+                                </p>
+                            </div>
+                            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center gap-1.5 pt-4 border-t border-slate-200/60">
+                                <span>Origin to destination</span>
+                            </div>
+                        </div>
+
+                        <!-- 3. FCL / LCL -->
+                        <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200/80 hover:border-slate-300 hover:shadow-lg transition-all group flex flex-col justify-between">
+                            <div>
+                                <div class="w-12 h-12 rounded-2xl bg-white shadow-xs border border-slate-200 flex items-center justify-center text-brand-navy text-xl mb-6 group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-boxes-stacked text-amber-600"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-brand-navy mb-2">FCL / LCL</h3>
+                                <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                    Solutions structured around your cargo volume. Shared container consolidation (LCL) starting from 0.1 M³ or dedicated full-container loads (FCL).
+                                </p>
+                            </div>
+                            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center gap-1.5 pt-4 border-t border-slate-200/60">
+                                <span>Volume-optimized</span>
+                            </div>
+                        </div>
+
+                        <!-- 4. SPECIAL CARGO SUPPORT -->
+                        <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200/80 hover:border-slate-300 hover:shadow-lg transition-all group flex flex-col justify-between">
+                            <div>
+                                <div class="w-12 h-12 rounded-2xl bg-white shadow-xs border border-slate-200 flex items-center justify-center text-brand-navy text-xl mb-6 group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-shield-halved text-emerald-600"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-brand-navy mb-2">SPECIAL CARGO SUPPORT</h3>
+                                <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                    Dedicated operational verification for cargo categories requiring additional handling, documentation checks, or pre-shipment compliance assessment.
+                                </p>
+                            </div>
+                            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center gap-1.5 pt-4 border-t border-slate-200/60">
+                                <span>Compliance & verification</span>
+                            </div>
+                        </div>
+
+                        <!-- 5. IMPORT ASSISTANCE -->
+                        <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200/80 hover:border-slate-300 hover:shadow-lg transition-all group flex flex-col justify-between md:col-span-2 lg:col-span-2">
+                            <div>
+                                <div class="w-12 h-12 rounded-2xl bg-white shadow-xs border border-slate-200 flex items-center justify-center text-brand-navy text-xl mb-6 group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-headset text-indigo-600"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-brand-navy mb-2">IMPORT ASSISTANCE</h3>
+                                <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                    Professional advisory assisting you in determining the most suitable transport mode (Sea vs Air), warehouse address assignment, supplier packaging advice, and transit scheduling.
+                                </p>
+                            </div>
+                            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center gap-1.5 pt-4 border-t border-slate-200/60">
+                                <span>Route planning & specialist guidance</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <!-- DAFTAR TARIF SECTION (Translucent background with backdrop blur so hero scroll is visible) -->
-    <section id="tarif" class="py-24 bg-slate-50/75 backdrop-blur-md relative z-30 border-b border-slate-200/80">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-100/80 bg-white/90 backdrop-blur-sm text-xs font-bold text-brand-navy uppercase tracking-wider mb-3">
-                    <i class="fa-solid fa-list-check text-brand-orange"></i> Katalog Harga
+            <!-- SECTION 4: WHY JABORKA (BENEFITS) -->
+            <section class="py-24 sm:py-28 bg-slate-900 text-white relative z-30 border-t border-slate-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-16">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-xs font-bold text-brand-orange uppercase tracking-wider mb-3">
+                            <i class="fa-solid fa-star"></i> Network Advantages
+                        </div>
+                        <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4 uppercase font-display">
+                            WHY JABORKA?
+                        </h2>
+                        <p class="text-sm sm:text-base text-slate-400">
+                            Built around reliability, coordination ease, and transparent route execution.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- 1. ONE CONTACT -->
+                        <div class="p-8 rounded-3xl bg-slate-800/60 border border-slate-700/80 hover:border-slate-600 transition-all">
+                            <div class="text-brand-orange text-2xl font-black mb-3">01</div>
+                            <h3 class="text-xl font-bold text-white mb-2">ONE CONTACT</h3>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                One unified partner for multiple import origins across Asia-Pacific. Manage all your cross-border shipments under a single relationship.
+                            </p>
+                        </div>
+
+                        <!-- 2. MULTIPLE ROUTES -->
+                        <div class="p-8 rounded-3xl bg-slate-800/60 border border-slate-700/80 hover:border-slate-600 transition-all">
+                            <div class="text-brand-orange text-2xl font-black mb-3">02</div>
+                            <h3 class="text-xl font-bold text-white mb-2">MULTIPLE ROUTES</h3>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                Access an established and growing network of import corridors connecting China, East Asia, Southeast Asia, and Oceania to Indonesia.
+                            </p>
+                        </div>
+
+                        <!-- 3. ALL-IN QUOTATION -->
+                        <div class="p-8 rounded-3xl bg-slate-800/60 border border-slate-700/80 hover:border-slate-600 transition-all">
+                            <div class="text-brand-orange text-2xl font-black mb-3">03</div>
+                            <h3 class="text-xl font-bold text-white mb-2">ALL-IN QUOTATION</h3>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                A simpler quotation without requiring customers to coordinate multiple shipping lines, warehouse operators, and clearance brokers.
+                            </p>
+                        </div>
+
+                        <!-- 4. ROUTE MATCHING -->
+                        <div class="p-8 rounded-3xl bg-slate-800/60 border border-slate-700/80 hover:border-slate-600 transition-all">
+                            <div class="text-brand-orange text-2xl font-black mb-3">04</div>
+                            <h3 class="text-xl font-bold text-white mb-2">ROUTE MATCHING</h3>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                JABORKA evaluates your shipment requirements to select the suitable route and operational partner based on cargo type, speed, and budget.
+                            </p>
+                        </div>
+
+                        <!-- 5. IMPORT ASSISTANCE -->
+                        <div class="p-8 rounded-3xl bg-slate-800/60 border border-slate-700/80 hover:border-slate-600 transition-all md:col-span-2 lg:col-span-2">
+                            <div class="text-brand-orange text-2xl font-black mb-3">05</div>
+                            <h3 class="text-xl font-bold text-white mb-2">IMPORT ASSISTANCE</h3>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                We help handle the operational complexity behind every shipment — providing clear marking instructions, tracking updates, and proactive guidance every step of the way.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy tracking-tight mb-2">Daftar Tarif Resmi & Terkurasi</h2>
-                <p class="text-sm text-slate-500 max-w-2xl mx-auto">Pilih rute negara asal untuk melihat rincian harga per kategori barang.</p>
-            </div>
+            </section>
 
-            <!-- Country Tabs Navigation -->
-            <div class="flex overflow-x-auto hide-scroll bg-white/80 backdrop-blur-md p-2 rounded-2xl border border-white/80 shadow-sm mb-8 gap-2" id="country-tabs">
-                <button onclick="switchTab('guangzhou')" data-country="guangzhou" class="tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 whitespace-nowrap transition-all active">Guangzhou</button>
-                <button onclick="switchTab('yiwu')" data-country="yiwu" class="tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 whitespace-nowrap transition-all">Yiwu</button>
-                <button onclick="switchTab('singapore')" data-country="singapore" class="tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 whitespace-nowrap transition-all">Singapore</button>
-                <button onclick="switchTab('bangkok')" data-country="bangkok" class="tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 whitespace-nowrap transition-all">Bangkok</button>
-                <button onclick="switchTab('korea')" data-country="korea" class="tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 whitespace-nowrap transition-all">Korea</button>
-                <button onclick="switchTab('hongkong')" data-country="hongkong" class="tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 whitespace-nowrap transition-all">Hongkong</button>
-                <button onclick="switchTab('shanghai')" data-country="shanghai" class="tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 whitespace-nowrap transition-all">Shanghai</button>
-                <button onclick="switchTab('taiwan')" data-country="taiwan" class="tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 whitespace-nowrap transition-all">Taiwan</button>
-                <button onclick="switchTab('aussie')" data-country="aussie" class="tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 whitespace-nowrap transition-all">Australia</button>
-            </div>
+            <!-- SECTION 5: NETWORK SECTION (ONE NETWORK. MULTIPLE ORIGINS.) -->
+            <section id="jaringan" class="py-24 sm:py-28 bg-[#f8fafc] text-slate-900 relative z-30 border-t border-slate-200">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-16">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-slate-200 bg-white text-xs font-bold text-brand-navy uppercase tracking-wider mb-3 shadow-xs">
+                            <i class="fa-solid fa-globe text-brand-orange"></i> Regional Corridors
+                        </div>
+                        <h2 class="text-3xl sm:text-5xl font-extrabold text-brand-navy tracking-tight mb-4 uppercase font-display">
+                            ONE NETWORK. MULTIPLE ORIGINS.
+                        </h2>
+                        <p class="text-sm sm:text-base text-slate-600">
+                            Direct import channels linking primary Asian and Oceanic manufacturing hubs to Indonesia.
+                        </p>
+                    </div>
 
-            <!-- Dynamic Table Container -->
-            <div id="pricing-content" class="bg-white/85 backdrop-blur-md rounded-3xl border border-white/80 shadow-[0_10px_30px_rgba(0,0,0,0.04)] p-6 sm:p-10 min-h-[380px]">
-                <!-- Dynamic Content Injected via JS -->
-            </div>
-            
-            <div class="mt-6 text-center space-y-1">
-                <p class="text-xs font-bold text-brand-orange bg-orange-50 inline-block px-4 py-1.5 rounded-full border border-orange-200">
-                    <i class="fa-solid fa-tag mr-1"></i> Khusus pengiriman barang Branded / Bermerek: +Rp 250.000 / m³ (CBM)
-                </p>
-                <p class="text-xs text-slate-400">*Harga dapat berubah sesuai jadwal kapal, closing, dan regulasi customs. Hubungi admin untuk konfirmasi kuota terkini.</p>
-            </div>
-        </div>
-    </section>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                        <!-- CHINA (Cities specified inside) -->
+                        <div class="bg-white p-7 rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between md:col-span-2 xl:col-span-2 border-l-4 border-l-brand-orange">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="text-xs font-bold uppercase tracking-widest text-brand-orange">Manufacturing Hub</span>
+                                    <span class="text-xs bg-orange-50 text-brand-orange px-2.5 py-1 rounded-full font-bold border border-orange-200">Sea & Air</span>
+                                </div>
+                                <h3 class="text-2xl font-black text-brand-navy mb-1 flex items-center gap-2">
+                                    <span>CHINA</span>
+                                    <span class="text-sm font-semibold text-slate-400">→ Indonesia</span>
+                                </h3>
+                                <p class="text-xs font-semibold text-slate-500 mb-6">Manufacturing · Wholesale · Machinery</p>
+                                
+                                <div class="bg-slate-50 rounded-2xl p-4 border border-slate-100 mb-4">
+                                    <p class="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">China Origin Hubs:</p>
+                                    <div class="flex flex-wrap gap-2 text-xs font-bold text-brand-navy">
+                                        <span class="bg-white px-3 py-1.5 rounded-xl border border-slate-200 shadow-xs flex items-center gap-1.5">
+                                            <i class="fa-solid fa-location-dot text-brand-orange text-[10px]"></i> Guangzhou
+                                        </span>
+                                        <span class="bg-white px-3 py-1.5 rounded-xl border border-slate-200 shadow-xs flex items-center gap-1.5">
+                                            <i class="fa-solid fa-location-dot text-brand-orange text-[10px]"></i> Yiwu
+                                        </span>
+                                        <span class="bg-white px-3 py-1.5 rounded-xl border border-slate-200 shadow-xs flex items-center gap-1.5">
+                                            <i class="fa-solid fa-location-dot text-brand-orange text-[10px]"></i> Shanghai
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#tarif" onclick="switchTab('guangzhou')" class="text-xs font-bold text-brand-orange hover:text-orange-700 inline-flex items-center gap-1.5 mt-2">
+                                <span>Lihat Rute China</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
 
-    <!-- SYARAT & KETENTUAN SECTION -->
-    <section id="ketentuan" class="py-24 bg-brand-navy text-white relative z-30">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-extrabold tracking-tight mb-2">Syarat & Ketentuan Pengiriman</h2>
-                <p class="text-sm text-slate-300 font-light">Ketentuan operasional dan kebijakan klaim kargo jaborka.</p>
-            </div>
+                        <!-- SOUTH KOREA -->
+                        <div class="bg-white p-7 rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="text-xs font-bold uppercase tracking-widest text-slate-400">East Asia</span>
+                                    <span class="text-xs bg-slate-100 text-slate-700 px-2.5 py-1 rounded-full font-bold">Sea & Air</span>
+                                </div>
+                                <h3 class="text-xl font-black text-brand-navy mb-1">SOUTH KOREA</h3>
+                                <p class="text-xs font-semibold text-slate-500 mb-4">Beauty · Cosmetics · Fashion</p>
+                                <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                                    Direct air courier and consolidated sea routes for K-beauty, skincare, and apparel.
+                                </p>
+                            </div>
+                            <a href="#tarif" onclick="switchTab('korea')" class="text-xs font-bold text-brand-navy hover:text-brand-orange inline-flex items-center gap-1.5">
+                                <span>Lihat Rute Korea</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="p-8 bg-slate-800/60 rounded-3xl border border-slate-700/60 backdrop-blur-sm">
-                    <h3 class="text-base font-bold text-amber-400 mb-4 border-b border-slate-700 pb-3 flex items-center gap-2">
-                        <i class="fa-solid fa-circle-check text-emerald-400"></i> Ketentuan Umum & Penggantian
-                    </h3>
-                    <ul class="space-y-3.5 text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
-                            <span>Penggantian barang via laut maksimal <strong>Rp 20.000.000 / 1 CBM</strong> apabila hilang saat penanganan ekspedisi (bukan rusak karena sifat bawaan barang).</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
-                            <span>Barang udara dan laut wajib melampirkan <strong>Invoice & Packing List</strong> sebelum pengiriman ke gudang asal.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
-                            <span>Pengiriman China by sea memiliki rasio <strong>1 CBM = 600 Kg max</strong>. Apabila berat melebihi proporsi volume, akan dikenakan charge kilogram.</span>
-                        </li>
-                    </ul>
+                        <!-- TAIWAN -->
+                        <div class="bg-white p-7 rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="text-xs font-bold uppercase tracking-widest text-slate-400">East Asia</span>
+                                    <span class="text-xs bg-slate-100 text-slate-700 px-2.5 py-1 rounded-full font-bold">Sea & Air</span>
+                                </div>
+                                <h3 class="text-xl font-black text-brand-navy mb-1">TAIWAN</h3>
+                                <p class="text-xs font-semibold text-slate-500 mb-4">Electronics · Components · Specialty Goods</p>
+                                <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                                    Precision electronic components, hardware, industrial supplies, and consumer goods.
+                                </p>
+                            </div>
+                            <a href="#tarif" onclick="switchTab('taiwan')" class="text-xs font-bold text-brand-navy hover:text-brand-orange inline-flex items-center gap-1.5">
+                                <span>Lihat Rute Taiwan</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
+
+                        <!-- THAILAND -->
+                        <div class="bg-white p-7 rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Southeast Asia</span>
+                                    <span class="text-xs bg-slate-100 text-slate-700 px-2.5 py-1 rounded-full font-bold">Sea & Air</span>
+                                </div>
+                                <h3 class="text-xl font-black text-brand-navy mb-1">THAILAND</h3>
+                                <p class="text-xs font-semibold text-slate-500 mb-4">Retail · Lifestyle · Consumer Goods</p>
+                                <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                                    Bangkok wholesale hubs, fashion accessories, automotive spare parts, and packaged snacks.
+                                </p>
+                            </div>
+                            <a href="#tarif" onclick="switchTab('bangkok')" class="text-xs font-bold text-brand-navy hover:text-brand-orange inline-flex items-center gap-1.5">
+                                <span>Lihat Rute Thailand</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
+
+                        <!-- SINGAPORE -->
+                        <div class="bg-white p-7 rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Regional Transit</span>
+                                    <span class="text-xs bg-slate-100 text-slate-700 px-2.5 py-1 rounded-full font-bold">Sea & Air</span>
+                                </div>
+                                <h3 class="text-xl font-black text-brand-navy mb-1">SINGAPORE</h3>
+                                <p class="text-xs font-semibold text-slate-500 mb-4">Trading · Distribution · Regional Supply</p>
+                                <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                                    Fast express transit for regional spare parts, electronic accessories, and urgent shipments.
+                                </p>
+                            </div>
+                            <a href="#tarif" onclick="switchTab('singapore')" class="text-xs font-bold text-brand-navy hover:text-brand-orange inline-flex items-center gap-1.5">
+                                <span>Lihat Rute Singapore</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
+
+                        <!-- HONG KONG -->
+                        <div class="bg-white p-7 rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Global Gateway</span>
+                                    <span class="text-xs bg-slate-100 text-slate-700 px-2.5 py-1 rounded-full font-bold">Sea & Air</span>
+                                </div>
+                                <h3 class="text-xl font-black text-brand-navy mb-1">HONG KONG</h3>
+                                <p class="text-xs font-semibold text-slate-500 mb-4">Trading · Electronics · Global Supply</p>
+                                <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                                    International re-export gateway for gadgets, luxury goods, and electronics.
+                                </p>
+                            </div>
+                            <a href="#tarif" onclick="switchTab('hongkong')" class="text-xs font-bold text-brand-navy hover:text-brand-orange inline-flex items-center gap-1.5">
+                                <span>Lihat Rute Hong Kong</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
+
+                        <!-- AUSTRALIA -->
+                        <div class="bg-white p-7 rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Oceania</span>
+                                    <span class="text-xs bg-slate-100 text-slate-700 px-2.5 py-1 rounded-full font-bold">Sea & Air</span>
+                                </div>
+                                <h3 class="text-xl font-black text-brand-navy mb-1">AUSTRALIA</h3>
+                                <p class="text-xs font-semibold text-slate-500 mb-4">Regional Supply · Specialty Goods · Trading</p>
+                                <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                                    Health supplements, lifestyle products, honey, specialty foods, and natural goods.
+                                </p>
+                            </div>
+                            <a href="#tarif" onclick="switchTab('aussie')" class="text-xs font-bold text-brand-navy hover:text-brand-orange inline-flex items-center gap-1.5">
+                                <span>Lihat Rute Australia</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
+            </section>
 
-                <div class="p-8 bg-slate-800/60 rounded-3xl border border-slate-700/60 backdrop-blur-sm">
-                    <h3 class="text-base font-bold text-rose-400 mb-4 border-b border-slate-700 pb-3 flex items-center gap-2">
-                        <i class="fa-solid fa-triangle-exclamation text-rose-400"></i> Pengecualian Klaim
-                    </h3>
-                    <p class="text-xs text-slate-400 mb-3">Klaim tidak berlaku untuk kondisi berikut:</p>
-                    <ul class="space-y-3 text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-xmark text-rose-400 mt-1"></i>
-                            <span>Barang mudah bocor/pecah/retak akibat sifat barang itu sendiri (kaca, keramik, cairan, bubuk).</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-xmark text-rose-400 mt-1"></i>
-                            <span>Kerusakan pada saat packing original dari supplier negara asal masih utuh.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-xmark text-rose-400 mt-1"></i>
-                            <span>Barang tanpa packing layak (misal: mesin hanya berpalet bawah atau wrapping tipis).</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-xmark text-rose-400 mt-1"></i>
-                            <span>Force Majeure (Bencana alam, kapal tenggelam, kebakaran, huru-hara) & penyitaan resmi customs.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+            <!-- SECTION 6: HOW IT WORKS (FROM SUPPLIER TO DELIVERY.) -->
+            <section id="cara-kerja" class="py-24 sm:py-28 bg-[#0b1a30] text-white relative z-30 border-t border-slate-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-20">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-xs font-bold text-brand-orange uppercase tracking-wider mb-3">
+                            <i class="fa-solid fa-diagram-project"></i> Execution Blueprint
+                        </div>
+                        <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4 uppercase font-display">
+                            FROM SUPPLIER TO DELIVERY.
+                        </h2>
+                        <p class="text-sm sm:text-base text-slate-400">
+                            A clear, structured six-step journey from origin factory to your doorstep.
+                        </p>
+                    </div>
 
-    <!-- FOOTER -->
-    <footer class="bg-black text-slate-400 py-12 border-t border-slate-800 relative z-30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left mb-8">
-                <div class="flex flex-col items-center md:items-start">
-                    <span class="text-white font-extrabold text-2xl tracking-tight">jaborka</span>
-                    <span class="text-xs text-slate-500 font-medium mt-1">★ jaborka Door To Door Cargo Service (jbrk)</span>
-                    <p class="text-xs text-slate-500 mt-1">Jasa Pengiriman Kargo & Impor Borongan Internasional Door to Door</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative">
+                        <!-- Step 01 -->
+                        <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700/70 hover:border-slate-600 transition-all flex flex-col justify-between">
+                            <div>
+                                <div class="w-12 h-12 rounded-2xl bg-orange-500/10 border border-orange-500/20 text-brand-orange flex items-center justify-center font-black text-base mb-6">
+                                    01
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2">SEND DETAILS</h3>
+                                <p class="text-sm text-slate-300 leading-relaxed">
+                                    Send supplier, origin, cargo and destination information. Include approximate dimensions, weight, and photos.
+                                </p>
+                            </div>
+                            <div class="mt-6 pt-4 border-t border-slate-700/60 text-xs font-semibold text-slate-400">
+                                Step 1 of 6
+                            </div>
+                        </div>
+
+                        <!-- Step 02 -->
+                        <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700/70 hover:border-slate-600 transition-all flex flex-col justify-between">
+                            <div>
+                                <div class="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center font-black text-base mb-6">
+                                    02
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2">WE CHECK</h3>
+                                <p class="text-sm text-slate-300 leading-relaxed">
+                                    We check cargo categorization, volume, route suitability, and available partner network capacity.
+                                </p>
+                            </div>
+                            <div class="mt-6 pt-4 border-t border-slate-700/60 text-xs font-semibold text-slate-400">
+                                Step 2 of 6
+                            </div>
+                        </div>
+
+                        <!-- Step 03 -->
+                        <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700/70 hover:border-slate-600 transition-all flex flex-col justify-between">
+                            <div>
+                                <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center font-black text-base mb-6">
+                                    03
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2">GET YOUR QUOTE</h3>
+                                <p class="text-sm text-slate-300 leading-relaxed">
+                                    Receive a transparent JABORKA import quotation based on your confirmed route, with no hidden costs.
+                                </p>
+                            </div>
+                            <div class="mt-6 pt-4 border-t border-slate-700/60 text-xs font-semibold text-slate-400">
+                                Step 3 of 6
+                            </div>
+                        </div>
+
+                        <!-- Step 04 -->
+                        <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700/70 hover:border-slate-600 transition-all flex flex-col justify-between">
+                            <div>
+                                <div class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center font-black text-base mb-6">
+                                    04
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2">SHIP TO ORIGIN</h3>
+                                <p class="text-sm text-slate-300 leading-relaxed">
+                                    Supplier sends the goods to the designated origin partner warehouse with our dedicated marking code.
+                                </p>
+                            </div>
+                            <div class="mt-6 pt-4 border-t border-slate-700/60 text-xs font-semibold text-slate-400">
+                                Step 4 of 6
+                            </div>
+                        </div>
+
+                        <!-- Step 05 -->
+                        <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700/70 hover:border-slate-600 transition-all flex flex-col justify-between">
+                            <div>
+                                <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center font-black text-base mb-6">
+                                    05
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2">WE HANDLE THE IMPORT</h3>
+                                <p class="text-sm text-slate-300 leading-relaxed">
+                                    The operational network manages international transit, freight forwarding, and all Indonesian customs clearance.
+                                </p>
+                            </div>
+                            <div class="mt-6 pt-4 border-t border-slate-700/60 text-xs font-semibold text-slate-400">
+                                Step 5 of 6
+                            </div>
+                        </div>
+
+                        <!-- Step 06 -->
+                        <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700/70 hover:border-slate-600 transition-all flex flex-col justify-between">
+                            <div>
+                                <div class="w-12 h-12 rounded-2xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center font-black text-base mb-6">
+                                    06
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2">DELIVERED</h3>
+                                <p class="text-sm text-slate-300 leading-relaxed">
+                                    Your shipment arrives safely at the agreed destination address in Indonesia, ready for your business.
+                                </p>
+                            </div>
+                            <div class="mt-6 pt-4 border-t border-slate-700/60 text-xs font-semibold text-slate-400">
+                                Step 6 of 6
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="flex flex-col md:items-end gap-1 text-sm">
-                    <p class="text-slate-300">Kontak Konsultasi & CS: <strong class="text-white">Fera Uli</strong></p>
-                    <a href="https://wa.me/6283170641208" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-semibold transition-colors flex items-center gap-1.5">
-                        <i class="fa-brands fa-whatsapp text-base"></i> 0831-7064-1208
-                    </a>
-                    <p class="text-xs text-slate-500 mt-1">Ruko Permata Ancol Blok N No. 37, Jakarta Utara</p>
+            </section>
+
+            <!-- SECTION 7: CALCULATOR REDESIGN (ESTIMATE YOUR IMPORT COST) -->
+            <section id="kalkulator" class="py-24 sm:py-28 bg-white relative z-30 border-t border-slate-200">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-100 bg-blue-50 text-xs font-bold text-brand-navy uppercase tracking-wider mb-3">
+                            <i class="fa-solid fa-calculator text-brand-orange"></i> Indicative Estimator
+                        </div>
+                        <h2 class="text-3xl sm:text-5xl font-extrabold text-brand-navy tracking-tight mb-3 uppercase font-display">
+                            ESTIMATE YOUR IMPORT COST
+                        </h2>
+                        <p class="text-sm sm:text-base text-slate-500 max-w-xl mx-auto">
+                            Get an indicative estimate based on your origin, shipment volume and route.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-[#0b1a30] text-white rounded-3xl border border-blue-900/60 shadow-[0_20px_50px_rgba(11,26,48,0.25)] p-6 sm:p-10 relative overflow-hidden">
+                        <!-- Subtle background star branding -->
+                        <div class="absolute -bottom-14 -right-14 sm:-bottom-16 sm:-right-16 pointer-events-none select-none z-0">
+                            <svg class="w-48 h-48 sm:w-56 sm:h-56 text-brand-orange opacity-25 transform rotate-12 filter drop-shadow-[0_0_20px_rgba(255,85,0,0.3)]" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 relative z-10">
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold text-slate-300 uppercase tracking-wider">Negara / Kota Asal</label>
+                                <select id="calc-origin" class="w-full bg-[#122848] border border-blue-700/60 rounded-xl px-4 py-3.5 text-sm font-semibold text-white focus:outline-none focus:ring-2 focus:ring-brand-orange transition-all shadow-inner">
+                                    <option class="bg-[#0b1a30] text-white" value="guangzhou" selected>Guangzhou, China</option>
+                                    <option class="bg-[#0b1a30] text-white" value="yiwu">Yiwu, China</option>
+                                    <option class="bg-[#0b1a30] text-white" value="singapore">Singapore</option>
+                                    <option class="bg-[#0b1a30] text-white" value="bangkok">Bangkok, Thailand</option>
+                                    <option class="bg-[#0b1a30] text-white" value="korea">Korea Selatan</option>
+                                    <option class="bg-[#0b1a30] text-white" value="hongkong">Hongkong</option>
+                                    <option class="bg-[#0b1a30] text-white" value="shanghai">Shanghai, China</option>
+                                    <option class="bg-[#0b1a30] text-white" value="taiwan">Taiwan</option>
+                                    <option class="bg-[#0b1a30] text-white" value="aussie">Australia</option>
+                                </select>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold text-slate-300 uppercase tracking-wider">Jalur Pengiriman</label>
+                                <select id="calc-mode" class="w-full bg-[#122848] border border-blue-700/60 rounded-xl px-4 py-3.5 text-sm font-semibold text-white focus:outline-none focus:ring-2 focus:ring-brand-orange transition-all shadow-inner">
+                                    <option class="bg-[#0b1a30] text-white" value="laut" selected>Laut / Sea Freight (Per M³)</option>
+                                    <option class="bg-[#0b1a30] text-white" value="udara">Udara / Air Freight (Per Kg)</option>
+                                </select>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold text-slate-300 uppercase tracking-wider">Jumlah / Kuantitas</label>
+                                <div class="relative">
+                                    <input type="number" id="calc-amount" value="1" min="0.1" step="0.1" class="w-full bg-[#122848] border border-blue-700/60 rounded-xl px-4 py-3.5 text-sm font-semibold text-white focus:outline-none focus:ring-2 focus:ring-brand-orange transition-all shadow-inner">
+                                    <span id="calc-unit-label" class="absolute right-4 top-1/2 -translate-y-1/2 text-sm text-blue-300 font-bold">M³</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-8 border-t border-blue-900/60 flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
+                            <div>
+                                <p class="text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">Estimated Import Cost</p>
+                                <div id="calc-result" class="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-orange tracking-tight drop-shadow-[0_2px_12px_rgba(255,85,0,0.25)]">Rp 0</div>
+                                <p class="text-xs text-slate-400 mt-2 font-normal max-w-md">
+                                    *Final quotation may vary depending on cargo type, dimensions, weight, route, schedule and operational requirements.
+                                </p>
+                            </div>
+                            <a id="calc-whatsapp" href="https://wa.me/6283170641208" target="_blank" class="w-full md:w-auto px-8 py-4 bg-brand-orange hover:bg-orange-600 text-white text-sm font-bold rounded-2xl transition-all shadow-lg hover:shadow-orange-900/50 flex items-center justify-center gap-2 whitespace-nowrap">
+                                <span>GET MY IMPORT QUOTE</span>
+                                <i class="fa-brands fa-whatsapp text-base"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="border-t border-slate-800/80 pt-6 text-center text-xs text-slate-500">
-                &copy; <span id="year"></span> <strong>jaborka</strong> (jbrk Cargo Service). All rights reserved.
-            </div>
-        </div>
-    </footer>
+            </section>
+
+            <!-- SECTION 8: IMPORT ROUTES (CURATED IMPORT RATES / Tarif Impor Terkurasi) -->
+            <section id="tarif" class="py-24 sm:py-28 bg-[#f8fafc] relative z-30 border-t border-slate-200">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-100 bg-white text-xs font-bold text-brand-navy uppercase tracking-wider mb-3 shadow-xs">
+                            <i class="fa-solid fa-compass text-brand-orange"></i> Tarif Impor Terkurasi
+                        </div>
+                        <h2 class="text-3xl sm:text-5xl font-extrabold text-brand-navy tracking-tight mb-2 uppercase font-display">
+                            IMPORT ROUTES
+                        </h2>
+                        <p class="text-sm sm:text-base text-slate-500 max-w-2xl mx-auto">
+                            Curated route cards with indicative rates across verified Asia-Pacific corridors. Final quotes verified per shipment.
+                        </p>
+                    </div>
+
+                    <!-- Country Tabs Navigation -->
+                    <div class="flex overflow-x-auto hide-scroll bg-white p-2 rounded-2xl border border-slate-200/90 shadow-xs mb-8 gap-2" id="country-tabs">
+                        <button onclick="switchTab('guangzhou')" data-country="guangzhou" class="tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 whitespace-nowrap transition-all active">Guangzhou</button>
+                        <button onclick="switchTab('yiwu')" data-country="yiwu" class="tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 whitespace-nowrap transition-all">Yiwu</button>
+                        <button onclick="switchTab('singapore')" data-country="singapore" class="tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 whitespace-nowrap transition-all">Singapore</button>
+                        <button onclick="switchTab('bangkok')" data-country="bangkok" class="tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 whitespace-nowrap transition-all">Bangkok</button>
+                        <button onclick="switchTab('korea')" data-country="korea" class="tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 whitespace-nowrap transition-all">Korea</button>
+                        <button onclick="switchTab('hongkong')" data-country="hongkong" class="tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 whitespace-nowrap transition-all">Hongkong</button>
+                        <button onclick="switchTab('shanghai')" data-country="shanghai" class="tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 whitespace-nowrap transition-all">Shanghai</button>
+                        <button onclick="switchTab('taiwan')" data-country="taiwan" class="tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 whitespace-nowrap transition-all">Taiwan</button>
+                        <button onclick="switchTab('aussie')" data-country="aussie" class="tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 whitespace-nowrap transition-all">Australia</button>
+                    </div>
+
+                    <!-- Dynamic Table / Route Details Container -->
+                    <div id="pricing-content" class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-10 min-h-[380px]">
+                        <!-- Injected via JS -->
+                    </div>
+                    
+                    <div class="mt-8 text-center space-y-2">
+                        <p class="text-xs font-bold text-slate-600 bg-white inline-block px-5 py-2 rounded-full border border-slate-200 shadow-xs">
+                            <i class="fa-solid fa-circle-info text-brand-orange mr-1.5"></i> All rates are indicative. Final quotations verified based on cargo classification, weight-volume ratio, and schedule.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 9: SPECIAL CARGO SUPPORT -->
+            <section class="py-24 sm:py-28 bg-white relative z-30 border-t border-slate-200">
+                <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-16">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-200 bg-amber-50 text-xs font-bold text-amber-800 uppercase tracking-wider mb-3">
+                            <i class="fa-solid fa-clipboard-check text-amber-600"></i> Verification & Compliance
+                        </div>
+                        <h2 class="text-3xl sm:text-5xl font-extrabold text-brand-navy tracking-tight mb-4 uppercase font-display">
+                            SPECIAL CARGO SUPPORT
+                        </h2>
+                        <p class="text-base text-slate-600">
+                            Certain cargo categories may require additional verification before shipment.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                        <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200">
+                            <h3 class="text-lg font-bold text-brand-navy mb-4 flex items-center gap-2">
+                                <i class="fa-solid fa-magnifying-glass text-brand-orange"></i> Pre-Shipment Verification Categories
+                            </h3>
+                            <ul class="space-y-3 text-sm text-slate-600">
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-check text-brand-orange mt-1 text-xs"></i>
+                                    <span><strong>Beauty & Cosmetics</strong> — Skincare, makeup, and personal care formulations.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-check text-brand-orange mt-1 text-xs"></i>
+                                    <span><strong>Food, Supplements & Powders</strong> — Packaged goods requiring ingredient and hygiene scrutiny.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-check text-brand-orange mt-1 text-xs"></i>
+                                    <span><strong>Electronics & Batteries</strong> — Lithium cells, power banks, and electrical machinery.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-check text-brand-orange mt-1 text-xs"></i>
+                                    <span><strong>Textiles & Garments</strong> — Fabric rolls, branded apparel, and accessories.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200">
+                            <h3 class="text-lg font-bold text-brand-navy mb-4 flex items-center gap-2">
+                                <i class="fa-solid fa-file-invoice text-blue-600"></i> Required Documents for Verification
+                            </h3>
+                            <p class="text-xs text-slate-500 mb-4">
+                                To ensure smooth processing and avoid port hold-ups, please provide our team with:
+                            </p>
+                            <ul class="space-y-3 text-sm text-slate-600">
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-file-circle-check text-blue-600 mt-1 text-xs"></i>
+                                    <span><strong>Commercial Invoice & Packing List</strong> (item details, gross weight, CBM).</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-file-circle-check text-blue-600 mt-1 text-xs"></i>
+                                    <span><strong>Clear Product Photos</strong> showing packaging, markings, and labels.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-file-circle-check text-blue-600 mt-1 text-xs"></i>
+                                    <span><strong>MSDS / Technical Sheet</strong> for liquid, powder, or battery items.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <a href="https://wa.me/6283170641208?text=Halo%20Fera%20Uli%20(jaborka%20Cargo),%20saya%20ingin%20konsultasi%20verifikasi%20Special%20Cargo" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 bg-[#0b1a30] hover:bg-slate-800 text-white text-sm font-bold rounded-2xl transition-all shadow-md">
+                            <span>Verifikasi Kategori Kargo Anda</span>
+                            <i class="fa-solid fa-arrow-right text-xs text-brand-orange"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 10: TWO CUSTOMER ENTRY POINTS -->
+            <section class="py-24 sm:py-28 bg-[#071222] text-white relative z-30 border-t border-slate-800">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-16">
+                        <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4 uppercase font-display">
+                            START YOUR IMPORT WITH JABORKA
+                        </h2>
+                        <p class="text-sm sm:text-base text-slate-400">
+                            Whether you are a seasoned importer with ready suppliers or exploring your first shipment.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- ENTRY POINT 1 -->
+                        <div class="bg-gradient-to-b from-slate-900 to-[#0e213b] p-8 sm:p-10 rounded-3xl border border-slate-700/80 flex flex-col justify-between">
+                            <div>
+                                <span class="text-xs font-bold uppercase tracking-widest text-brand-orange mb-2 block">Direct Quotation</span>
+                                <h3 class="text-2xl font-black text-white mb-3">I ALREADY HAVE A SUPPLIER</h3>
+                                <p class="text-sm text-slate-300 leading-relaxed mb-6">
+                                    Get an import quote based on your shipment. Provide your origin city, cargo volume, and packing list for immediate route quotation.
+                                </p>
+                            </div>
+                            <a href="https://wa.me/6283170641208?text=Halo%20Fera%20Uli%20(jaborka%20Cargo),%20saya%20sudah%20punya%20supplier%20dan%20ingin%20minta%20penawaran%20impor" target="_blank" class="w-full py-4 bg-brand-orange hover:bg-orange-600 text-white text-center text-sm font-bold rounded-2xl shadow-lg transition-all flex items-center justify-center gap-2">
+                                <span>GET IMPORT QUOTE</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+
+                        <!-- ENTRY POINT 2 -->
+                        <div class="bg-gradient-to-b from-slate-900 to-[#0e213b] p-8 sm:p-10 rounded-3xl border border-slate-700/80 flex flex-col justify-between">
+                            <div>
+                                <span class="text-xs font-bold uppercase tracking-widest text-sky-400 mb-2 block">Advisory & Guidance</span>
+                                <h3 class="text-2xl font-black text-white mb-3">I NEED HELP WITH MY IMPORT</h3>
+                                <p class="text-sm text-slate-300 leading-relaxed mb-6">
+                                    Help me determine the right route and process. Consult with our specialists on mode comparison, warehouse marking, and estimated landing costs.
+                                </p>
+                            </div>
+                            <a href="https://wa.me/6283170641208?text=Halo%20Fera%20Uli%20(jaborka%20Cargo),%20saya%20butuh%20bantuan%20dan%20panduan%20konsultasi%20impor" target="_blank" class="w-full py-4 bg-sky-600 hover:bg-sky-500 text-white text-center text-sm font-bold rounded-2xl shadow-lg transition-all flex items-center justify-center gap-2">
+                                <span>TALK TO IMPORT SPECIALIST</span>
+                                <i class="fa-solid fa-headset text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 11: FINAL CTA (READY TO IMPORT?) -->
+            <section class="py-24 sm:py-28 bg-brand-orange text-white relative z-30 overflow-hidden">
+                <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                    <h2 class="text-4xl sm:text-6xl font-black tracking-tight mb-6 uppercase font-display text-white">
+                        READY TO IMPORT?
+                    </h2>
+                    <p class="text-lg sm:text-2xl text-white/95 font-medium max-w-2xl mx-auto mb-10 leading-relaxed">
+                        Send us your supplier and shipment details. We'll help you find the right route.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="https://wa.me/6283170641208?text=Halo%20Fera%20Uli%20(jaborka%20Cargo),%20saya%20siap%20impor%20dan%20ingin%20minta%20penawaran%20rute" target="_blank" class="w-full sm:w-auto px-9 py-4 bg-black hover:bg-slate-950 text-white text-sm font-bold rounded-2xl shadow-xl transition-all flex items-center justify-center gap-2">
+                            <span>GET AN IMPORT QUOTE</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                        <a href="https://wa.me/6283170641208?text=Halo%20Fera%20Uli%20(jaborka%20Cargo),%20saya%20ingin%20berbicara%20dengan%20Import%20Specialist" target="_blank" class="w-full sm:w-auto px-9 py-4 bg-white hover:bg-slate-100 text-brand-orange text-sm font-bold rounded-2xl shadow-xl transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-headset text-sm"></i>
+                            <span>TALK TO IMPORT SPECIALIST</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 12: ASIA-PACIFIC BRAND STATEMENT -->
+            <section class="py-20 bg-[#071222] text-white relative z-30 border-t border-slate-800">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="border-b border-slate-800 pb-8 mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-brand-orange">Unified Network</span>
+                            <h3 class="text-2xl sm:text-3xl font-extrabold text-white mt-1 uppercase font-display">OUR NETWORK ACROSS ASIA-PACIFIC</h3>
+                        </div>
+                        <p class="text-xs text-slate-400 max-w-sm">
+                            Connecting Indonesia to major industrial, trading, and regional supply epicenters.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800">
+                            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-2">EAST ASIA</span>
+                            <p class="text-sm font-bold text-white">China · Hong Kong · South Korea · Taiwan</p>
+                        </div>
+                        <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800">
+                            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-2">SOUTHEAST ASIA</span>
+                            <p class="text-sm font-bold text-white">Singapore · Thailand</p>
+                        </div>
+                        <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800">
+                            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-2">OCEANIA</span>
+                            <p class="text-sm font-bold text-white">Australia</p>
+                        </div>
+                        <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800">
+                            <span class="text-xs font-bold text-brand-orange uppercase tracking-wider block mb-2">CHINA ORIGINS</span>
+                            <p class="text-sm font-bold text-white">Guangzhou · Yiwu · Shanghai</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 13: FOOTER -->
+            <footer class="bg-black text-slate-400 py-16 border-t border-slate-900 relative z-30">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+                        <!-- Brand Column -->
+                        <div class="lg:col-span-2">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="text-brand-orange text-2xl">★</span>
+                                <span class="text-white font-extrabold text-2xl tracking-tight uppercase font-display">JABORKA</span>
+                            </div>
+                            <p class="text-xs font-bold tracking-widest text-slate-300 uppercase mb-4">
+                                YOUR IMPORT. OUR NETWORK.
+                            </p>
+                            <p class="text-xs text-slate-400 leading-relaxed max-w-sm mb-6">
+                                Simplifying import freight from Asia to Indonesia. One unified partner connecting your business to verified origins across Asia-Pacific.
+                            </p>
+                            <div class="text-xs text-slate-400 space-y-1">
+                                <p><strong class="text-white">CS Specialist:</strong> Fera Uli</p>
+                                <a href="https://wa.me/6283170641208" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-bold inline-flex items-center gap-1.5 mt-1">
+                                    <i class="fa-brands fa-whatsapp"></i> 0831-7064-1208
+                                </a>
+                                <p class="text-slate-500 pt-1">Ruko Permata Ancol Blok N No. 37, Jakarta Utara</p>
+                            </div>
+                        </div>
+
+                        <!-- NETWORK -->
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-white mb-4">NETWORK</h4>
+                            <ul class="space-y-2.5 text-xs text-slate-400">
+                                <li><a href="#tarif" onclick="switchTab('guangzhou')" class="hover:text-white transition-colors">China</a></li>
+                                <li><a href="#tarif" onclick="switchTab('hongkong')" class="hover:text-white transition-colors">Hong Kong</a></li>
+                                <li><a href="#tarif" onclick="switchTab('korea')" class="hover:text-white transition-colors">South Korea</a></li>
+                                <li><a href="#tarif" onclick="switchTab('taiwan')" class="hover:text-white transition-colors">Taiwan</a></li>
+                                <li><a href="#tarif" onclick="switchTab('singapore')" class="hover:text-white transition-colors">Singapore</a></li>
+                                <li><a href="#tarif" onclick="switchTab('bangkok')" class="hover:text-white transition-colors">Thailand</a></li>
+                                <li><a href="#tarif" onclick="switchTab('aussie')" class="hover:text-white transition-colors">Australia</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- CHINA ORIGINS -->
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-white mb-4">CHINA ORIGINS</h4>
+                            <ul class="space-y-2.5 text-xs text-slate-400">
+                                <li><a href="#tarif" onclick="switchTab('guangzhou')" class="hover:text-white transition-colors">Guangzhou</a></li>
+                                <li><a href="#tarif" onclick="switchTab('yiwu')" class="hover:text-white transition-colors">Yiwu</a></li>
+                                <li><a href="#tarif" onclick="switchTab('shanghai')" class="hover:text-white transition-colors">Shanghai</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- SERVICES & COMPANY -->
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-white mb-4">SERVICES</h4>
+                            <ul class="space-y-2.5 text-xs text-slate-400 mb-6">
+                                <li><a href="#layanan" class="hover:text-white transition-colors">Import All-In</a></li>
+                                <li><a href="#layanan" class="hover:text-white transition-colors">Door-to-Door</a></li>
+                                <li><a href="#layanan" class="hover:text-white transition-colors">FCL / LCL</a></li>
+                                <li><a href="#layanan" class="hover:text-white transition-colors">Special Cargo Support</a></li>
+                                <li><a href="#layanan" class="hover:text-white transition-colors">Import Assistance</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-slate-900 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                        <div>
+                            &copy; <span id="year"></span> <strong>JABORKA</strong> (jbrk Network). All rights reserved.
+                        </div>
+                        <div class="flex items-center gap-6">
+                            <a href="#cara-kerja" class="hover:text-slate-400">How It Works</a>
+                            <a href="#kalkulator" class="hover:text-slate-400">Calculator</a>
+                            <a href="#tarif" class="hover:text-slate-400">Import Routes</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
 
         </div> <!-- /relative z-20 content layer -->
     </div> <!-- /hero-scroll-wrapper -->
@@ -581,463 +1245,189 @@
             });
         }
 
-        // 2. PRICING DATABASE
+        // 2. PRICING DATABASE (Customer-facing rates only - No internal costs or margins)
         let pricingDB = {
           "guangzhou": {
-                "title": "Guangzhou, China",
-                "estUdara": "± 7 Hari",
-                "estLaut": "3-4 Minggu",
-                "items": [
-                          {
-                                    "name": "Laut Tas & Sepatu",
-                                    "realPrice": "Rp 4.000.000 / m³",
-                                    "publishPrice": "Rp 5.000.000 / m³",
-                                    "price": "Rp 5.000.000 / m³",
-                                    "min": "0,1 M³"
-                          },
-                          {
-                                    "name": "Laut Non Lartas / Umum",
-                                    "realPrice": "Rp 5.100.000 / m³",
-                                    "publishPrice": "Rp 6.100.000 / m³",
-                                    "price": "Rp 6.100.000 / m³",
-                                    "min": "0,1 M³"
-                          },
-                          {
-                                    "name": "Laut Lartas Ringan",
-                                    "realPrice": "Rp 5.500.000 / m³",
-                                    "publishPrice": "Rp 6.500.000 / m³",
-                                    "price": "Rp 6.500.000 / m³",
-                                    "min": "0,1 M³"
-                          },
-                          {
-                                    "name": "Laut Lartas Berat (Alkes/Obat/Chemical/Besi dll)",
-                                    "realPrice": "Rp 6.250.000 / m³",
-                                    "publishPrice": "Rp 7.250.000 / m³",
-                                    "price": "Rp 7.250.000 / m³",
-                                    "min": "0,1 M³"
-                          },
-                          {
-                                    "name": "Laut Benang / Pita Velcro",
-                                    "realPrice": "Rp 6.250.000 / m³",
-                                    "publishPrice": "Rp 7.250.000 / m³",
-                                    "price": "Rp 7.250.000 / m³",
-                                    "min": "1 M³"
-                          },
-                          {
-                                    "name": "Laut (Tax Refund)",
-                                    "realPrice": "Rp 6.000.000 / m³",
-                                    "publishPrice": "Rp 7.000.000 / m³",
-                                    "price": "Rp 7.000.000 / m³",
-                                    "min": "1 M³"
-                          },
-                          {
-                                    "name": "Laut Semi Garment",
-                                    "realPrice": "Rp 7.000.000 / m³",
-                                    "publishPrice": "Rp 8.000.000 / m³",
-                                    "price": "Rp 8.000.000 / m³",
-                                    "min": "0,1 M³"
-                          },
-                          {
-                                    "name": "Laut Semi Garment Plus / Scarf / Syal",
-                                    "realPrice": "Rp 7.500.000 / m³",
-                                    "publishPrice": "Rp 8.500.000 / m³",
-                                    "price": "Rp 8.500.000 / m³",
-                                    "min": "0,1 M³"
-                          },
-                          {
-                                    "name": "Laut Kosmetik / Makanan / Cairan / Bubuk",
-                                    "realPrice": "Rp 8.250.000 / m³",
-                                    "publishPrice": "Rp 9.250.000 / m³",
-                                    "price": "Rp 9.250.000 / m³",
-                                    "min": "0,1 M³"
-                          },
-                          {
-                                    "name": "Laut Textile",
-                                    "realPrice": "Rp 8.500.000 / m³",
-                                    "publishPrice": "Rp 9.500.000 / m³",
-                                    "price": "Rp 9.500.000 / m³",
-                                    "min": "0,1 M³"
-                          },
-                          {
-                                    "name": "Laut Garment",
-                                    "realPrice": "Rp 9.250.000 / m³",
-                                    "publishPrice": "Rp 10.250.000 / m³",
-                                    "price": "Rp 10.250.000 / m³",
-                                    "min": "0,1 M³"
-                          },
-                          {
-                                    "name": "Tambahan Barang Branded / Merek",
-                                    "realPrice": "+ Rp 250.000 / m³",
-                                    "publishPrice": "+ Rp 250.000 / m³",
-                                    "price": "+ Rp 250.000 / m³",
-                                    "min": "0,1 M³"
-                          },
-                          {
-                                    "name": "Udara Umum",
-                                    "realPrice": "Rp 195.000 / Kg",
-                                    "publishPrice": "Rp 215.000 / Kg",
-                                    "price": "Rp 215.000 / Kg",
-                                    "min": "2 KG"
-                          },
-                          {
-                                    "name": "Udara Branded",
-                                    "realPrice": "Rp 205.000 / Kg",
-                                    "publishPrice": "Rp 225.000 / Kg",
-                                    "price": "Rp 225.000 / Kg",
-                                    "min": "2 KG"
-                          },
-                          {
-                                    "name": "Udara (Garment, Semi, Elektronik, Alas Kaki)",
-                                    "realPrice": "Rp 210.000 / Kg",
-                                    "publishPrice": "Rp 230.000 / Kg",
-                                    "price": "Rp 230.000 / Kg",
-                                    "min": "2 KG"
-                          },
-                          {
-                                    "name": "Udara Baterai",
-                                    "realPrice": "Rp 225.000 / Kg",
-                                    "publishPrice": "Rp 245.000 / Kg",
-                                    "price": "Rp 245.000 / Kg",
-                                    "min": "2 KG"
-                          }
-                ],
-                "calcData": {
-                          "udara": 215000,
-                          "laut": 5000000
-                }
+            "title": "Guangzhou, China → Indonesia",
+            "estUdara": "± 7 Hari",
+            "estLaut": "3-4 Minggu",
+            "items": [
+              { "name": "Laut Tas & Sepatu", "price": "Rp 5.000.000 / m³", "min": "0,1 M³" },
+              { "name": "Laut Non Lartas / Umum", "price": "Rp 6.100.000 / m³", "min": "0,1 M³" },
+              { "name": "Laut Lartas Ringan", "price": "Rp 6.500.000 / m³", "min": "0,1 M³" },
+              { "name": "Laut Lartas Berat (Alkes/Obat/Chemical/Besi dll)", "price": "Rp 7.250.000 / m³", "min": "0,1 M³" },
+              { "name": "Laut Benang / Pita Velcro", "price": "Rp 7.250.000 / m³", "min": "1 M³" },
+              { "name": "Laut (Tax Refund)", "price": "Rp 7.000.000 / m³", "min": "1 M³" },
+              { "name": "Laut Semi Garment", "price": "Rp 8.000.000 / m³", "min": "0,1 M³" },
+              { "name": "Laut Semi Garment Plus / Scarf / Syal", "price": "Rp 8.500.000 / m³", "min": "0,1 M³" },
+              { "name": "Laut Kosmetik / Makanan / Cairan / Bubuk", "price": "Rp 9.250.000 / m³", "min": "0,1 M³" },
+              { "name": "Laut Textile", "price": "Rp 9.500.000 / m³", "min": "0,1 M³" },
+              { "name": "Laut Garment", "price": "Rp 10.250.000 / m³", "min": "0,1 M³" },
+              { "name": "Tambahan Barang Branded / Merek", "price": "+ Rp 250.000 / m³", "min": "0,1 M³" },
+              { "name": "Udara Umum", "price": "Rp 215.000 / Kg", "min": "2 KG" },
+              { "name": "Udara Branded", "price": "Rp 225.000 / Kg", "min": "2 KG" },
+              { "name": "Udara (Garment, Semi, Elektronik, Alas Kaki)", "price": "Rp 230.000 / Kg", "min": "2 KG" },
+              { "name": "Udara Baterai", "price": "Rp 245.000 / Kg", "min": "2 KG" }
+            ],
+            "calcData": { "udara": 215000, "laut": 5000000 }
           },
           "yiwu": {
-                "title": "Yiwu, China",
-                "estUdara": "-",
-                "estLaut": "3-4 Minggu",
-                "items": [
-                          {
-                                    "name": "Laut Tas & Sepatu",
-                                    "realPrice": "Rp 4.000.000 / m³",
-                                    "publishPrice": "Rp 5.000.000 / m³",
-                                    "price": "Rp 5.000.000 / m³",
-                                    "min": "0,1 M³"
-                          },
-                          {
-                                    "name": "Laut Umum / Non Lartas",
-                                    "realPrice": "Rp 4.750.000 / m³",
-                                    "publishPrice": "Rp 5.750.000 / m³",
-                                    "price": "Rp 5.750.000 / m³",
-                                    "min": "0,1 M³"
-                          },
-                          {
-                                    "name": "Laut Lartas / Lartas Ringan",
-                                    "realPrice": "Rp 5.250.000 / m³",
-                                    "publishPrice": "Rp 6.250.000 / m³",
-                                    "price": "Rp 6.250.000 / m³",
-                                    "min": "0,1 M³"
-                          },
-                          {
-                                    "name": "Laut Alkes",
-                                    "realPrice": "Rp 6.000.000 / m³",
-                                    "publishPrice": "Rp 7.000.000 / m³",
-                                    "price": "Rp 7.000.000 / m³",
-                                    "min": "0,1 M³"
-                          },
-                          {
-                                    "name": "Laut Semi Garment Plus (Vitamin, F&B, Obat, Kaos Kaki)",
-                                    "realPrice": "Rp 6.500.000 / m³",
-                                    "publishPrice": "Rp 7.500.000 / m³",
-                                    "price": "Rp 7.500.000 / m³",
-                                    "min": "0,1 M³"
-                          },
-                          {
-                                    "name": "Laut Kosmetik",
-                                    "realPrice": "Rp 7.500.000 / m³",
-                                    "publishPrice": "Rp 8.500.000 / m³",
-                                    "price": "Rp 8.500.000 / m³",
-                                    "min": "0,1 M³"
-                          },
-                          {
-                                    "name": "Tambahan Barang Branded / Merek",
-                                    "realPrice": "+ Rp 250.000 / m³",
-                                    "publishPrice": "+ Rp 250.000 / m³",
-                                    "price": "+ Rp 250.000 / m³",
-                                    "min": "0,1 M³"
-                          }
-                ],
-                "calcData": {
-                          "udara": 0,
-                          "laut": 5000000
-                }
+            "title": "Yiwu, China → Indonesia",
+            "estUdara": "-",
+            "estLaut": "3-4 Minggu",
+            "items": [
+              { "name": "Laut Tas & Sepatu", "price": "Rp 5.000.000 / m³", "min": "0,1 M³" },
+              { "name": "Laut Umum / Non Lartas", "price": "Rp 5.750.000 / m³", "min": "0,1 M³" },
+              { "name": "Laut Lartas / Lartas Ringan", "price": "Rp 6.250.000 / m³", "min": "0,1 M³" },
+              { "name": "Laut Alkes", "price": "Rp 7.000.000 / m³", "min": "0,1 M³" },
+              { "name": "Laut Semi Garment Plus (Vitamin, F&B, Obat)", "price": "Rp 7.500.000 / m³", "min": "0,1 M³" },
+              { "name": "Laut Kosmetik", "price": "Rp 8.500.000 / m³", "min": "0,1 M³" },
+              { "name": "Tambahan Barang Branded / Merek", "price": "+ Rp 250.000 / m³", "min": "0,1 M³" }
+            ],
+            "calcData": { "udara": 0, "laut": 5000000 }
           },
           "singapore": {
-                "title": "Singapore",
-                "estUdara": "± 3 Hari",
-                "estLaut": "2-3 Minggu",
-                "items": [
-                          {
-                                    "name": "Udara Umum",
-                                    "realPrice": "Rp 160.000 / Kg",
-                                    "publishPrice": "Rp 180.000 / Kg",
-                                    "price": "Rp 180.000 / Kg",
-                                    "min": "2 KG"
-                          },
-                          {
-                                    "name": "Laut (Umum, Sparepart, Acc)",
-                                    "realPrice": "Rp 9.500.000 / m³",
-                                    "publishPrice": "Rp 10.500.000 / m³",
-                                    "price": "Rp 10.500.000 / m³",
-                                    "min": "0,1 M³"
-                          },
-                          {
-                                    "name": "Laut (Lartas Berat)",
-                                    "realPrice": "Rp 10.000.000 / m³",
-                                    "publishPrice": "Rp 11.000.000 / m³",
-                                    "price": "Rp 11.000.000 / m³",
-                                    "min": "0,1 M³"
-                          }
-                ],
-                "calcData": {
-                          "udara": 180000,
-                          "laut": 10500000
-                }
+            "title": "Singapore → Indonesia",
+            "estUdara": "± 3 Hari",
+            "estLaut": "2-3 Minggu",
+            "items": [
+              { "name": "Udara Umum", "price": "Rp 180.000 / Kg", "min": "2 KG" },
+              { "name": "Laut (Umum, Sparepart, Acc)", "price": "Rp 10.500.000 / m³", "min": "0,1 M³" },
+              { "name": "Laut (Lartas Berat)", "price": "Rp 11.000.000 / m³", "min": "0,1 M³" }
+            ],
+            "calcData": { "udara": 180000, "laut": 10500000 }
           },
           "bangkok": {
-                "title": "Bangkok, Thailand",
-                "estUdara": "± 5-7 Hari",
-                "estLaut": "± 4-6 Minggu",
-                "items": [
-                          {
-                                    "name": "Udara Umum",
-                                    "realPrice": "Rp 170.000 / Kg",
-                                    "publishPrice": "Rp 190.000 / Kg",
-                                    "price": "Rp 190.000 / Kg",
-                                    "min": "2 KG"
-                          },
-                          {
-                                    "name": "Udara Lartas",
-                                    "realPrice": "Rp 180.000 / Kg",
-                                    "publishPrice": "Rp 200.000 / Kg",
-                                    "price": "Rp 200.000 / Kg",
-                                    "min": "2 KG"
-                          },
-                          {
-                                    "name": "Laut Umum",
-                                    "realPrice": "Rp 9.000.000 / m³",
-                                    "publishPrice": "Rp 10.000.000 / m³",
-                                    "price": "Rp 10.000.000 / m³",
-                                    "min": "0,1 M³"
-                          },
-                          {
-                                    "name": "Laut Lartas",
-                                    "realPrice": "Rp 10.000.000 / m³",
-                                    "publishPrice": "Rp 11.000.000 / m³",
-                                    "price": "Rp 11.000.000 / m³",
-                                    "min": "0,1 M³"
-                          }
-                ],
-                "calcData": {
-                          "udara": 190000,
-                          "laut": 10000000
-                }
+            "title": "Bangkok, Thailand → Indonesia",
+            "estUdara": "± 5-7 Hari",
+            "estLaut": "± 4-6 Minggu",
+            "items": [
+              { "name": "Udara Umum", "price": "Rp 190.000 / Kg", "min": "2 KG" },
+              { "name": "Udara Lartas", "price": "Rp 200.000 / Kg", "min": "2 KG" },
+              { "name": "Laut Umum", "price": "Rp 10.000.000 / m³", "min": "0,1 M³" },
+              { "name": "Laut Lartas", "price": "Rp 11.000.000 / m³", "min": "0,1 M³" }
+            ],
+            "calcData": { "udara": 190000, "laut": 10000000 }
           },
           "korea": {
-                "title": "Korea Selatan",
-                "estUdara": "± 5-7 Hari",
-                "estLaut": "± 4-6 Minggu",
-                "items": [
-                          {
-                                    "name": "Udara Umum",
-                                    "realPrice": "Rp 250.000 / Kg",
-                                    "publishPrice": "Rp 270.000 / Kg",
-                                    "price": "Rp 270.000 / Kg",
-                                    "min": "2 KG"
-                          },
-                          {
-                                    "name": "Udara Lartas",
-                                    "realPrice": "Rp 255.000 / Kg",
-                                    "publishPrice": "Rp 275.000 / Kg",
-                                    "price": "Rp 275.000 / Kg",
-                                    "min": "2 KG"
-                          },
-                          {
-                                    "name": "Laut",
-                                    "realPrice": "Rp 16.000.000 / m³",
-                                    "publishPrice": "Rp 17.000.000 / m³",
-                                    "price": "Rp 17.000.000 / m³",
-                                    "min": "0.5 M³"
-                          }
-                ],
-                "calcData": {
-                          "udara": 270000,
-                          "laut": 17000000
-                }
+            "title": "South Korea → Indonesia",
+            "estUdara": "± 5-7 Hari",
+            "estLaut": "± 4-6 Minggu",
+            "items": [
+              { "name": "Udara Umum", "price": "Rp 270.000 / Kg", "min": "2 KG" },
+              { "name": "Udara Kosmetik", "price": "Rp 290.000 / Kg", "min": "2 KG" },
+              { "name": "Laut Umum", "price": "Rp 11.000.000 / m³", "min": "0,1 M³" },
+              { "name": "Laut Kosmetik", "price": "Rp 12.000.000 / m³", "min": "0,1 M³" }
+            ],
+            "calcData": { "udara": 270000, "laut": 11000000 }
           },
           "hongkong": {
-                "title": "Hongkong",
-                "estUdara": "± 4-5 Hari",
-                "estLaut": "3-4 Minggu",
-                "items": [
-                          {
-                                    "name": "Udara Umum",
-                                    "realPrice": "Rp 210.000 / Kg",
-                                    "publishPrice": "Rp 230.000 / Kg",
-                                    "price": "Rp 230.000 / Kg",
-                                    "min": "2 KG"
-                          },
-                          {
-                                    "name": "Udara (Garment, Kosmetik, Sepatu, Tas)",
-                                    "realPrice": "Rp 215.000 / Kg",
-                                    "publishPrice": "Rp 235.000 / Kg",
-                                    "price": "Rp 235.000 / Kg",
-                                    "min": "2 KG"
-                          },
-                          {
-                                    "name": "Laut (Umum)",
-                                    "realPrice": "Rp 12.250.000 / m³",
-                                    "publishPrice": "Rp 13.250.000 / m³",
-                                    "price": "Rp 13.250.000 / m³",
-                                    "min": "0,5 M³"
-                          },
-                          {
-                                    "name": "Laut (Alkes)",
-                                    "realPrice": "Rp 13.250.000 / m³",
-                                    "publishPrice": "Rp 14.250.000 / m³",
-                                    "price": "Rp 14.250.000 / m³",
-                                    "min": "0,5 M³"
-                          }
-                ],
-                "calcData": {
-                          "udara": 230000,
-                          "laut": 13250000
-                }
+            "title": "Hong Kong → Indonesia",
+            "estUdara": "± 5-7 Hari",
+            "estLaut": "± 4-6 Minggu",
+            "items": [
+              { "name": "Udara Umum", "price": "Rp 200.000 / Kg", "min": "2 KG" },
+              { "name": "Laut Umum", "price": "Rp 10.000.000 / m³", "min": "0,1 M³" }
+            ],
+            "calcData": { "udara": 200000, "laut": 10000000 }
           },
           "shanghai": {
-                "title": "Shanghai, China",
-                "estUdara": "± 7 Hari",
-                "estLaut": "3-4 Minggu",
-                "items": [
-                          {
-                                    "name": "Udara",
-                                    "realPrice": "Rp 245.000 / Kg",
-                                    "publishPrice": "Rp 265.000 / Kg",
-                                    "price": "Rp 265.000 / Kg",
-                                    "min": "2 KG"
-                          },
-                          {
-                                    "name": "Laut",
-                                    "realPrice": "Rp 9.750.000 / m³",
-                                    "publishPrice": "Rp 10.750.000 / m³",
-                                    "price": "Rp 10.750.000 / m³",
-                                    "min": "0,5 M³"
-                          }
-                ],
-                "calcData": {
-                          "udara": 265000,
-                          "laut": 10750000
-                }
+            "title": "Shanghai, China → Indonesia",
+            "estUdara": "± 7 Hari",
+            "estLaut": "± 4 Minggu",
+            "items": [
+              { "name": "Udara Umum", "price": "Rp 220.000 / Kg", "min": "2 KG" },
+              { "name": "Laut Umum", "price": "Rp 6.000.000 / m³", "min": "0,1 M³" }
+            ],
+            "calcData": { "udara": 220000, "laut": 6000000 }
           },
           "taiwan": {
-                "title": "Taiwan",
-                "estUdara": "± 4-5 Hari",
-                "estLaut": "3-4 Minggu",
-                "items": [
-                          {
-                                    "name": "Udara",
-                                    "realPrice": "Rp 175.000 / Kg",
-                                    "publishPrice": "Rp 195.000 / Kg",
-                                    "price": "Rp 195.000 / Kg",
-                                    "min": "2 KG"
-                          },
-                          {
-                                    "name": "Laut",
-                                    "realPrice": "Rp 11.500.000 / m³",
-                                    "publishPrice": "Rp 12.500.000 / m³",
-                                    "price": "Rp 12.500.000 / m³",
-                                    "min": "0,5 M³"
-                          }
-                ],
-                "calcData": {
-                          "udara": 195000,
-                          "laut": 12500000
-                }
+            "title": "Taiwan → Indonesia",
+            "estUdara": "± 5-7 Hari",
+            "estLaut": "± 4-6 Minggu",
+            "items": [
+              { "name": "Udara Umum", "price": "Rp 210.000 / Kg", "min": "2 KG" },
+              { "name": "Laut Umum", "price": "Rp 10.500.000 / m³", "min": "0,1 M³" }
+            ],
+            "calcData": { "udara": 210000, "laut": 10500000 }
           },
           "aussie": {
-                "title": "Australia",
-                "estUdara": "± 5-7 Hari",
-                "estLaut": "-",
-                "items": [
-                          {
-                                    "name": "Udara",
-                                    "realPrice": "Rp 410.000 / Kg",
-                                    "publishPrice": "Rp 430.000 / Kg",
-                                    "price": "Rp 430.000 / Kg",
-                                    "min": "2 KG"
-                          }
-                ],
-                "calcData": {
-                          "udara": 430000,
-                          "laut": 0
-                }
+            "title": "Australia → Indonesia",
+            "estUdara": "± 5-7 Hari",
+            "estLaut": "± 4-6 Minggu",
+            "items": [
+              { "name": "Udara Umum", "price": "Rp 260.000 / Kg", "min": "2 KG" },
+              { "name": "Laut Umum", "price": "Rp 12.000.000 / m³", "min": "0,1 M³" }
+            ],
+            "calcData": { "udara": 260000, "laut": 12000000 }
           }
-};
+        };
 
-        function switchTab(countryKey) {
-            const tabs = document.querySelectorAll('.tab-btn');
-            tabs.forEach(tab => tab.classList.remove('active'));
-            
-            const activeTab = document.querySelector(`.tab-btn[data-country="${countryKey}"]`);
-            if (activeTab) {
-                activeTab.classList.add('active');
-            }
+        // 3. SWITCH TAB & RENDER ROUTE CARDS
+        function switchTab(country) {
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-country') === country) {
+                    btn.classList.add('active');
+                }
+            });
 
-            const data = pricingDB[countryKey];
-            const contentDiv = document.getElementById('pricing-content');
+            const data = pricingDB[country];
+            if (!data) return;
+
+            const container = document.getElementById('pricing-content');
             
             let listHTML = '';
-            
             data.items.forEach(item => {
-                const isAir = item.name.toLowerCase().includes('udara');
-                const badge = isAir 
-                    ? `<span class="inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-sky-100 text-sky-800 border border-sky-200"><i class="fa-solid fa-plane"></i> Udara</span>`
-                    : `<span class="inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-900 border border-blue-200"><i class="fa-solid fa-ship"></i> Laut</span>`;
-
+                const itemPrice = item.publishPrice || item.price || '-';
+                const waText = encodeURIComponent(`Halo Fera Uli (JABORKA), saya ingin cek kuota dan estimasi rute ${data.title} untuk kategori: ${item.name}.`);
                 listHTML += `
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between py-3.5 border-b border-slate-100 last:border-0 hover:bg-slate-50 transition-colors px-4 rounded-2xl -mx-2">
-                        <div class="mb-2 sm:mb-0">
-                            <div class="flex items-center gap-2.5">
-                                ${badge}
-                                <span class="text-sm font-bold text-brand-navy">${item.name}</span>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between p-4 sm:p-5 rounded-2xl hover:bg-slate-50/80 transition-colors border border-slate-100 gap-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-xl bg-orange-50 text-brand-orange flex items-center justify-center text-xs font-bold shrink-0">
+                                <i class="fa-solid fa-box"></i>
                             </div>
-                            <span class="text-xs text-slate-400 font-medium ml-1">Min. Pengiriman: ${item.min}</span>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm sm:text-base leading-snug">${item.name}</h4>
+                                <span class="text-xs text-slate-400 font-medium">Min. Pengiriman: ${item.min}</span>
+                            </div>
                         </div>
-                        <div class="text-brand-navy font-black text-base sm:text-right">
-                            ${item.price}
+                        <div class="flex items-center justify-between sm:justify-end gap-4 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-100">
+                            <span class="text-sm sm:text-base font-extrabold text-brand-navy">${itemPrice}</span>
+                            <a href="https://wa.me/6283170641208?text=${waText}" target="_blank" class="px-4 py-2 bg-slate-900 hover:bg-brand-orange text-white text-xs font-bold rounded-xl transition-all shadow-xs flex items-center gap-1.5 whitespace-nowrap">
+                                <span>GET A QUOTE</span>
+                                <i class="fa-solid fa-arrow-right text-[9px]"></i>
+                            </a>
                         </div>
                     </div>
                 `;
             });
 
-            contentDiv.innerHTML = `
-                <div class="flex flex-col md:flex-row justify-between md:items-end mb-6 gap-4 border-b border-slate-100 pb-5">
+            container.innerHTML = `
+                <div class="flex flex-col md:flex-row md:items-center justify-between pb-6 mb-6 border-b border-slate-100 gap-4">
                     <div>
-                        <h3 class="text-2xl sm:text-3xl font-black text-brand-navy">${data.title}</h3>
-                        <p class="text-xs text-slate-500 mt-1">Tarif resmi & terkurasi door-to-door</p>
+                        <span class="text-xs font-bold uppercase tracking-widest text-brand-orange">Curated Corridor</span>
+                        <h3 class="text-2xl sm:text-3xl font-black text-brand-navy mt-0.5">${data.title}</h3>
+                        <p class="text-xs text-slate-500 mt-1">Indicative door-to-door all-in rates. Pre-shipment verification applies.</p>
                     </div>
-                    <div class="flex gap-3">
-                        <div class="bg-slate-50/80 px-4 py-2 rounded-2xl border border-slate-200/80 text-center">
-                            <p class="text-[10px] uppercase tracking-wider font-bold text-slate-400">Estimasi Udara</p>
+                    <div class="flex gap-3 shrink-0">
+                        <div class="bg-slate-50 px-4 py-2.5 rounded-2xl border border-slate-200/80 text-center">
+                            <p class="text-[10px] uppercase tracking-wider font-bold text-slate-400">Est. Udara</p>
                             <p class="text-xs sm:text-sm font-bold text-brand-navy">${data.estUdara}</p>
                         </div>
-                        <div class="bg-slate-50/80 px-4 py-2 rounded-2xl border border-slate-200/80 text-center">
-                            <p class="text-[10px] uppercase tracking-wider font-bold text-slate-400">Estimasi Laut</p>
+                        <div class="bg-slate-50 px-4 py-2.5 rounded-2xl border border-slate-200/80 text-center">
+                            <p class="text-[10px] uppercase tracking-wider font-bold text-slate-400">Est. Laut</p>
                             <p class="text-xs sm:text-sm font-bold text-brand-navy">${data.estLaut}</p>
                         </div>
                     </div>
                 </div>
-                <div class="space-y-1">
+                <div class="space-y-2">
                     ${listHTML}
                 </div>
             `;
         }
 
-        // 3. CALCULATOR INTERACTIVITY
+        // 4. CALCULATOR LOGIC
         const calcOrigin = document.getElementById('calc-origin');
         const calcMode = document.getElementById('calc-mode');
         const calcAmount = document.getElementById('calc-amount');
@@ -1052,15 +1442,15 @@
             
             calcUnitLabel.innerText = mode === 'udara' ? 'Kg' : 'M³';
             
-            const rate = pricingDB[origin]?.calcData[mode];
+            const rate = pricingDB[origin]?.calcData ? pricingDB[origin].calcData[mode] : null;
             
             if (rate === 0 || !rate) {
-                calcResult.innerText = "Layanan Khusus (Hubungi CS)";
-                calcWhatsapp.href = `https://wa.me/6283170641208?text=Halo%20Fera%20Uli%20(jaborka%20Cargo),%20saya%20ingin%20konsultasi%20pengiriman%20dari%20${origin.toUpperCase()}`;
+                calcResult.innerText = "Custom Quote Required";
+                calcWhatsapp.href = `https://wa.me/6283170641208?text=Halo%20Fera%20Uli%20(JABORKA),%20saya%20ingin%20konsultasi%20rute%20khusus%20dari%20${origin.toUpperCase()}`;
             } else {
                 const total = rate * amount;
                 calcResult.innerText = 'Rp ' + total.toLocaleString('id-ID');
-                calcWhatsapp.href = `https://wa.me/6283170641208?text=Halo%20Fera%20Uli%20(jaborka%20Cargo),%20saya%20ingin%20booking%20pengiriman%20dari%20${origin.toUpperCase()}%20via%20${mode}%20sebanyak%20${amount}%20${calcUnitLabel.innerText}.%20Estimasi%20biaya%20Rp%20${total.toLocaleString('id-ID')}.`;
+                calcWhatsapp.href = `https://wa.me/6283170641208?text=Halo%20Fera%20Uli%20(JABORKA),%20saya%20ingin%20booking%20pengiriman%20dari%20${origin.toUpperCase()}%20via%20${mode}%20sebanyak%20${amount}%20${calcUnitLabel.innerText}.%20Estimasi%20biaya%20Rp%20${total.toLocaleString('id-ID')}.`;
             }
         }
 
@@ -1088,7 +1478,7 @@
                     }
                 })
                 .catch(err => {
-                    console.log('Using default pricing cache:', err.message);
+                    console.log('Using default cached pricing:', err.message);
                 });
         });
     </script>
