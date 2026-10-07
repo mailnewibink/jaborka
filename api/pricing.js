@@ -18,11 +18,24 @@ function getLocalFallback() {
     return defaultPricing;
 }
 
+function filterResponse(data, req) {
+    if (!data) return {};
+    const url = req.url || '';
+    const isAdmin = url.includes('scope=admin') || (req.headers && (req.headers['x-admin-scope'] === 'true' || req.headers['x-admin-scope'] === true));
+    if (isAdmin) {
+        return data;
+    }
+    // Public scope: clone and strip _v2 sensitive partner cost and quotations
+    const publicData = { ...data };
+    delete publicData._v2;
+    return publicData;
+}
+
 module.exports = async (req, res) => {
     // Enable CORS
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, x-admin-scope');
 
     if (req.method === 'OPTIONS') {
         return res.status(204).end();
@@ -32,7 +45,7 @@ module.exports = async (req, res) => {
     if (req.method === 'GET') {
         if (!SUPABASE_KEY) {
             console.log('SUPABASE_KEY belum diset, menggunakan local fallback pricing.json');
-            return res.status(200).json(getLocalFallback());
+            return res.status(200).json(filterResponse(getLocalFallback(), req));
         }
 
         try {
@@ -54,7 +67,7 @@ module.exports = async (req, res) => {
             
             // Jika data sudah ada di Supabase, kembalikan data tersebut
             if (Array.isArray(rows) && rows.length > 0 && rows[0].data) {
-                return res.status(200).json(rows[0].data);
+                return res.status(200).json(filterResponse(rows[0].data, req));
             }
 
             // Jika tabel masih kosong, lakukan auto-seed dari pricing.json lokal
@@ -77,11 +90,11 @@ module.exports = async (req, res) => {
                 })
             });
 
-            return res.status(200).json(fallbackData);
+            return res.status(200).json(filterResponse(fallbackData, req));
         } catch (err) {
             console.error('Error saat fetch dari Supabase:', err.message);
             // Fallback aman ke file lokal jika jaringan bermasalah
-            return res.status(200).json(getLocalFallback());
+            return res.status(200).json(filterResponse(getLocalFallback(), req));
         }
     }
 
