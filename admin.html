@@ -51,6 +51,8 @@
             border-color: #0b1a30;
         }
     </style>
+    <!-- PDF.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen flex selection:bg-orange-500 selection:text-white">
 
@@ -285,7 +287,12 @@
                         <h2 class="text-2xl font-black text-white">Operational Partners</h2>
                         <p class="text-xs text-slate-400 mt-1">Manage JABORKA's operational partner network (RTS, Blessindo, and regional forwarders).</p>
                     </div>
-                    <button onclick="openAddPartnerModal()" class="px-4 py-2.5 bg-brand-orange hover:bg-orange-600 text-white text-xs font-bold rounded-xl transition-all flex items-center gap-2 shadow-sm">
+                    <div class="flex items-center gap-3">
+                        <button onclick="openPdfUploaderModal()" class="px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold rounded-xl transition-all flex items-center gap-2 border border-slate-700 shadow-sm">
+                            <i class="fa-solid fa-file-pdf text-rose-400"></i>
+                            <span>Upload PDF Price List</span>
+                        </button>
+                        <button onclick="openAddPartnerModal()" class="px-4 py-2.5 bg-brand-orange hover:bg-orange-600 text-white text-xs font-bold rounded-xl transition-all flex items-center gap-2 shadow-sm">
                         <i class="fa-solid fa-plus"></i>
                         <span>Add New Partner</span>
                     </button>
@@ -297,6 +304,7 @@
                             <thead class="bg-slate-800/60 text-xs font-bold uppercase text-slate-400 border-b border-slate-800">
                                 <tr>
                                     <th class="py-4 px-6">Partner</th>
+                                    <th class="py-4 px-3 text-center">Status Engine</th>
                                     <th class="py-4 px-4">Status</th>
                                     <th class="py-4 px-6">Coverage Origins</th>
                                     <th class="py-4 px-4 text-center">Active Rates</th>
@@ -374,6 +382,10 @@
                             <option value="hongkong">Hong Kong</option>
                             <option value="aussie">Australia</option>
                         </select>
+                        <button onclick="runBestRateEngineAndPublish()" class="px-4 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-xl transition-all flex items-center gap-2 shadow-sm whitespace-nowrap">
+                            <i class="fa-solid fa-bolt"></i>
+                            <span>Pick Best Rates & Publish</span>
+                        </button>
                         <button onclick="openRateCardModal()" class="px-4 py-2.5 bg-brand-orange hover:bg-orange-600 text-white text-xs font-bold rounded-xl transition-all flex items-center gap-2 shadow-sm whitespace-nowrap">
                             <i class="fa-solid fa-plus"></i>
                             <span>New Rate Card</span>
@@ -846,6 +858,61 @@
         </div>
     </div>
 
+
+    <!-- PDF UPLOADER & EXTRACTOR MODAL -->
+    <div id="modal-pdf-uploader" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl w-full max-w-2xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
+            <div class="p-6 border-b border-slate-800 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-white">Upload & Parse PDF Price List</h3>
+                        <p class="text-xs text-slate-400">Pilih partner lalu upload file PDF surat penawaran harga untuk update otomatis.</p>
+                    </div>
+                </div>
+                <button onclick="closeModal('modal-pdf-uploader')" class="text-slate-400 hover:text-white p-2 text-lg">✕</button>
+            </div>
+
+            <div class="p-6 overflow-y-auto space-y-5">
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Target Partner</label>
+                    <select id="pdf-target-partner" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-sm font-semibold text-white focus:outline-none focus:ring-1 focus:ring-brand-orange">
+                        <option value="partner-blessindo">PT. Blessindo Cargo (Multi-Route)</option>
+                        <option value="partner-rts">RTS Global Logistics (Guangzhou & Yiwu)</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">File PDF Penawaran</label>
+                    <div id="pdf-drop-zone" class="border-2 border-dashed border-slate-700 hover:border-brand-orange rounded-2xl p-8 text-center transition-all bg-slate-800/30 cursor-pointer">
+                        <i class="fa-solid fa-cloud-arrow-up text-3xl text-brand-orange mb-3"></i>
+                        <p class="text-sm font-bold text-white mb-1">Klik atau drag & drop file PDF di sini</p>
+                        <p class="text-xs text-slate-400">Mendukung PDF rate list Blessindo atau RTS</p>
+                        <input type="file" id="pdf-file-input" accept="application/pdf" class="hidden" onchange="handlePdfFileSelected(event)">
+                    </div>
+                </div>
+
+                <div id="pdf-parse-preview" class="hidden space-y-3">
+                    <div class="flex items-center justify-between text-xs font-bold">
+                        <span class="text-slate-300">Hasil Deteksi & Ekstraksi Teks:</span>
+                        <span id="pdf-extracted-count" class="text-emerald-400">0 Tarif Terdeteksi</span>
+                    </div>
+                    <div id="pdf-preview-box" class="p-4 bg-slate-950 rounded-xl border border-slate-800 font-mono text-xs text-slate-300 max-h-48 overflow-y-auto whitespace-pre-wrap"></div>
+                </div>
+            </div>
+
+            <div class="p-6 border-t border-slate-800 flex items-center justify-end gap-3 bg-slate-900/50">
+                <button type="button" onclick="closeModal('modal-pdf-uploader')" class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-300">Batal</button>
+                <button id="btn-apply-pdf" onclick="applyPdfRatesToSystem()" disabled class="px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 disabled:opacity-40 disabled:cursor-not-allowed text-xs font-bold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-check"></i>
+                    <span>Terapkan Tarif & Jalankan Rate Engine</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- TOAST NOTIFICATION -->
     <div id="toast" class="fixed bottom-6 right-6 z-50 bg-slate-900 border border-slate-700 text-white px-5 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 transform translate-y-24 opacity-0 transition-all duration-300">
         <i id="toast-icon" class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
@@ -1091,7 +1158,7 @@
             }).join('');
         }
 
-        // 6. RATE CARDS RENDERER
+        // 6. RATE CARDS RENDERER WITH ENGINE BADGE (Red = RTS, Blue = Blessindo)
         function renderRateCards() {
             const tbody = document.getElementById('table-ratecards-body');
             const partnerFilter = document.getElementById('filter-rate-partner').value;
@@ -1108,12 +1175,20 @@
             tbody.innerHTML = cards.map(c => {
                 const partner = (masterData._v2?.partners || []).find(p => p.id === c.partnerId);
                 const partnerName = partner ? partner.name : (c.partnerId === 'partner-rts' ? 'RTS' : 'Blessindo');
+                const isRTS = c.partnerId === 'partner-rts';
+                
+                // Engine selection tag
+                const engineTag = isRTS
+                    ? '<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold bg-rose-500/20 text-rose-400 border border-rose-500/30"><span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span>RTS (China Hub)</span>'
+                    : '<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold bg-sky-500/20 text-sky-400 border border-sky-500/30"><span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span>Blessindo (Official)</span>';
+
                 return `
                     <tr class="hover:bg-slate-800/30 transition-colors">
                         <td class="py-4 px-6">
                             <span class="font-bold text-white text-xs block">${partnerName}</span>
                             <span class="text-[10px] text-slate-500">${c.service}</span>
                         </td>
+                        <td class="py-4 px-3 text-center">${engineTag}</td>
                         <td class="py-4 px-4 text-xs font-semibold text-slate-300 capitalize">${c.routeKey} → ID</td>
                         <td class="py-4 px-6">
                             <div class="font-bold text-slate-200 text-sm">${c.category}</div>

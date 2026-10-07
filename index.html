@@ -1378,32 +1378,52 @@
  const container = document.getElementById('pricing-content');
  
  let listHTML = '';
- data.items.forEach(item => {
- const itemPrice = item.publishPrice || item.price || '-';
- const waText = encodeURIComponent(`Halo Fera Uli (JABORKA), saya ingin cek kuota dan estimasi rute ${data.title} untuk kategori: ${item.name}.`);
- listHTML += `
- <div class="flex flex-col sm:flex-row sm:items-center justify-between p-4 sm:p-5 rounded-2xl hover:bg-slate-50/80 transition-colors border border-slate-100 gap-3">
- <div class="flex items-center gap-3">
- <div class="w-8 h-8 rounded-xl bg-orange-50 text-brand-orange flex items-center justify-center text-xs font-bold shrink-0">
- <i class="fa-solid fa-box"></i>
- </div>
- <div>
- <h4 class="font-bold text-slate-800 text-sm sm:text-base leading-snug">${item.name}</h4>
- <span class="text-xs text-slate-400 font-medium">Min. Pengiriman: ${item.min}</span>
- </div>
- </div>
- <div class="flex items-center justify-between sm:justify-end gap-4 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-100">
- <span class="text-sm sm:text-base font-extrabold text-brand-navy">${itemPrice}</span>
- <a href="https://wa.me/6283170641208?text=${waText}" target="_blank" class="px-4 py-2 bg-slate-900 hover:bg-brand-orange text-white text-xs font-bold rounded-xl transition-all shadow-xs flex items-center gap-1.5 whitespace-nowrap">
- <span>GET A QUOTE</span>
- <i class="fa-solid fa-arrow-right text-[9px]"></i>
- </a>
- </div>
- </div>
- `;
- });
+            data.items.forEach(item => {
+                const itemPrice = item.publishPrice || item.price || '-';
+                const waText = encodeURIComponent(`Halo Fera Uli (JABORKA), saya ingin cek kuota dan estimasi rute ${data.title} untuk kategori: ${item.name}.`);
+                
+                // Partner indicator badge (Red = RTS, Blue = Blessindo)
+                let partnerBadge = '';
+                if (item.bestPartner) {
+                    const isRed = item.bestPartnerColor === 'red' || item.bestPartner.toUpperCase().includes('RTS');
+                    const badgeClass = isRed 
+                        ? 'bg-rose-500/10 text-rose-600 border-rose-200' 
+                        : 'bg-sky-500/10 text-sky-600 border-sky-200';
+                    const dotClass = isRed ? 'bg-rose-500' : 'bg-sky-500';
+                    partnerBadge = `
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold border ${badgeClass}">
+                            <span class="w-1.5 h-1.5 rounded-full ${dotClass}"></span>
+                            ${item.bestPartner} Rate
+                        </span>
+                    `;
+                }
 
- container.innerHTML = `
+                listHTML += `
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between p-4 sm:p-5 rounded-2xl hover:bg-slate-50/80 transition-colors border border-slate-100 gap-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-xl bg-orange-50 text-brand-orange flex items-center justify-center text-xs font-bold shrink-0">
+                                <i class="fa-solid fa-box"></i>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2 flex-wrap">
+                                    <h4 class="font-bold text-slate-800 text-sm sm:text-base leading-snug">${item.name}</h4>
+                                    ${partnerBadge}
+                                </div>
+                                <span class="text-xs text-slate-400 font-medium">Min. Pengiriman: ${item.min}</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between sm:justify-end gap-4 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-100">
+                            <span class="text-sm sm:text-base font-extrabold text-brand-navy">${itemPrice}</span>
+                            <a href="https://wa.me/6283170641208?text=${waText}" target="_blank" class="px-4 py-2 bg-slate-900 hover:bg-brand-orange text-white text-xs font-bold rounded-xl transition-all shadow-xs flex items-center gap-1.5 whitespace-nowrap">
+                                <span>GET A QUOTE</span>
+                                <i class="fa-solid fa-arrow-right text-[9px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = `
  <div class="flex flex-col md:flex-row md:items-center justify-between pb-6 mb-6 border-b border-slate-100 gap-4">
  <div>
  <span class="text-xs font-bold uppercase tracking-widest text-brand-orange">Curated Corridor</span>

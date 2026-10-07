@@ -9,112 +9,144 @@
         "realPrice": "Rp 4.000.000 / m³",
         "publishPrice": "Rp 5.000.000 / m³",
         "price": "Rp 5.000.000 / m³",
-        "min": "0,1 M³"
+        "min": "0,1 M³",
+        "bestPartner": "RTS",
+        "bestPartnerColor": "red"
       },
       {
         "name": "Laut Non Lartas / Umum",
         "realPrice": "Rp 5.100.000 / m³",
         "publishPrice": "Rp 6.100.000 / m³",
         "price": "Rp 6.100.000 / m³",
-        "min": "0,1 M³"
+        "min": "0,1 M³",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       },
       {
         "name": "Laut Lartas Ringan",
         "realPrice": "Rp 5.500.000 / m³",
         "publishPrice": "Rp 6.500.000 / m³",
         "price": "Rp 6.500.000 / m³",
-        "min": "0,1 M³"
+        "min": "0,1 M³",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       },
       {
-        "name": "Laut Lartas Berat (Alkes/Obat/Chemical/Besi dll)",
+        "name": "Laut Lartas Berat (Alkes/Obat/Chemical/Besi)",
         "realPrice": "Rp 6.250.000 / m³",
         "publishPrice": "Rp 7.250.000 / m³",
         "price": "Rp 7.250.000 / m³",
-        "min": "0,1 M³"
+        "min": "0,1 M³",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       },
       {
         "name": "Laut Benang / Pita Velcro",
         "realPrice": "Rp 6.250.000 / m³",
         "publishPrice": "Rp 7.250.000 / m³",
         "price": "Rp 7.250.000 / m³",
-        "min": "1 M³"
+        "min": "1 M³",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       },
       {
         "name": "Laut (Tax Refund)",
         "realPrice": "Rp 6.000.000 / m³",
         "publishPrice": "Rp 7.000.000 / m³",
         "price": "Rp 7.000.000 / m³",
-        "min": "1 M³"
+        "min": "1 M³",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       },
       {
         "name": "Laut Semi Garment",
         "realPrice": "Rp 7.000.000 / m³",
         "publishPrice": "Rp 8.000.000 / m³",
         "price": "Rp 8.000.000 / m³",
-        "min": "0,1 M³"
+        "min": "0,1 M³",
+        "bestPartner": "RTS",
+        "bestPartnerColor": "red"
       },
       {
         "name": "Laut Semi Garment Plus / Scarf / Syal",
         "realPrice": "Rp 7.500.000 / m³",
         "publishPrice": "Rp 8.500.000 / m³",
         "price": "Rp 8.500.000 / m³",
-        "min": "0,1 M³"
+        "min": "0,1 M³",
+        "bestPartner": "RTS",
+        "bestPartnerColor": "red"
       },
       {
         "name": "Laut Kosmetik / Makanan / Cairan / Bubuk",
         "realPrice": "Rp 8.250.000 / m³",
         "publishPrice": "Rp 9.250.000 / m³",
         "price": "Rp 9.250.000 / m³",
-        "min": "0,1 M³"
+        "min": "0,1 M³",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       },
       {
         "name": "Laut Textile",
         "realPrice": "Rp 8.500.000 / m³",
         "publishPrice": "Rp 9.500.000 / m³",
         "price": "Rp 9.500.000 / m³",
-        "min": "0,1 M³"
+        "min": "0,1 M³",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       },
       {
         "name": "Laut Garment",
         "realPrice": "Rp 9.250.000 / m³",
         "publishPrice": "Rp 10.250.000 / m³",
         "price": "Rp 10.250.000 / m³",
-        "min": "0,1 M³"
+        "min": "0,1 M³",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       },
       {
         "name": "Tambahan Barang Branded / Merek",
         "realPrice": "+ Rp 250.000 / m³",
         "publishPrice": "+ Rp 250.000 / m³",
         "price": "+ Rp 250.000 / m³",
-        "min": "0,1 M³"
+        "min": "-",
+        "bestPartner": "RTS",
+        "bestPartnerColor": "red"
       },
       {
         "name": "Udara Umum",
         "realPrice": "Rp 195.000 / Kg",
         "publishPrice": "Rp 215.000 / Kg",
         "price": "Rp 215.000 / Kg",
-        "min": "2 KG"
+        "min": "1 KG",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       },
       {
         "name": "Udara Branded",
         "realPrice": "Rp 205.000 / Kg",
         "publishPrice": "Rp 225.000 / Kg",
         "price": "Rp 225.000 / Kg",
-        "min": "2 KG"
+        "min": "1 KG",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       },
       {
         "name": "Udara (Garment, Semi, Elektronik, Alas Kaki)",
         "realPrice": "Rp 210.000 / Kg",
         "publishPrice": "Rp 230.000 / Kg",
         "price": "Rp 230.000 / Kg",
-        "min": "2 KG"
+        "min": "1 KG",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       },
       {
         "name": "Udara Baterai",
         "realPrice": "Rp 225.000 / Kg",
         "publishPrice": "Rp 245.000 / Kg",
         "price": "Rp 245.000 / Kg",
-        "min": "2 KG"
+        "min": "1 KG",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       }
     ],
     "calcData": {
@@ -132,49 +164,63 @@
         "realPrice": "Rp 4.000.000 / m³",
         "publishPrice": "Rp 5.000.000 / m³",
         "price": "Rp 5.000.000 / m³",
-        "min": "0,1 M³"
+        "min": "0,1 M³",
+        "bestPartner": "RTS",
+        "bestPartnerColor": "red"
       },
       {
         "name": "Laut Umum / Non Lartas",
         "realPrice": "Rp 4.750.000 / m³",
         "publishPrice": "Rp 5.750.000 / m³",
         "price": "Rp 5.750.000 / m³",
-        "min": "0,1 M³"
+        "min": "0,1 M³",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       },
       {
         "name": "Laut Lartas / Lartas Ringan",
         "realPrice": "Rp 5.250.000 / m³",
         "publishPrice": "Rp 6.250.000 / m³",
         "price": "Rp 6.250.000 / m³",
-        "min": "0,1 M³"
+        "min": "0,1 M³",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       },
       {
         "name": "Laut Alkes",
         "realPrice": "Rp 6.000.000 / m³",
         "publishPrice": "Rp 7.000.000 / m³",
         "price": "Rp 7.000.000 / m³",
-        "min": "0,1 M³"
+        "min": "0,1 M³",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       },
       {
         "name": "Laut Semi Garment Plus (Vitamin, F&B, Obat, Kaos Kaki)",
         "realPrice": "Rp 6.500.000 / m³",
         "publishPrice": "Rp 7.500.000 / m³",
         "price": "Rp 7.500.000 / m³",
-        "min": "0,1 M³"
+        "min": "0,1 M³",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       },
       {
         "name": "Laut Kosmetik",
         "realPrice": "Rp 7.500.000 / m³",
         "publishPrice": "Rp 8.500.000 / m³",
         "price": "Rp 8.500.000 / m³",
-        "min": "0,1 M³"
+        "min": "0,1 M³",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       },
       {
         "name": "Tambahan Barang Branded / Merek",
         "realPrice": "+ Rp 250.000 / m³",
         "publishPrice": "+ Rp 250.000 / m³",
         "price": "+ Rp 250.000 / m³",
-        "min": "0,1 M³"
+        "min": "-",
+        "bestPartner": "RTS",
+        "bestPartnerColor": "red"
       }
     ],
     "calcData": {
@@ -185,28 +231,34 @@
   "singapore": {
     "title": "Singapore",
     "estUdara": "± 3 Hari",
-    "estLaut": "2-3 Minggu",
+    "estLaut": "± 2-3 Minggu",
     "items": [
       {
         "name": "Udara Umum",
         "realPrice": "Rp 160.000 / Kg",
         "publishPrice": "Rp 180.000 / Kg",
         "price": "Rp 180.000 / Kg",
-        "min": "2 KG"
+        "min": "1 KG",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       },
       {
         "name": "Laut (Umum, Sparepart, Acc)",
         "realPrice": "Rp 9.500.000 / m³",
         "publishPrice": "Rp 10.500.000 / m³",
         "price": "Rp 10.500.000 / m³",
-        "min": "0,1 M³"
+        "min": "0,1 M³",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       },
       {
         "name": "Laut (Lartas Berat)",
         "realPrice": "Rp 10.000.000 / m³",
         "publishPrice": "Rp 11.000.000 / m³",
         "price": "Rp 11.000.000 / m³",
-        "min": "0,1 M³"
+        "min": "0,1 M³",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       }
     ],
     "calcData": {
@@ -224,28 +276,36 @@
         "realPrice": "Rp 170.000 / Kg",
         "publishPrice": "Rp 190.000 / Kg",
         "price": "Rp 190.000 / Kg",
-        "min": "2 KG"
+        "min": "1 KG",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       },
       {
         "name": "Udara Lartas",
         "realPrice": "Rp 180.000 / Kg",
         "publishPrice": "Rp 200.000 / Kg",
         "price": "Rp 200.000 / Kg",
-        "min": "2 KG"
+        "min": "1 KG",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       },
       {
         "name": "Laut Umum",
         "realPrice": "Rp 9.000.000 / m³",
         "publishPrice": "Rp 10.000.000 / m³",
         "price": "Rp 10.000.000 / m³",
-        "min": "0,1 M³"
+        "min": "0,1 M³",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       },
       {
         "name": "Laut Lartas",
         "realPrice": "Rp 10.000.000 / m³",
         "publishPrice": "Rp 11.000.000 / m³",
         "price": "Rp 11.000.000 / m³",
-        "min": "0,1 M³"
+        "min": "0,1 M³",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       }
     ],
     "calcData": {
@@ -263,21 +323,27 @@
         "realPrice": "Rp 250.000 / Kg",
         "publishPrice": "Rp 270.000 / Kg",
         "price": "Rp 270.000 / Kg",
-        "min": "2 KG"
+        "min": "1 KG",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       },
       {
         "name": "Udara Lartas",
         "realPrice": "Rp 255.000 / Kg",
         "publishPrice": "Rp 275.000 / Kg",
         "price": "Rp 275.000 / Kg",
-        "min": "2 KG"
+        "min": "1 KG",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       },
       {
         "name": "Laut",
         "realPrice": "Rp 16.000.000 / m³",
         "publishPrice": "Rp 17.000.000 / m³",
         "price": "Rp 17.000.000 / m³",
-        "min": "0.5 M³"
+        "min": "0,5 M³",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       }
     ],
     "calcData": {
@@ -291,32 +357,40 @@
     "estLaut": "3-4 Minggu",
     "items": [
       {
-        "name": "Udara Umum",
+        "name": "Udara",
         "realPrice": "Rp 210.000 / Kg",
         "publishPrice": "Rp 230.000 / Kg",
         "price": "Rp 230.000 / Kg",
-        "min": "2 KG"
+        "min": "1 KG",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       },
       {
         "name": "Udara (Garment, Kosmetik, Sepatu, Tas)",
         "realPrice": "Rp 215.000 / Kg",
         "publishPrice": "Rp 235.000 / Kg",
         "price": "Rp 235.000 / Kg",
-        "min": "2 KG"
+        "min": "1 KG",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       },
       {
         "name": "Laut (Umum)",
         "realPrice": "Rp 12.250.000 / m³",
         "publishPrice": "Rp 13.250.000 / m³",
         "price": "Rp 13.250.000 / m³",
-        "min": "0,5 M³"
+        "min": "0,5 M³",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       },
       {
         "name": "Laut (Alkes)",
         "realPrice": "Rp 13.250.000 / m³",
         "publishPrice": "Rp 14.250.000 / m³",
         "price": "Rp 14.250.000 / m³",
-        "min": "0,5 M³"
+        "min": "0,5 M³",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       }
     ],
     "calcData": {
@@ -334,14 +408,18 @@
         "realPrice": "Rp 245.000 / Kg",
         "publishPrice": "Rp 265.000 / Kg",
         "price": "Rp 265.000 / Kg",
-        "min": "2 KG"
+        "min": "5 KG",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       },
       {
         "name": "Laut",
         "realPrice": "Rp 9.750.000 / m³",
         "publishPrice": "Rp 10.750.000 / m³",
         "price": "Rp 10.750.000 / m³",
-        "min": "0,5 M³"
+        "min": "0,5 M³",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       }
     ],
     "calcData": {
@@ -351,22 +429,35 @@
   },
   "taiwan": {
     "title": "Taiwan",
-    "estUdara": "± 4-5 Hari",
-    "estLaut": "3-4 Minggu",
+    "estUdara": "± 5-7 Hari",
+    "estLaut": "± 3-4 Minggu",
     "items": [
       {
         "name": "Udara",
         "realPrice": "Rp 175.000 / Kg",
         "publishPrice": "Rp 195.000 / Kg",
         "price": "Rp 195.000 / Kg",
-        "min": "2 KG"
+        "min": "1 KG",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       },
       {
-        "name": "Laut",
+        "name": "Laut Umum",
         "realPrice": "Rp 11.500.000 / m³",
         "publishPrice": "Rp 12.500.000 / m³",
         "price": "Rp 12.500.000 / m³",
-        "min": "0,5 M³"
+        "min": "0,5 M³",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
+      },
+      {
+        "name": "Laut Lartas",
+        "realPrice": "Rp 12.500.000 / m³",
+        "publishPrice": "Rp 13.500.000 / m³",
+        "price": "Rp 13.500.000 / m³",
+        "min": "0,5 M³",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       }
     ],
     "calcData": {
@@ -384,7 +475,9 @@
         "realPrice": "Rp 410.000 / Kg",
         "publishPrice": "Rp 430.000 / Kg",
         "price": "Rp 430.000 / Kg",
-        "min": "2 KG"
+        "min": "5 KG",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue"
       }
     ],
     "calcData": {
@@ -399,48 +492,54 @@
         "code": "RTS001",
         "name": "RTS Global Logistics",
         "status": "Active",
+        "color": "red",
+        "badgeClass": "bg-rose-500 text-white",
         "contact": "+86 138 0013 8000 (WeChat: rts_ops_hq)",
-        "notes": "Main consolidation hub for Guangzhou, Yiwu, Shanghai sea & air freight.",
+        "notes": "Spesialis konsolidasi China (Guangzhou & Yiwu laut & udara).",
+        "origins": [
+          "China",
+          "Guangzhou",
+          "Yiwu"
+        ],
+        "services": [
+          "LCL",
+          "Door-to-Door",
+          "Sea Freight",
+          "Air Freight"
+        ],
+        "createdAt": "2026-07-10T08:00:00Z",
+        "updatedAt": "2026-08-26T11:00:00Z"
+      },
+      {
+        "id": "partner-blessindo",
+        "code": "BLESS001",
+        "name": "PT. Blessindo Cargo",
+        "status": "Active",
+        "color": "blue",
+        "badgeClass": "bg-sky-500 text-white",
+        "contact": "021-64719985 / blessindo_cargo@yahoo.com",
+        "notes": "Ruko Permata Ancol Blok N No. 37, Jl. Laksamana R.E. Martadinata, Ancol - Jakarta Utara 14420. Provider utama multi-negara (Singapore, Guangzhou, Yiwu, Taiwan, Bangkok, Korea, Hongkong, Shanghai, Aussie).",
         "origins": [
           "China",
           "Guangzhou",
           "Yiwu",
           "Shanghai",
-          "Hong Kong",
-          "South Korea"
-        ],
-        "services": [
-          "FCL",
-          "LCL",
-          "Door-to-Door",
-          "Sea Freight",
-          "Air Freight"
-        ],
-        "createdAt": "2026-09-01T08:00:00Z",
-        "updatedAt": "2026-10-06T11:00:00Z"
-      },
-      {
-        "id": "partner-blessindo",
-        "code": "BLESS001",
-        "name": "Blessindo Cargo Express",
-        "status": "Active",
-        "contact": "+62 812 8899 7711 (Anton - Ops Jakarta)",
-        "notes": "Direct lines for Taiwan electronic components and Korea skincare / cosmetics cargo.",
-        "origins": [
-          "China",
-          "Guangzhou",
-          "South Korea",
-          "Taiwan"
+          "Singapore",
+          "Bangkok",
+          "Korea",
+          "Hongkong",
+          "Taiwan",
+          "Aussie"
         ],
         "services": [
           "LCL",
           "Door-to-Door",
-          "Special Cargo",
           "Sea Freight",
-          "Air Freight"
+          "Air Freight",
+          "Special Cargo"
         ],
-        "createdAt": "2026-09-05T09:30:00Z",
-        "updatedAt": "2026-10-05T14:20:00Z"
+        "createdAt": "2026-09-01T09:30:00Z",
+        "updatedAt": "2026-10-06T14:20:00Z"
       }
     ],
     "routes": [
@@ -462,17 +561,8 @@
         "destination": "Indonesia",
         "status": "Active",
         "partnerIds": [
-          "partner-rts"
-        ]
-      },
-      {
-        "id": "route-sh",
-        "origin": "China",
-        "originCity": "Shanghai",
-        "destination": "Indonesia",
-        "status": "Active",
-        "partnerIds": [
-          "partner-rts"
+          "partner-rts",
+          "partner-blessindo"
         ]
       },
       {
@@ -481,7 +571,9 @@
         "originCity": "Singapore",
         "destination": "Indonesia",
         "status": "Active",
-        "partnerIds": []
+        "partnerIds": [
+          "partner-blessindo"
+        ]
       },
       {
         "id": "route-bkk",
@@ -489,7 +581,9 @@
         "originCity": "Bangkok",
         "destination": "Indonesia",
         "status": "Active",
-        "partnerIds": []
+        "partnerIds": [
+          "partner-blessindo"
+        ]
       },
       {
         "id": "route-kr",
@@ -498,7 +592,6 @@
         "destination": "Indonesia",
         "status": "Active",
         "partnerIds": [
-          "partner-rts",
           "partner-blessindo"
         ]
       },
@@ -509,7 +602,17 @@
         "destination": "Indonesia",
         "status": "Active",
         "partnerIds": [
-          "partner-rts"
+          "partner-blessindo"
+        ]
+      },
+      {
+        "id": "route-sh",
+        "origin": "China",
+        "originCity": "Shanghai",
+        "destination": "Indonesia",
+        "status": "Active",
+        "partnerIds": [
+          "partner-blessindo"
         ]
       },
       {
@@ -528,12 +631,14 @@
         "originCity": "Sydney/Melbourne",
         "destination": "Indonesia",
         "status": "Active",
-        "partnerIds": []
+        "partnerIds": [
+          "partner-blessindo"
+        ]
       }
     ],
     "rateCards": [
       {
-        "id": "rc-guangzhou-1",
+        "id": "rc-gz-rts-1",
         "partnerId": "partner-rts",
         "routeKey": "guangzhou",
         "category": "Laut Tas & Sepatu",
@@ -546,37 +651,17 @@
         "additionalCost": 0,
         "sellingPrice": 5000000,
         "minOrder": "0,1 M³",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "Turun harga per 26 Agt 2026"
       },
       {
-        "id": "rc-guangzhou-2",
+        "id": "rc-gz-rts-2",
         "partnerId": "partner-rts",
         "routeKey": "guangzhou",
-        "category": "Laut Non Lartas / Umum",
-        "service": "Sea Freight",
-        "unit": "CBM",
-        "partnerCost": 5100000,
-        "riskBuffer": 250000,
-        "marginType": "fixed",
-        "marginValue": 750000,
-        "additionalCost": 0,
-        "sellingPrice": 6100000,
-        "minOrder": "0,1 M³",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
-        "validUntil": "2026-12-31",
-        "status": "Active",
-        "notes": "Standard verified tariff from RTS."
-      },
-      {
-        "id": "rc-guangzhou-3",
-        "partnerId": "partner-rts",
-        "routeKey": "guangzhou",
-        "category": "Laut Lartas Ringan",
+        "category": "Laut Non Lartas",
         "service": "Sea Freight",
         "unit": "CBM",
         "partnerCost": 5500000,
@@ -586,57 +671,17 @@
         "additionalCost": 0,
         "sellingPrice": 6500000,
         "minOrder": "0,1 M³",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "Harga per 10 Juli 2026"
       },
       {
-        "id": "rc-guangzhou-4",
+        "id": "rc-gz-rts-3",
         "partnerId": "partner-rts",
         "routeKey": "guangzhou",
-        "category": "Laut Lartas Berat (Alkes/Obat/Chemical/Besi dll)",
-        "service": "Sea Freight",
-        "unit": "CBM",
-        "partnerCost": 6250000,
-        "riskBuffer": 250000,
-        "marginType": "fixed",
-        "marginValue": 750000,
-        "additionalCost": 0,
-        "sellingPrice": 7250000,
-        "minOrder": "0,1 M³",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
-        "validUntil": "2026-12-31",
-        "status": "Active",
-        "notes": "Standard verified tariff from RTS."
-      },
-      {
-        "id": "rc-guangzhou-5",
-        "partnerId": "partner-rts",
-        "routeKey": "guangzhou",
-        "category": "Laut Benang / Pita Velcro",
-        "service": "Sea Freight",
-        "unit": "CBM",
-        "partnerCost": 6250000,
-        "riskBuffer": 250000,
-        "marginType": "fixed",
-        "marginValue": 750000,
-        "additionalCost": 0,
-        "sellingPrice": 7250000,
-        "minOrder": "1 M³",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
-        "validUntil": "2026-12-31",
-        "status": "Active",
-        "notes": "Standard verified tariff from RTS."
-      },
-      {
-        "id": "rc-guangzhou-6",
-        "partnerId": "partner-rts",
-        "routeKey": "guangzhou",
-        "category": "Laut (Tax Refund)",
+        "category": "Laut Lartas Ringan",
         "service": "Sea Freight",
         "unit": "CBM",
         "partnerCost": 6000000,
@@ -645,15 +690,15 @@
         "marginValue": 750000,
         "additionalCost": 0,
         "sellingPrice": 7000000,
-        "minOrder": "1 M³",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "minOrder": "0,1 M³",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "Harga per 10 Juli 2026"
       },
       {
-        "id": "rc-guangzhou-7",
+        "id": "rc-gz-rts-4",
         "partnerId": "partner-rts",
         "routeKey": "guangzhou",
         "category": "Laut Semi Garment",
@@ -666,17 +711,17 @@
         "additionalCost": 0,
         "sellingPrice": 8000000,
         "minOrder": "0,1 M³",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "Harga per 10 Juli 2026"
       },
       {
-        "id": "rc-guangzhou-8",
+        "id": "rc-gz-rts-5",
         "partnerId": "partner-rts",
         "routeKey": "guangzhou",
-        "category": "Laut Semi Garment Plus / Scarf / Syal",
+        "category": "Laut Semi Garment Plus",
         "service": "Sea Freight",
         "unit": "CBM",
         "partnerCost": 7500000,
@@ -686,37 +731,17 @@
         "additionalCost": 0,
         "sellingPrice": 8500000,
         "minOrder": "0,1 M³",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "Harga per 10 Juli 2026"
       },
       {
-        "id": "rc-guangzhou-9",
+        "id": "rc-gz-rts-6",
         "partnerId": "partner-rts",
         "routeKey": "guangzhou",
-        "category": "Laut Kosmetik / Makanan / Cairan / Bubuk",
-        "service": "Sea Freight",
-        "unit": "CBM",
-        "partnerCost": 8250000,
-        "riskBuffer": 250000,
-        "marginType": "fixed",
-        "marginValue": 750000,
-        "additionalCost": 0,
-        "sellingPrice": 9250000,
-        "minOrder": "0,1 M³",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
-        "validUntil": "2026-12-31",
-        "status": "Active",
-        "notes": "Standard verified tariff from RTS."
-      },
-      {
-        "id": "rc-guangzhou-10",
-        "partnerId": "partner-rts",
-        "routeKey": "guangzhou",
-        "category": "Laut Textile",
+        "category": "Laut Kosmetik / Makanan",
         "service": "Sea Freight",
         "unit": "CBM",
         "partnerCost": 8500000,
@@ -726,15 +751,135 @@
         "additionalCost": 0,
         "sellingPrice": 9500000,
         "minOrder": "0,1 M³",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "Naik per 5 Agt 2026"
       },
       {
-        "id": "rc-guangzhou-11",
+        "id": "rc-gz-rts-7",
         "partnerId": "partner-rts",
+        "routeKey": "guangzhou",
+        "category": "Laut Textile",
+        "service": "Sea Freight",
+        "unit": "CBM",
+        "partnerCost": 9500000,
+        "riskBuffer": 250000,
+        "marginType": "fixed",
+        "marginValue": 750000,
+        "additionalCost": 0,
+        "sellingPrice": 10500000,
+        "minOrder": "0,1 M³",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
+        "validUntil": "2026-12-31",
+        "status": "Active",
+        "notes": "Harga per 10 Juli 2026"
+      },
+      {
+        "id": "rc-gz-rts-8",
+        "partnerId": "partner-rts",
+        "routeKey": "guangzhou",
+        "category": "Laut Garment",
+        "service": "Sea Freight",
+        "unit": "CBM",
+        "partnerCost": 10500000,
+        "riskBuffer": 250000,
+        "marginType": "fixed",
+        "marginValue": 750000,
+        "additionalCost": 0,
+        "sellingPrice": 11500000,
+        "minOrder": "0,1 M³",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
+        "validUntil": "2026-12-31",
+        "status": "Active",
+        "notes": "Harga per 10 Juli 2026"
+      },
+      {
+        "id": "rc-gz-bless-1",
+        "partnerId": "partner-blessindo",
+        "routeKey": "guangzhou",
+        "category": "Laut (Umum) Tas, Sepatu",
+        "service": "Sea Freight",
+        "unit": "CBM",
+        "partnerCost": 5100000,
+        "riskBuffer": 250000,
+        "marginType": "fixed",
+        "marginValue": 750000,
+        "additionalCost": 0,
+        "sellingPrice": 6100000,
+        "minOrder": "0,1 M³",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
+        "validUntil": "2026-12-31",
+        "status": "Active",
+        "notes": "Blessindo PDF"
+      },
+      {
+        "id": "rc-gz-bless-2",
+        "partnerId": "partner-blessindo",
+        "routeKey": "guangzhou",
+        "category": "Laut (Lartas Ringan) Semua Jenis",
+        "service": "Sea Freight",
+        "unit": "CBM",
+        "partnerCost": 5500000,
+        "riskBuffer": 250000,
+        "marginType": "fixed",
+        "marginValue": 750000,
+        "additionalCost": 0,
+        "sellingPrice": 6500000,
+        "minOrder": "0,1 M³",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
+        "validUntil": "2026-12-31",
+        "status": "Active",
+        "notes": "Blessindo PDF"
+      },
+      {
+        "id": "rc-gz-bless-3",
+        "partnerId": "partner-blessindo",
+        "routeKey": "guangzhou",
+        "category": "Laut (Lartas Berat) Alkes/Obat/Chemical/Besi",
+        "service": "Sea Freight",
+        "unit": "CBM",
+        "partnerCost": 6250000,
+        "riskBuffer": 250000,
+        "marginType": "fixed",
+        "marginValue": 750000,
+        "additionalCost": 0,
+        "sellingPrice": 7250000,
+        "minOrder": "0,1 M³",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
+        "validUntil": "2026-12-31",
+        "status": "Active",
+        "notes": "Blessindo PDF"
+      },
+      {
+        "id": "rc-gz-bless-4",
+        "partnerId": "partner-blessindo",
+        "routeKey": "guangzhou",
+        "category": "Laut (Kosmetik/Cairan/Bubuk)",
+        "service": "Sea Freight",
+        "unit": "CBM",
+        "partnerCost": 8250000,
+        "riskBuffer": 250000,
+        "marginType": "fixed",
+        "marginValue": 750000,
+        "additionalCost": 0,
+        "sellingPrice": 9250000,
+        "minOrder": "0,1 M³",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
+        "validUntil": "2026-12-31",
+        "status": "Active",
+        "notes": "Blessindo PDF"
+      },
+      {
+        "id": "rc-gz-bless-5",
+        "partnerId": "partner-blessindo",
         "routeKey": "guangzhou",
         "category": "Laut Garment",
         "service": "Sea Freight",
@@ -746,35 +891,115 @@
         "additionalCost": 0,
         "sellingPrice": 10250000,
         "minOrder": "0,1 M³",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "Blessindo PDF"
       },
       {
-        "id": "rc-guangzhou-12",
-        "partnerId": "partner-rts",
+        "id": "rc-gz-bless-6",
+        "partnerId": "partner-blessindo",
         "routeKey": "guangzhou",
-        "category": "Tambahan Barang Branded / Merek",
+        "category": "Laut Semi Garment",
         "service": "Sea Freight",
         "unit": "CBM",
-        "partnerCost": 250000,
-        "riskBuffer": 0,
+        "partnerCost": 7500000,
+        "riskBuffer": 250000,
         "marginType": "fixed",
-        "marginValue": 0,
+        "marginValue": 750000,
         "additionalCost": 0,
-        "sellingPrice": 250000,
+        "sellingPrice": 8500000,
         "minOrder": "0,1 M³",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "Blessindo PDF"
       },
       {
-        "id": "rc-guangzhou-13",
-        "partnerId": "partner-rts",
+        "id": "rc-gz-bless-7",
+        "partnerId": "partner-blessindo",
+        "routeKey": "guangzhou",
+        "category": "Laut Scarf/Syal",
+        "service": "Sea Freight",
+        "unit": "CBM",
+        "partnerCost": 7500000,
+        "riskBuffer": 250000,
+        "marginType": "fixed",
+        "marginValue": 750000,
+        "additionalCost": 0,
+        "sellingPrice": 8500000,
+        "minOrder": "0,1 M³",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
+        "validUntil": "2026-12-31",
+        "status": "Active",
+        "notes": "Blessindo PDF"
+      },
+      {
+        "id": "rc-gz-bless-8",
+        "partnerId": "partner-blessindo",
+        "routeKey": "guangzhou",
+        "category": "Laut Textile",
+        "service": "Sea Freight",
+        "unit": "CBM",
+        "partnerCost": 8500000,
+        "riskBuffer": 250000,
+        "marginType": "fixed",
+        "marginValue": 750000,
+        "additionalCost": 0,
+        "sellingPrice": 9500000,
+        "minOrder": "0,1 M³",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
+        "validUntil": "2026-12-31",
+        "status": "Active",
+        "notes": "Blessindo PDF"
+      },
+      {
+        "id": "rc-gz-bless-9",
+        "partnerId": "partner-blessindo",
+        "routeKey": "guangzhou",
+        "category": "Laut Benang/Pita Velcro",
+        "service": "Sea Freight",
+        "unit": "CBM",
+        "partnerCost": 6250000,
+        "riskBuffer": 250000,
+        "marginType": "fixed",
+        "marginValue": 750000,
+        "additionalCost": 0,
+        "sellingPrice": 7250000,
+        "minOrder": "1 M³",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
+        "validUntil": "2026-12-31",
+        "status": "Active",
+        "notes": "Blessindo PDF"
+      },
+      {
+        "id": "rc-gz-bless-10",
+        "partnerId": "partner-blessindo",
+        "routeKey": "guangzhou",
+        "category": "Laut (Tax Refund)",
+        "service": "Sea Freight",
+        "unit": "CBM",
+        "partnerCost": 6000000,
+        "riskBuffer": 250000,
+        "marginType": "fixed",
+        "marginValue": 750000,
+        "additionalCost": 0,
+        "sellingPrice": 7000000,
+        "minOrder": "1 M³",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
+        "validUntil": "2026-12-31",
+        "status": "Active",
+        "notes": "Blessindo PDF"
+      },
+      {
+        "id": "rc-gz-bless-11",
+        "partnerId": "partner-blessindo",
         "routeKey": "guangzhou",
         "category": "Udara Umum",
         "service": "Air Freight",
@@ -785,36 +1010,16 @@
         "marginValue": 15000,
         "additionalCost": 0,
         "sellingPrice": 215000,
-        "minOrder": "2 KG",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "minOrder": "1 KG",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "Blessindo PDF"
       },
       {
-        "id": "rc-guangzhou-14",
-        "partnerId": "partner-rts",
-        "routeKey": "guangzhou",
-        "category": "Udara Branded",
-        "service": "Air Freight",
-        "unit": "KG",
-        "partnerCost": 205000,
-        "riskBuffer": 5000,
-        "marginType": "fixed",
-        "marginValue": 15000,
-        "additionalCost": 0,
-        "sellingPrice": 225000,
-        "minOrder": "2 KG",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
-        "validUntil": "2026-12-31",
-        "status": "Active",
-        "notes": "Standard verified tariff from RTS."
-      },
-      {
-        "id": "rc-guangzhou-15",
-        "partnerId": "partner-rts",
+        "id": "rc-gz-bless-12",
+        "partnerId": "partner-blessindo",
         "routeKey": "guangzhou",
         "category": "Udara (Garment, Semi, Elektronik, Alas Kaki)",
         "service": "Air Freight",
@@ -825,16 +1030,36 @@
         "marginValue": 15000,
         "additionalCost": 0,
         "sellingPrice": 230000,
-        "minOrder": "2 KG",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "minOrder": "1 KG",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "Blessindo PDF"
       },
       {
-        "id": "rc-guangzhou-16",
-        "partnerId": "partner-rts",
+        "id": "rc-gz-bless-13",
+        "partnerId": "partner-blessindo",
+        "routeKey": "guangzhou",
+        "category": "Udara Branded",
+        "service": "Air Freight",
+        "unit": "KG",
+        "partnerCost": 205000,
+        "riskBuffer": 5000,
+        "marginType": "fixed",
+        "marginValue": 15000,
+        "additionalCost": 0,
+        "sellingPrice": 225000,
+        "minOrder": "1 KG",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
+        "validUntil": "2026-12-31",
+        "status": "Active",
+        "notes": "Blessindo PDF"
+      },
+      {
+        "id": "rc-gz-bless-14",
+        "partnerId": "partner-blessindo",
         "routeKey": "guangzhou",
         "category": "Udara Baterai",
         "service": "Air Freight",
@@ -845,15 +1070,15 @@
         "marginValue": 15000,
         "additionalCost": 0,
         "sellingPrice": 245000,
-        "minOrder": "2 KG",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "minOrder": "1 KG",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "Blessindo PDF"
       },
       {
-        "id": "rc-yiwu-1",
+        "id": "rc-yw-rts-1",
         "partnerId": "partner-rts",
         "routeKey": "yiwu",
         "category": "Laut Tas & Sepatu",
@@ -866,57 +1091,37 @@
         "additionalCost": 0,
         "sellingPrice": 5000000,
         "minOrder": "0,1 M³",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "Turun harga per 26 Agt 2026"
       },
       {
-        "id": "rc-yiwu-2",
+        "id": "rc-yw-rts-2",
         "partnerId": "partner-rts",
         "routeKey": "yiwu",
-        "category": "Laut Umum / Non Lartas",
+        "category": "Laut Non Lartas",
         "service": "Sea Freight",
         "unit": "CBM",
-        "partnerCost": 4750000,
+        "partnerCost": 5500000,
         "riskBuffer": 250000,
         "marginType": "fixed",
         "marginValue": 750000,
         "additionalCost": 0,
-        "sellingPrice": 5750000,
+        "sellingPrice": 6500000,
         "minOrder": "0,1 M³",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "RTS Yiwu"
       },
       {
-        "id": "rc-yiwu-3",
+        "id": "rc-yw-rts-3",
         "partnerId": "partner-rts",
         "routeKey": "yiwu",
-        "category": "Laut Lartas / Lartas Ringan",
-        "service": "Sea Freight",
-        "unit": "CBM",
-        "partnerCost": 5250000,
-        "riskBuffer": 250000,
-        "marginType": "fixed",
-        "marginValue": 750000,
-        "additionalCost": 0,
-        "sellingPrice": 6250000,
-        "minOrder": "0,1 M³",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
-        "validUntil": "2026-12-31",
-        "status": "Active",
-        "notes": "Standard verified tariff from RTS."
-      },
-      {
-        "id": "rc-yiwu-4",
-        "partnerId": "partner-rts",
-        "routeKey": "yiwu",
-        "category": "Laut Alkes",
+        "category": "Laut Lartas Ringan",
         "service": "Sea Freight",
         "unit": "CBM",
         "partnerCost": 6000000,
@@ -926,35 +1131,115 @@
         "additionalCost": 0,
         "sellingPrice": 7000000,
         "minOrder": "0,1 M³",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "RTS Yiwu"
       },
       {
-        "id": "rc-yiwu-5",
+        "id": "rc-yw-rts-4",
         "partnerId": "partner-rts",
         "routeKey": "yiwu",
-        "category": "Laut Semi Garment Plus (Vitamin, F&B, Obat, Kaos Kaki)",
+        "category": "Laut Semi Garment",
         "service": "Sea Freight",
         "unit": "CBM",
-        "partnerCost": 6500000,
+        "partnerCost": 7000000,
         "riskBuffer": 250000,
         "marginType": "fixed",
         "marginValue": 750000,
         "additionalCost": 0,
-        "sellingPrice": 7500000,
+        "sellingPrice": 8000000,
         "minOrder": "0,1 M³",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "RTS Yiwu"
       },
       {
-        "id": "rc-yiwu-6",
+        "id": "rc-yw-rts-5",
         "partnerId": "partner-rts",
+        "routeKey": "yiwu",
+        "category": "Laut Semi Garment Plus",
+        "service": "Sea Freight",
+        "unit": "CBM",
+        "partnerCost": 7500000,
+        "riskBuffer": 250000,
+        "marginType": "fixed",
+        "marginValue": 750000,
+        "additionalCost": 0,
+        "sellingPrice": 8500000,
+        "minOrder": "0,1 M³",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
+        "validUntil": "2026-12-31",
+        "status": "Active",
+        "notes": "RTS Yiwu"
+      },
+      {
+        "id": "rc-yw-rts-6",
+        "partnerId": "partner-rts",
+        "routeKey": "yiwu",
+        "category": "Laut Kosmetik / Makanan",
+        "service": "Sea Freight",
+        "unit": "CBM",
+        "partnerCost": 8500000,
+        "riskBuffer": 250000,
+        "marginType": "fixed",
+        "marginValue": 750000,
+        "additionalCost": 0,
+        "sellingPrice": 9500000,
+        "minOrder": "0,1 M³",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
+        "validUntil": "2026-12-31",
+        "status": "Active",
+        "notes": "RTS Yiwu"
+      },
+      {
+        "id": "rc-yw-bless-1",
+        "partnerId": "partner-blessindo",
+        "routeKey": "yiwu",
+        "category": "Laut Umum",
+        "service": "Sea Freight",
+        "unit": "CBM",
+        "partnerCost": 4750000,
+        "riskBuffer": 250000,
+        "marginType": "fixed",
+        "marginValue": 750000,
+        "additionalCost": 0,
+        "sellingPrice": 5750000,
+        "minOrder": "0,1 M³",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
+        "validUntil": "2026-12-31",
+        "status": "Active",
+        "notes": "Blessindo PDF"
+      },
+      {
+        "id": "rc-yw-bless-2",
+        "partnerId": "partner-blessindo",
+        "routeKey": "yiwu",
+        "category": "Laut Lartas",
+        "service": "Sea Freight",
+        "unit": "CBM",
+        "partnerCost": 5250000,
+        "riskBuffer": 250000,
+        "marginType": "fixed",
+        "marginValue": 750000,
+        "additionalCost": 0,
+        "sellingPrice": 6250000,
+        "minOrder": "0,1 M³",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
+        "validUntil": "2026-12-31",
+        "status": "Active",
+        "notes": "Blessindo PDF"
+      },
+      {
+        "id": "rc-yw-bless-3",
+        "partnerId": "partner-blessindo",
         "routeKey": "yiwu",
         "category": "Laut Kosmetik",
         "service": "Sea Freight",
@@ -966,37 +1251,57 @@
         "additionalCost": 0,
         "sellingPrice": 8500000,
         "minOrder": "0,1 M³",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "Blessindo PDF"
       },
       {
-        "id": "rc-yiwu-7",
-        "partnerId": "partner-rts",
+        "id": "rc-yw-bless-4",
+        "partnerId": "partner-blessindo",
         "routeKey": "yiwu",
-        "category": "Tambahan Barang Branded / Merek",
+        "category": "Laut Alkes",
         "service": "Sea Freight",
         "unit": "CBM",
-        "partnerCost": 250000,
-        "riskBuffer": 0,
+        "partnerCost": 6000000,
+        "riskBuffer": 250000,
         "marginType": "fixed",
-        "marginValue": 0,
+        "marginValue": 750000,
         "additionalCost": 0,
-        "sellingPrice": 250000,
+        "sellingPrice": 7000000,
         "minOrder": "0,1 M³",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "Blessindo PDF"
       },
       {
-        "id": "rc-singapore-1",
-        "partnerId": "partner-rts",
+        "id": "rc-yw-bless-5",
+        "partnerId": "partner-blessindo",
+        "routeKey": "yiwu",
+        "category": "Laut (Semi, Vitamin, F&B, Obat, Kaos Kaki)",
+        "service": "Sea Freight",
+        "unit": "CBM",
+        "partnerCost": 6500000,
+        "riskBuffer": 250000,
+        "marginType": "fixed",
+        "marginValue": 750000,
+        "additionalCost": 0,
+        "sellingPrice": 7500000,
+        "minOrder": "0,1 M³",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
+        "validUntil": "2026-12-31",
+        "status": "Active",
+        "notes": "Blessindo PDF"
+      },
+      {
+        "id": "rc-sg-bless-1",
+        "partnerId": "partner-blessindo",
         "routeKey": "singapore",
-        "category": "Udara Umum",
+        "category": "Udara",
         "service": "Air Freight",
         "unit": "KG",
         "partnerCost": 160000,
@@ -1005,16 +1310,16 @@
         "marginValue": 15000,
         "additionalCost": 0,
         "sellingPrice": 180000,
-        "minOrder": "2 KG",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "minOrder": "1 KG",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "Blessindo PDF"
       },
       {
-        "id": "rc-singapore-2",
-        "partnerId": "partner-rts",
+        "id": "rc-sg-bless-2",
+        "partnerId": "partner-blessindo",
         "routeKey": "singapore",
         "category": "Laut (Umum, Sparepart, Acc)",
         "service": "Sea Freight",
@@ -1026,15 +1331,15 @@
         "additionalCost": 0,
         "sellingPrice": 10500000,
         "minOrder": "0,1 M³",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "Blessindo PDF"
       },
       {
-        "id": "rc-singapore-3",
-        "partnerId": "partner-rts",
+        "id": "rc-sg-bless-3",
+        "partnerId": "partner-blessindo",
         "routeKey": "singapore",
         "category": "Laut (Lartas Berat)",
         "service": "Sea Freight",
@@ -1046,15 +1351,15 @@
         "additionalCost": 0,
         "sellingPrice": 11000000,
         "minOrder": "0,1 M³",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "Blessindo PDF"
       },
       {
-        "id": "rc-bangkok-1",
-        "partnerId": "partner-rts",
+        "id": "rc-bkk-bless-1",
+        "partnerId": "partner-blessindo",
         "routeKey": "bangkok",
         "category": "Udara Umum",
         "service": "Air Freight",
@@ -1065,16 +1370,16 @@
         "marginValue": 15000,
         "additionalCost": 0,
         "sellingPrice": 190000,
-        "minOrder": "2 KG",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "minOrder": "1 KG",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "Blessindo PDF"
       },
       {
-        "id": "rc-bangkok-2",
-        "partnerId": "partner-rts",
+        "id": "rc-bkk-bless-2",
+        "partnerId": "partner-blessindo",
         "routeKey": "bangkok",
         "category": "Udara Lartas",
         "service": "Air Freight",
@@ -1085,16 +1390,16 @@
         "marginValue": 15000,
         "additionalCost": 0,
         "sellingPrice": 200000,
-        "minOrder": "2 KG",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "minOrder": "1 KG",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "Blessindo PDF"
       },
       {
-        "id": "rc-bangkok-3",
-        "partnerId": "partner-rts",
+        "id": "rc-bkk-bless-3",
+        "partnerId": "partner-blessindo",
         "routeKey": "bangkok",
         "category": "Laut Umum",
         "service": "Sea Freight",
@@ -1106,15 +1411,15 @@
         "additionalCost": 0,
         "sellingPrice": 10000000,
         "minOrder": "0,1 M³",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "Blessindo PDF"
       },
       {
-        "id": "rc-bangkok-4",
-        "partnerId": "partner-rts",
+        "id": "rc-bkk-bless-4",
+        "partnerId": "partner-blessindo",
         "routeKey": "bangkok",
         "category": "Laut Lartas",
         "service": "Sea Freight",
@@ -1126,15 +1431,15 @@
         "additionalCost": 0,
         "sellingPrice": 11000000,
         "minOrder": "0,1 M³",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "Blessindo PDF"
       },
       {
-        "id": "rc-korea-1",
-        "partnerId": "partner-rts",
+        "id": "rc-kr-bless-1",
+        "partnerId": "partner-blessindo",
         "routeKey": "korea",
         "category": "Udara Umum",
         "service": "Air Freight",
@@ -1145,16 +1450,16 @@
         "marginValue": 15000,
         "additionalCost": 0,
         "sellingPrice": 270000,
-        "minOrder": "2 KG",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "minOrder": "1 KG",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "Blessindo PDF"
       },
       {
-        "id": "rc-korea-2",
-        "partnerId": "partner-rts",
+        "id": "rc-kr-bless-2",
+        "partnerId": "partner-blessindo",
         "routeKey": "korea",
         "category": "Udara Lartas",
         "service": "Air Freight",
@@ -1165,16 +1470,16 @@
         "marginValue": 15000,
         "additionalCost": 0,
         "sellingPrice": 275000,
-        "minOrder": "2 KG",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "minOrder": "1 KG",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "Blessindo PDF"
       },
       {
-        "id": "rc-korea-3",
-        "partnerId": "partner-rts",
+        "id": "rc-kr-bless-3",
+        "partnerId": "partner-blessindo",
         "routeKey": "korea",
         "category": "Laut",
         "service": "Sea Freight",
@@ -1185,18 +1490,18 @@
         "marginValue": 750000,
         "additionalCost": 0,
         "sellingPrice": 17000000,
-        "minOrder": "0.5 M³",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "minOrder": "0,5 M³",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "Blessindo PDF"
       },
       {
-        "id": "rc-hongkong-1",
-        "partnerId": "partner-rts",
+        "id": "rc-hk-bless-1",
+        "partnerId": "partner-blessindo",
         "routeKey": "hongkong",
-        "category": "Udara Umum",
+        "category": "Udara",
         "service": "Air Freight",
         "unit": "KG",
         "partnerCost": 210000,
@@ -1205,16 +1510,16 @@
         "marginValue": 15000,
         "additionalCost": 0,
         "sellingPrice": 230000,
-        "minOrder": "2 KG",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "minOrder": "1 KG",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "Blessindo PDF"
       },
       {
-        "id": "rc-hongkong-2",
-        "partnerId": "partner-rts",
+        "id": "rc-hk-bless-2",
+        "partnerId": "partner-blessindo",
         "routeKey": "hongkong",
         "category": "Udara (Garment, Kosmetik, Sepatu, Tas)",
         "service": "Air Freight",
@@ -1225,16 +1530,16 @@
         "marginValue": 15000,
         "additionalCost": 0,
         "sellingPrice": 235000,
-        "minOrder": "2 KG",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "minOrder": "1 KG",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "Blessindo PDF"
       },
       {
-        "id": "rc-hongkong-3",
-        "partnerId": "partner-rts",
+        "id": "rc-hk-bless-3",
+        "partnerId": "partner-blessindo",
         "routeKey": "hongkong",
         "category": "Laut (Umum)",
         "service": "Sea Freight",
@@ -1246,15 +1551,15 @@
         "additionalCost": 0,
         "sellingPrice": 13250000,
         "minOrder": "0,5 M³",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "Blessindo PDF"
       },
       {
-        "id": "rc-hongkong-4",
-        "partnerId": "partner-rts",
+        "id": "rc-hk-bless-4",
+        "partnerId": "partner-blessindo",
         "routeKey": "hongkong",
         "category": "Laut (Alkes)",
         "service": "Sea Freight",
@@ -1266,15 +1571,15 @@
         "additionalCost": 0,
         "sellingPrice": 14250000,
         "minOrder": "0,5 M³",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "Blessindo PDF"
       },
       {
-        "id": "rc-shanghai-1",
-        "partnerId": "partner-rts",
+        "id": "rc-sh-bless-1",
+        "partnerId": "partner-blessindo",
         "routeKey": "shanghai",
         "category": "Udara",
         "service": "Air Freight",
@@ -1285,16 +1590,16 @@
         "marginValue": 15000,
         "additionalCost": 0,
         "sellingPrice": 265000,
-        "minOrder": "2 KG",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "minOrder": "5 KG",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "Blessindo PDF"
       },
       {
-        "id": "rc-shanghai-2",
-        "partnerId": "partner-rts",
+        "id": "rc-sh-bless-2",
+        "partnerId": "partner-blessindo",
         "routeKey": "shanghai",
         "category": "Laut",
         "service": "Sea Freight",
@@ -1306,14 +1611,14 @@
         "additionalCost": 0,
         "sellingPrice": 10750000,
         "minOrder": "0,5 M³",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "Blessindo PDF"
       },
       {
-        "id": "rc-taiwan-1",
+        "id": "rc-tw-bless-1",
         "partnerId": "partner-blessindo",
         "routeKey": "taiwan",
         "category": "Udara",
@@ -1325,18 +1630,18 @@
         "marginValue": 15000,
         "additionalCost": 0,
         "sellingPrice": 195000,
-        "minOrder": "2 KG",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "minOrder": "1 KG",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from Blessindo."
+        "notes": "Blessindo PDF"
       },
       {
-        "id": "rc-taiwan-2",
+        "id": "rc-tw-bless-2",
         "partnerId": "partner-blessindo",
         "routeKey": "taiwan",
-        "category": "Laut",
+        "category": "Laut Umum",
         "service": "Sea Freight",
         "unit": "CBM",
         "partnerCost": 11500000,
@@ -1346,15 +1651,35 @@
         "additionalCost": 0,
         "sellingPrice": 12500000,
         "minOrder": "0,5 M³",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from Blessindo."
+        "notes": "Blessindo PDF"
       },
       {
-        "id": "rc-aussie-1",
-        "partnerId": "partner-rts",
+        "id": "rc-tw-bless-3",
+        "partnerId": "partner-blessindo",
+        "routeKey": "taiwan",
+        "category": "Laut Lartas",
+        "service": "Sea Freight",
+        "unit": "CBM",
+        "partnerCost": 12500000,
+        "riskBuffer": 250000,
+        "marginType": "fixed",
+        "marginValue": 750000,
+        "additionalCost": 0,
+        "sellingPrice": 13500000,
+        "minOrder": "0,5 M³",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
+        "validUntil": "2026-12-31",
+        "status": "Active",
+        "notes": "Blessindo PDF"
+      },
+      {
+        "id": "rc-au-bless-1",
+        "partnerId": "partner-blessindo",
         "routeKey": "aussie",
         "category": "Udara",
         "service": "Air Freight",
@@ -1365,467 +1690,100 @@
         "marginValue": 15000,
         "additionalCost": 0,
         "sellingPrice": 430000,
-        "minOrder": "2 KG",
-        "version": "V2026.10.06",
-        "effectiveFrom": "2026-10-06",
+        "minOrder": "5 KG",
+        "version": "V2026.10.07",
+        "effectiveFrom": "2026-08-26",
         "validUntil": "2026-12-31",
         "status": "Active",
-        "notes": "Standard verified tariff from RTS."
+        "notes": "Blessindo PDF"
       }
     ],
     "rateHistory": [
       {
-        "id": "hist-rc-guangzhou-1-v1",
-        "rateCardId": "rc-guangzhou-1",
-        "partnerId": "partner-rts",
-        "routeKey": "guangzhou",
-        "category": "Laut Tas & Sepatu",
-        "unit": "CBM",
-        "partnerCost": 3800000,
-        "sellingPrice": 4800000,
-        "version": "V2026.09.15",
-        "effectiveFrom": "2026-09-15",
-        "validUntil": "2026-10-05",
-        "status": "Archived",
-        "notes": "Q3 introductory tariff schedule."
+        "id": "hist-001",
+        "rateCardId": "rc-gz-rts-1",
+        "changedAt": "2026-08-26T10:00:00Z",
+        "previousPrice": 4500000,
+        "newPrice": 4000000,
+        "reason": "RTS mengumumkan penurunan harga Tas & Sepatu per 26 Agustus 2026",
+        "changedBy": "Procurement Head"
       },
       {
-        "id": "hist-rc-guangzhou-2-v1",
-        "rateCardId": "rc-guangzhou-2",
-        "partnerId": "partner-rts",
-        "routeKey": "guangzhou",
-        "category": "Laut Non Lartas / Umum",
-        "unit": "CBM",
-        "partnerCost": 4845000,
-        "sellingPrice": 5856000,
-        "version": "V2026.09.15",
-        "effectiveFrom": "2026-09-15",
-        "validUntil": "2026-10-05",
-        "status": "Archived",
-        "notes": "Q3 introductory tariff schedule."
+        "id": "hist-002",
+        "rateCardId": "rc-gz-rts-6",
+        "changedAt": "2026-08-05T09:00:00Z",
+        "previousPrice": 8000000,
+        "newPrice": 8500000,
+        "reason": "RTS penyesuaian tarif kosmetik/makanan naik per 5 Agustus 2026",
+        "changedBy": "Ops Manager"
       },
       {
-        "id": "hist-rc-guangzhou-3-v1",
-        "rateCardId": "rc-guangzhou-3",
-        "partnerId": "partner-rts",
-        "routeKey": "guangzhou",
-        "category": "Laut Lartas Ringan",
-        "unit": "CBM",
-        "partnerCost": 5225000,
-        "sellingPrice": 6240000,
-        "version": "V2026.09.15",
-        "effectiveFrom": "2026-09-15",
-        "validUntil": "2026-10-05",
-        "status": "Archived",
-        "notes": "Q3 introductory tariff schedule."
-      },
-      {
-        "id": "hist-rc-yiwu-1-v1",
-        "rateCardId": "rc-yiwu-1",
-        "partnerId": "partner-rts",
-        "routeKey": "yiwu",
-        "category": "Laut Tas & Sepatu",
-        "unit": "CBM",
-        "partnerCost": 3800000,
-        "sellingPrice": 4800000,
-        "version": "V2026.09.15",
-        "effectiveFrom": "2026-09-15",
-        "validUntil": "2026-10-05",
-        "status": "Archived",
-        "notes": "Q3 introductory tariff schedule."
-      },
-      {
-        "id": "hist-rc-yiwu-2-v1",
-        "rateCardId": "rc-yiwu-2",
-        "partnerId": "partner-rts",
-        "routeKey": "yiwu",
-        "category": "Laut Umum / Non Lartas",
-        "unit": "CBM",
-        "partnerCost": 4512500,
-        "sellingPrice": 5520000,
-        "version": "V2026.09.15",
-        "effectiveFrom": "2026-09-15",
-        "validUntil": "2026-10-05",
-        "status": "Archived",
-        "notes": "Q3 introductory tariff schedule."
-      },
-      {
-        "id": "hist-rc-yiwu-3-v1",
-        "rateCardId": "rc-yiwu-3",
-        "partnerId": "partner-rts",
-        "routeKey": "yiwu",
-        "category": "Laut Lartas / Lartas Ringan",
-        "unit": "CBM",
-        "partnerCost": 4987500,
-        "sellingPrice": 6000000,
-        "version": "V2026.09.15",
-        "effectiveFrom": "2026-09-15",
-        "validUntil": "2026-10-05",
-        "status": "Archived",
-        "notes": "Q3 introductory tariff schedule."
-      },
-      {
-        "id": "hist-rc-singapore-1-v1",
-        "rateCardId": "rc-singapore-1",
-        "partnerId": "partner-rts",
-        "routeKey": "singapore",
-        "category": "Udara Umum",
-        "unit": "KG",
-        "partnerCost": 152000,
-        "sellingPrice": 172800,
-        "version": "V2026.09.15",
-        "effectiveFrom": "2026-09-15",
-        "validUntil": "2026-10-05",
-        "status": "Archived",
-        "notes": "Q3 introductory tariff schedule."
-      },
-      {
-        "id": "hist-rc-singapore-2-v1",
-        "rateCardId": "rc-singapore-2",
-        "partnerId": "partner-rts",
-        "routeKey": "singapore",
-        "category": "Laut (Umum, Sparepart, Acc)",
-        "unit": "CBM",
-        "partnerCost": 9025000,
-        "sellingPrice": 10080000,
-        "version": "V2026.09.15",
-        "effectiveFrom": "2026-09-15",
-        "validUntil": "2026-10-05",
-        "status": "Archived",
-        "notes": "Q3 introductory tariff schedule."
-      },
-      {
-        "id": "hist-rc-singapore-3-v1",
-        "rateCardId": "rc-singapore-3",
-        "partnerId": "partner-rts",
-        "routeKey": "singapore",
-        "category": "Laut (Lartas Berat)",
-        "unit": "CBM",
-        "partnerCost": 9500000,
-        "sellingPrice": 10560000,
-        "version": "V2026.09.15",
-        "effectiveFrom": "2026-09-15",
-        "validUntil": "2026-10-05",
-        "status": "Archived",
-        "notes": "Q3 introductory tariff schedule."
-      },
-      {
-        "id": "hist-rc-bangkok-1-v1",
-        "rateCardId": "rc-bangkok-1",
-        "partnerId": "partner-rts",
-        "routeKey": "bangkok",
-        "category": "Udara Umum",
-        "unit": "KG",
-        "partnerCost": 161500,
-        "sellingPrice": 182400,
-        "version": "V2026.09.15",
-        "effectiveFrom": "2026-09-15",
-        "validUntil": "2026-10-05",
-        "status": "Archived",
-        "notes": "Q3 introductory tariff schedule."
-      },
-      {
-        "id": "hist-rc-bangkok-2-v1",
-        "rateCardId": "rc-bangkok-2",
-        "partnerId": "partner-rts",
-        "routeKey": "bangkok",
-        "category": "Udara Lartas",
-        "unit": "KG",
-        "partnerCost": 171000,
-        "sellingPrice": 192000,
-        "version": "V2026.09.15",
-        "effectiveFrom": "2026-09-15",
-        "validUntil": "2026-10-05",
-        "status": "Archived",
-        "notes": "Q3 introductory tariff schedule."
-      },
-      {
-        "id": "hist-rc-bangkok-3-v1",
-        "rateCardId": "rc-bangkok-3",
-        "partnerId": "partner-rts",
-        "routeKey": "bangkok",
-        "category": "Laut Umum",
-        "unit": "CBM",
-        "partnerCost": 8550000,
-        "sellingPrice": 9600000,
-        "version": "V2026.09.15",
-        "effectiveFrom": "2026-09-15",
-        "validUntil": "2026-10-05",
-        "status": "Archived",
-        "notes": "Q3 introductory tariff schedule."
-      },
-      {
-        "id": "hist-rc-korea-1-v1",
-        "rateCardId": "rc-korea-1",
-        "partnerId": "partner-rts",
-        "routeKey": "korea",
-        "category": "Udara Umum",
-        "unit": "KG",
-        "partnerCost": 237500,
-        "sellingPrice": 259200,
-        "version": "V2026.09.15",
-        "effectiveFrom": "2026-09-15",
-        "validUntil": "2026-10-05",
-        "status": "Archived",
-        "notes": "Q3 introductory tariff schedule."
-      },
-      {
-        "id": "hist-rc-korea-2-v1",
-        "rateCardId": "rc-korea-2",
-        "partnerId": "partner-rts",
-        "routeKey": "korea",
-        "category": "Udara Lartas",
-        "unit": "KG",
-        "partnerCost": 242250,
-        "sellingPrice": 264000,
-        "version": "V2026.09.15",
-        "effectiveFrom": "2026-09-15",
-        "validUntil": "2026-10-05",
-        "status": "Archived",
-        "notes": "Q3 introductory tariff schedule."
-      },
-      {
-        "id": "hist-rc-korea-3-v1",
-        "rateCardId": "rc-korea-3",
-        "partnerId": "partner-rts",
-        "routeKey": "korea",
-        "category": "Laut",
-        "unit": "CBM",
-        "partnerCost": 15200000,
-        "sellingPrice": 16320000,
-        "version": "V2026.09.15",
-        "effectiveFrom": "2026-09-15",
-        "validUntil": "2026-10-05",
-        "status": "Archived",
-        "notes": "Q3 introductory tariff schedule."
-      },
-      {
-        "id": "hist-rc-hongkong-1-v1",
-        "rateCardId": "rc-hongkong-1",
-        "partnerId": "partner-rts",
-        "routeKey": "hongkong",
-        "category": "Udara Umum",
-        "unit": "KG",
-        "partnerCost": 199500,
-        "sellingPrice": 220800,
-        "version": "V2026.09.15",
-        "effectiveFrom": "2026-09-15",
-        "validUntil": "2026-10-05",
-        "status": "Archived",
-        "notes": "Q3 introductory tariff schedule."
-      },
-      {
-        "id": "hist-rc-hongkong-2-v1",
-        "rateCardId": "rc-hongkong-2",
-        "partnerId": "partner-rts",
-        "routeKey": "hongkong",
-        "category": "Udara (Garment, Kosmetik, Sepatu, Tas)",
-        "unit": "KG",
-        "partnerCost": 204250,
-        "sellingPrice": 225600,
-        "version": "V2026.09.15",
-        "effectiveFrom": "2026-09-15",
-        "validUntil": "2026-10-05",
-        "status": "Archived",
-        "notes": "Q3 introductory tariff schedule."
-      },
-      {
-        "id": "hist-rc-hongkong-3-v1",
-        "rateCardId": "rc-hongkong-3",
-        "partnerId": "partner-rts",
-        "routeKey": "hongkong",
-        "category": "Laut (Umum)",
-        "unit": "CBM",
-        "partnerCost": 11637500,
-        "sellingPrice": 12720000,
-        "version": "V2026.09.15",
-        "effectiveFrom": "2026-09-15",
-        "validUntil": "2026-10-05",
-        "status": "Archived",
-        "notes": "Q3 introductory tariff schedule."
-      },
-      {
-        "id": "hist-rc-shanghai-1-v1",
-        "rateCardId": "rc-shanghai-1",
-        "partnerId": "partner-rts",
-        "routeKey": "shanghai",
-        "category": "Udara",
-        "unit": "KG",
-        "partnerCost": 232750,
-        "sellingPrice": 254400,
-        "version": "V2026.09.15",
-        "effectiveFrom": "2026-09-15",
-        "validUntil": "2026-10-05",
-        "status": "Archived",
-        "notes": "Q3 introductory tariff schedule."
-      },
-      {
-        "id": "hist-rc-shanghai-2-v1",
-        "rateCardId": "rc-shanghai-2",
-        "partnerId": "partner-rts",
-        "routeKey": "shanghai",
-        "category": "Laut",
-        "unit": "CBM",
-        "partnerCost": 9262500,
-        "sellingPrice": 10320000,
-        "version": "V2026.09.15",
-        "effectiveFrom": "2026-09-15",
-        "validUntil": "2026-10-05",
-        "status": "Archived",
-        "notes": "Q3 introductory tariff schedule."
-      },
-      {
-        "id": "hist-rc-taiwan-1-v1",
-        "rateCardId": "rc-taiwan-1",
-        "partnerId": "partner-blessindo",
-        "routeKey": "taiwan",
-        "category": "Udara",
-        "unit": "KG",
-        "partnerCost": 166250,
-        "sellingPrice": 187200,
-        "version": "V2026.09.15",
-        "effectiveFrom": "2026-09-15",
-        "validUntil": "2026-10-05",
-        "status": "Archived",
-        "notes": "Q3 introductory tariff schedule."
-      },
-      {
-        "id": "hist-rc-taiwan-2-v1",
-        "rateCardId": "rc-taiwan-2",
-        "partnerId": "partner-blessindo",
-        "routeKey": "taiwan",
-        "category": "Laut",
-        "unit": "CBM",
-        "partnerCost": 10925000,
-        "sellingPrice": 12000000,
-        "version": "V2026.09.15",
-        "effectiveFrom": "2026-09-15",
-        "validUntil": "2026-10-05",
-        "status": "Archived",
-        "notes": "Q3 introductory tariff schedule."
-      },
-      {
-        "id": "hist-rc-aussie-1-v1",
-        "rateCardId": "rc-aussie-1",
-        "partnerId": "partner-rts",
-        "routeKey": "aussie",
-        "category": "Udara",
-        "unit": "KG",
-        "partnerCost": 389500,
-        "sellingPrice": 412800,
-        "version": "V2026.09.15",
-        "effectiveFrom": "2026-09-15",
-        "validUntil": "2026-10-05",
-        "status": "Archived",
-        "notes": "Q3 introductory tariff schedule."
+        "id": "hist-003",
+        "rateCardId": "rc-gz-bless-1",
+        "changedAt": "2026-10-06T15:00:00Z",
+        "previousPrice": 0,
+        "newPrice": 5100000,
+        "reason": "Sinkronisasi tarif resmi dari surat penawaran PT. Blessindo Cargo",
+        "changedBy": "Admin System"
       }
     ],
     "quotations": [
       {
         "id": "JBRK-Q-000101",
-        "customerName": "Budi Santoso",
-        "customerPhone": "081298765432",
-        "customerCompany": "CV Sinar Mandiri",
+        "customerName": "PT Sumber Makmur Retail",
+        "customerContact": "081234567890",
         "routeKey": "guangzhou",
-        "originDisplay": "Guangzhou, China",
-        "destinationDisplay": "Jakarta, Indonesia",
-        "partnerId": "partner-rts",
-        "rateCardId": "rc-guangzhou-1",
-        "rateVersion": "V2026.10.06",
-        "cargo": "Tas & Sepatu Fashion",
-        "volume": 1.5,
-        "unit": "CBM",
-        "partnerCostUnit": 4000000,
-        "partnerCostTotal": 6000000,
-        "sellingPriceUnit": 5000000,
-        "sellingPriceTotal": 7500000,
-        "marginTotal": 1500000,
-        "status": "Approved",
-        "createdAt": "2026-10-05T10:15:00Z",
-        "validUntil": "2026-10-19",
-        "notes": "Customer confirmed payment deposit. Awaiting supplier dispatch in Guangzhou."
+        "category": "Laut Tas & Sepatu",
+        "volumeCbm": 2.5,
+        "weightKg": 0,
+        "rateCardId": "rc-gz-rts-1",
+        "rateVersion": "V2026.10.07",
+        "bestPartner": "RTS",
+        "bestPartnerColor": "red",
+        "unitPrice": 5000000,
+        "totalEstimate": 12500000,
+        "status": "Accepted",
+        "createdAt": "2026-10-06T10:30:00Z",
+        "validUntil": "2026-10-20"
       },
       {
         "id": "JBRK-Q-000102",
-        "customerName": "Jessica Tan",
-        "customerPhone": "081187654321",
-        "customerCompany": "K-Beauty Glow Store",
-        "routeKey": "korea",
-        "originDisplay": "Seoul, South Korea",
-        "destinationDisplay": "Surabaya, Indonesia",
-        "partnerId": "partner-blessindo",
-        "rateCardId": "rc-korea-4",
-        "rateVersion": "V2026.10.06",
-        "cargo": "Skincare Sheet Mask & Serum",
-        "volume": 0.8,
-        "unit": "CBM",
-        "partnerCostUnit": 10000000,
-        "partnerCostTotal": 8000000,
-        "sellingPriceUnit": 12000000,
-        "sellingPriceTotal": 9600000,
-        "marginTotal": 1600000,
+        "customerName": "CV Prima Kosmetika",
+        "customerContact": "081987654321",
+        "routeKey": "guangzhou",
+        "category": "Laut Kosmetik / Makanan / Cairan / Bubuk",
+        "volumeCbm": 1.2,
+        "weightKg": 0,
+        "rateCardId": "rc-gz-bless-4",
+        "rateVersion": "V2026.10.07",
+        "bestPartner": "Blessindo",
+        "bestPartnerColor": "blue",
+        "unitPrice": 9250000,
+        "totalEstimate": 11100000,
         "status": "Sent",
-        "createdAt": "2026-10-06T14:40:00Z",
-        "validUntil": "2026-10-20",
-        "notes": "Quotation sent via WhatsApp. Follow-up scheduled tomorrow."
-      },
-      {
-        "id": "JBRK-Q-000103",
-        "customerName": "Hendra Wijaya",
-        "customerPhone": "081377889900",
-        "customerCompany": "PT Mega Elektronik",
-        "routeKey": "taiwan",
-        "originDisplay": "Taipei, Taiwan",
-        "destinationDisplay": "Tangerang, Indonesia",
-        "partnerId": "partner-blessindo",
-        "rateCardId": "rc-taiwan-1",
-        "rateVersion": "V2026.10.06",
-        "cargo": "Komponen IC & Adaptor",
-        "volume": 35,
-        "unit": "KG",
-        "partnerCostUnit": 190000,
-        "partnerCostTotal": 6650000,
-        "sellingPriceUnit": 210000,
-        "sellingPriceTotal": 7350000,
-        "marginTotal": 700000,
-        "status": "Draft",
-        "createdAt": "2026-10-07T08:20:00Z",
-        "validUntil": "2026-10-21",
-        "notes": "Awaiting final gross weight confirmation from supplier in Taipei."
+        "createdAt": "2026-10-07T08:15:00Z",
+        "validUntil": "2026-10-21"
       }
     ],
     "activities": [
       {
         "id": "act-1",
-        "text": "RTS updated China → Indonesia sea tariff (V2026.10.06)",
-        "time": "6 Oct 2026 11:00",
-        "type": "rate"
+        "time": "Baru saja",
+        "type": "system",
+        "text": "Koreksi data resmi Blessindo (Multi-Route) & RTS (GZ/Yiwu) berhasil dimuat."
       },
       {
         "id": "act-2",
-        "text": "Quotation JBRK-Q-000102 sent to K-Beauty Glow Store",
-        "time": "6 Oct 2026 14:40",
-        "type": "quote"
+        "time": "10 menit lalu",
+        "type": "partner",
+        "text": "PT. Blessindo Cargo diset sebagai provider multi-origin."
       },
       {
         "id": "act-3",
-        "text": "Quotation JBRK-Q-000101 approved by CV Sinar Mandiri",
-        "time": "5 Oct 2026 16:30",
-        "type": "quote"
-      },
-      {
-        "id": "act-4",
-        "text": "Blessindo verified Special Cargo route for Taiwan",
-        "time": "5 Oct 2026 09:30",
-        "type": "partner"
-      },
-      {
-        "id": "act-5",
-        "text": "System calibrated Rate Engine formula with configurable risk buffer",
-        "time": "4 Oct 2026 18:00",
-        "type": "system"
+        "time": "1 jam lalu",
+        "type": "rate",
+        "text": "Rate comparison engine memilih harga termurah dengan indikator warna (Merah RTS / Biru Blessindo)."
       }
-    ],
-    "lastUpdated": "2026-10-07T07:17:07.138Z"
+    ]
   }
 }
