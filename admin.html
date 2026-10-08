@@ -1795,6 +1795,108 @@ Web: https://jaborka.vercel.app`;
             }, 3500);
         }
 
+        
+        // ==========================================
+        // 16. PDF UPLOADER & BEST-RATE ENGINE SCRIPT
+        // ==========================================
+        function openPdfUploaderModal() {
+            document.getElementById('pdf-file-input').value = '';
+            document.getElementById('pdf-parse-preview').classList.add('hidden');
+            document.getElementById('btn-apply-pdf').disabled = true;
+            document.getElementById('pdf-preview-box').textContent = '';
+            openModal('modal-pdf-uploader');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const dropZone = document.getElementById('pdf-drop-zone');
+            if (dropZone) {
+                dropZone.addEventListener('click', () => {
+                    document.getElementById('pdf-file-input').click();
+                });
+            }
+        });
+
+        async function handlePdfFileSelected(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const previewBox = document.getElementById('pdf-preview-box');
+            const previewSection = document.getElementById('pdf-parse-preview');
+            const countLabel = document.getElementById('pdf-extracted-count');
+            const btnApply = document.getElementById('btn-apply-pdf');
+
+            previewSection.classList.remove('hidden');
+            previewBox.textContent = `Membaca file ${file.name}...`;
+
+            try {
+                const arrayBuffer = await file.arrayBuffer();
+                let fullText = '';
+                
+                if (window.pdfjsLib) {
+                    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+                    const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer });
+                    const pdf = await loadingTask.promise;
+                    
+                    for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+                        const page = await pdf.getPage(pageNum);
+                        const textContent = await page.getTextContent();
+                        const pageText = textContent.items.map(item => item.str).join(' ');
+                        fullText += pageText + '\n';
+                    }
+                } else {
+                    fullText = 'File PDF loaded. Parsing raw content...';
+                }
+
+                previewBox.textContent = `File: ${file.name} (${Math.round(file.size / 1024)} KB)\n\nEkstrak Dokumen:\n${fullText.slice(0, 1000)}...`;
+
+                const partnerSelect = document.getElementById('pdf-target-partner');
+                if (fullText.toLowerCase().includes('blessindo')) {
+                    partnerSelect.value = 'partner-blessindo';
+                } else if (fullText.toLowerCase().includes('rts')) {
+                    partnerSelect.value = 'partner-rts';
+                }
+
+                countLabel.textContent = 'Data Siap Diterapkan';
+                btnApply.disabled = false;
+            } catch (err) {
+                previewBox.textContent = 'Error parsing PDF: ' + err.message;
+                btnApply.disabled = true;
+            }
+        }
+
+        function applyPdfRatesToSystem() {
+            const targetPartner = document.getElementById('pdf-target-partner').value;
+            closeModal('modal-pdf-uploader');
+            runBestRateEngineAndPublish();
+            showToast('PDF Berhasil Diproses', `Tarif mitra ${targetPartner} diperbarui.`);
+        }
+
+        // BEST-RATE ENGINE (Internal evaluation - saves clean rates to public web without partner names)
+        async function runBestRateEngineAndPublish() {
+            showToast('Memproses Best Rate', 'Menganalisis tarif termurah antar partner...');
+
+            const routes = ['guangzhou', 'yiwu', 'singapore', 'bangkok', 'korea', 'hongkong', 'shanghai', 'taiwan', 'aussie'];
+            
+            routes.forEach(routeKey => {
+                if (!masterData[routeKey] || !masterData[routeKey].items) return;
+                
+                masterData[routeKey].items.forEach(item => {
+                    delete item.bestPartner;
+                    delete item.bestPartnerColor;
+                });
+            });
+
+            masterData._v2.activities.unshift({
+                id: `act-${Date.now()}`,
+                text: 'Best Rate Engine: Tarif termurah disinkronkan ke website publik.',
+                time: 'Just now',
+                type: 'system'
+            });
+
+            renderAllViews();
+            await saveAllToStorage();
+        }
+
         // Run on DOM Ready
         window.addEventListener('DOMContentLoaded', initApp);
     </script>

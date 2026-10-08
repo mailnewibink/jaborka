@@ -1381,22 +1381,6 @@
             data.items.forEach(item => {
                 const itemPrice = item.publishPrice || item.price || '-';
                 const waText = encodeURIComponent(`Halo Yudda (JABORKA), saya ingin cek kuota dan estimasi rute ${data.title} untuk kategori: ${item.name}.`);
-                
-                // Partner indicator badge (Red = RTS, Blue = Blessindo)
-                let partnerBadge = '';
-                if (item.bestPartner) {
-                    const isRed = item.bestPartnerColor === 'red' || item.bestPartner.toUpperCase().includes('RTS');
-                    const badgeClass = isRed 
-                        ? 'bg-rose-500/10 text-rose-600 border-rose-200' 
-                        : 'bg-sky-500/10 text-sky-600 border-sky-200';
-                    const dotClass = isRed ? 'bg-rose-500' : 'bg-sky-500';
-                    partnerBadge = `
-                        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold border ${badgeClass}">
-                            <span class="w-1.5 h-1.5 rounded-full ${dotClass}"></span>
-                            ${item.bestPartner} Rate
-                        </span>
-                    `;
-                }
 
                 listHTML += `
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between p-4 sm:p-5 rounded-2xl hover:bg-slate-50/80 transition-colors border border-slate-100 gap-3">
@@ -1405,10 +1389,7 @@
                                 <i class="fa-solid fa-box"></i>
                             </div>
                             <div>
-                                <div class="flex items-center gap-2 flex-wrap">
-                                    <h4 class="font-bold text-slate-800 text-sm sm:text-base leading-snug">${item.name}</h4>
-                                    ${partnerBadge}
-                                </div>
+                                <h4 class="font-bold text-slate-800 text-sm sm:text-base leading-snug">${item.name}</h4>
                                 <span class="text-xs text-slate-400 font-medium">Min. Pengiriman: ${item.min}</span>
                             </div>
                         </div>
