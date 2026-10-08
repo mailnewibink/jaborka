@@ -555,146 +555,191 @@
                         </p>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
                         <!-- CHINA -->
-                        <div class="bg-white/85 backdrop-blur-sm p-7 rounded-3xl border border-white/80 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-md transition-all flex flex-col justify-between md:col-span-2 xl:col-span-2 border-l-4 border-l-brand-orange">
-                            <div>
-                                <div class="flex items-center justify-between mb-4">
-                                    <span data-i18n="net_hub_mfg" class="text-xs font-bold uppercase tracking-widest text-brand-orange">Manufacturing Hub</span>
-                                    <span data-i18n="net_sea_air" class="text-xs bg-orange-50 text-brand-orange px-2.5 py-1 rounded-full font-bold border border-orange-200">Sea & Air</span>
-                                </div>
-                                <h3 class="text-2xl font-black text-brand-navy mb-1 flex items-center gap-2">
-                                    <span>CHINA</span>
-                                    <span class="text-sm font-semibold text-slate-400">→ Indonesia</span>
-                                </h3>
-                                <p data-i18n="net_china_tag" class="text-xs font-semibold text-slate-500 mb-6">Manufacturing · Wholesale · Machinery</p>
-                                
-                                <div class="bg-slate-50 rounded-2xl p-4 border border-slate-100 mb-4">
-                                    <p data-i18n="net_china_hubs" class="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">China Origin Hubs:</p>
-                                    <div class="flex flex-wrap gap-2 text-xs font-bold text-brand-navy">
-                                        <span class="bg-white px-3 py-1.5 rounded-xl border border-slate-200 shadow-xs flex items-center gap-1.5">
-                                            <i class="fa-solid fa-location-dot text-brand-orange text-[10px]"></i> Guangzhou
-                                        </span>
-                                        <span class="bg-white px-3 py-1.5 rounded-xl border border-slate-200 shadow-xs flex items-center gap-1.5">
-                                            <i class="fa-solid fa-location-dot text-brand-orange text-[10px]"></i> Yiwu
-                                        </span>
-                                        <span class="bg-white px-3 py-1.5 rounded-xl border border-slate-200 shadow-xs flex items-center gap-1.5">
-                                            <i class="fa-solid fa-location-dot text-brand-orange text-[10px]"></i> Shanghai
-                                        </span>
+                        <div class="bg-white rounded-[26px] p-6 sm:p-7 border border-slate-100 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-lg transition-all duration-300 relative overflow-hidden flex flex-col justify-between md:col-span-2 lg:col-span-2 min-h-[310px] group">
+                            <!-- Orange left accent bar -->
+                            <div class="absolute left-0 top-3.5 bottom-3.5 w-1.5 bg-[#f95700] rounded-r-md z-20 pointer-events-none"></div>
+
+                            <!-- Silk Flag Image in bottom right -->
+                            <img src="flag-clean-china.png" alt="" class="absolute right-0 bottom-0 pointer-events-none select-none z-0 object-contain object-bottom-right max-h-[92%] max-w-[55%] transition-transform duration-500 group-hover:scale-105" />
+
+                            <!-- Content -->
+                            <div class="relative z-10 flex flex-col justify-between h-full">
+                                <div>
+                                    <div class="flex items-center justify-between mb-4">
+                                        <span data-i18n="net_hub_mfg" class="text-xs font-bold uppercase tracking-wider text-[#f95700]">Manufacturing Hub</span>
+                                        <span data-i18n="net_sea_air" class="text-xs bg-orange-50 text-[#f95700] px-3 py-1 rounded-full font-semibold border border-orange-200/70">Sea & Air</span>
+                                    </div>
+                                    <h3 class="text-2xl font-black text-brand-navy mb-1 flex items-center gap-2">
+                                        <span>CHINA</span>
+                                        <span class="text-sm font-semibold text-slate-400">→ Indonesia</span>
+                                    </h3>
+                                    <p data-i18n="net_china_tag" class="text-xs font-medium text-slate-500 mb-5">Manufacturing · Wholesale · Machinery</p>
+                                    
+                                    <div class="bg-slate-50/90 rounded-2xl p-3.5 sm:p-4 border border-slate-100/90 mb-5 max-w-sm">
+                                        <p data-i18n="net_china_hubs" class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-2">China Origin Hubs:</p>
+                                        <div class="flex flex-wrap gap-2 text-xs font-bold text-brand-navy">
+                                            <span class="bg-white px-3 py-1.5 rounded-xl border border-slate-200/80 shadow-xs flex items-center gap-1.5 text-xs font-bold text-slate-800">
+                                                <i class="fa-solid fa-location-dot text-[#f95700] text-[10px]"></i> Guangzhou
+                                            </span>
+                                            <span class="bg-white px-3 py-1.5 rounded-xl border border-slate-200/80 shadow-xs flex items-center gap-1.5 text-xs font-bold text-slate-800">
+                                                <i class="fa-solid fa-location-dot text-[#f95700] text-[10px]"></i> Yiwu
+                                            </span>
+                                            <span class="bg-white px-3 py-1.5 rounded-xl border border-slate-200/80 shadow-xs flex items-center gap-1.5 text-xs font-bold text-slate-800">
+                                                <i class="fa-solid fa-location-dot text-[#f95700] text-[10px]"></i> Shanghai
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
+                                <a href="#tarif" onclick="switchTab('guangzhou')" class="text-xs font-bold text-[#f95700] hover:text-orange-700 inline-flex items-center gap-1.5 pt-1">
+                                    <span data-i18n="net_view_china">View China Routes</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </a>
                             </div>
-                            <a href="#tarif" onclick="switchTab('guangzhou')" class="text-xs font-bold text-brand-orange hover:text-orange-700 inline-flex items-center gap-1.5 mt-2">
-                                <span data-i18n="net_view_china">View China Routes</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                            </a>
                         </div>
 
                         <!-- SOUTH KOREA -->
-                        <div class="bg-white/85 backdrop-blur-sm p-7 rounded-3xl border border-white/80 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-md transition-all flex flex-col justify-between">
-                            <div>
-                                <div class="flex items-center justify-between mb-4">
-                                    <span data-i18n="net_east_asia" class="text-xs font-bold uppercase tracking-widest text-slate-400">East Asia</span>
-                                    <span data-i18n="net_sea_air" class="text-xs bg-slate-100 text-slate-700 px-2.5 py-1 rounded-full font-bold">Sea & Air</span>
+                        <div class="bg-white rounded-[26px] p-6 sm:p-7 border border-slate-100 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-lg transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[310px] group">
+                            <!-- Silk Flag Image in bottom right -->
+                            <img src="flag-clean-korea.png" alt="" class="absolute right-0 bottom-0 pointer-events-none select-none z-0 object-contain object-bottom-right max-h-[82%] max-w-[62%] transition-transform duration-500 group-hover:scale-105" />
+
+                            <!-- Content -->
+                            <div class="relative z-10 flex flex-col justify-between h-full">
+                                <div>
+                                    <div class="flex items-center justify-between mb-4">
+                                        <span data-i18n="net_east_asia" class="text-xs font-bold uppercase tracking-wider text-slate-400">East Asia</span>
+                                        <span data-i18n="net_sea_air" class="text-xs bg-slate-100 text-slate-600 px-3 py-1 rounded-full font-semibold">Sea & Air</span>
+                                    </div>
+                                    <h3 data-i18n="net_name_korea" class="text-xl font-black text-brand-navy mb-1">SOUTH KOREA</h3>
+                                    <p data-i18n="net_korea_tag" class="text-xs font-medium text-slate-500 mb-3">Beauty · Cosmetics · Fashion</p>
+                                    <p data-i18n="net_korea_desc" class="text-xs text-slate-500 leading-relaxed max-w-[210px] mb-6">
+                                        Direct air courier and consolidated sea routes for K-beauty, skincare, and apparel.
+                                    </p>
                                 </div>
-                                <h3 data-i18n="net_name_korea" class="text-xl font-black text-brand-navy mb-1">SOUTH KOREA</h3>
-                                <p data-i18n="net_korea_tag" class="text-xs font-semibold text-slate-500 mb-4">Beauty · Cosmetics · Fashion</p>
-                                <p data-i18n="net_korea_desc" class="text-xs text-slate-600 leading-relaxed mb-6">
-                                    Direct air courier and consolidated sea routes for K-beauty, skincare, and apparel.
-                                </p>
+                                <a href="#tarif" onclick="switchTab('korea')" class="text-xs font-bold text-brand-navy hover:text-[#f95700] inline-flex items-center gap-1.5 pt-1">
+                                    <span data-i18n="net_view_korea">View Korea Routes</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </a>
                             </div>
-                            <a href="#tarif" onclick="switchTab('korea')" class="text-xs font-bold text-brand-navy hover:text-brand-orange inline-flex items-center gap-1.5">
-                                <span data-i18n="net_view_korea">View Korea Routes</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                            </a>
                         </div>
 
                         <!-- TAIWAN -->
-                        <div class="bg-white/85 backdrop-blur-sm p-7 rounded-3xl border border-white/80 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-md transition-all flex flex-col justify-between">
-                            <div>
-                                <div class="flex items-center justify-between mb-4">
-                                    <span data-i18n="net_east_asia" class="text-xs font-bold uppercase tracking-widest text-slate-400">East Asia</span>
-                                    <span data-i18n="net_sea_air" class="text-xs bg-slate-100 text-slate-700 px-2.5 py-1 rounded-full font-bold">Sea & Air</span>
+                        <div class="bg-white rounded-[26px] p-6 sm:p-7 border border-slate-100 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-lg transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[310px] group">
+                            <!-- Silk Flag Image in bottom right -->
+                            <img src="flag-clean-taiwan.png" alt="" class="absolute right-0 bottom-0 pointer-events-none select-none z-0 object-contain object-bottom-right max-h-[82%] max-w-[62%] transition-transform duration-500 group-hover:scale-105" />
+
+                            <!-- Content -->
+                            <div class="relative z-10 flex flex-col justify-between h-full">
+                                <div>
+                                    <div class="flex items-center justify-between mb-4">
+                                        <span data-i18n="net_east_asia" class="text-xs font-bold uppercase tracking-wider text-slate-400">East Asia</span>
+                                        <span data-i18n="net_sea_air" class="text-xs bg-slate-100 text-slate-600 px-3 py-1 rounded-full font-semibold">Sea & Air</span>
+                                    </div>
+                                    <h3 class="text-xl font-black text-brand-navy mb-1">TAIWAN</h3>
+                                    <p data-i18n="net_taiwan_tag" class="text-xs font-medium text-slate-500 mb-3">Electronics · Components · Specialty Goods</p>
+                                    <p data-i18n="net_taiwan_desc" class="text-xs text-slate-500 leading-relaxed max-w-[210px] mb-6">
+                                        Precision electronic components, hardware, industrial supplies, and consumer goods.
+                                    </p>
                                 </div>
-                                <h3 class="text-xl font-black text-brand-navy mb-1">TAIWAN</h3>
-                                <p data-i18n="net_taiwan_tag" class="text-xs font-semibold text-slate-500 mb-4">Electronics · Components · Specialty Goods</p>
-                                <p data-i18n="net_taiwan_desc" class="text-xs text-slate-600 leading-relaxed mb-6">
-                                    Precision electronic components, hardware, industrial supplies, and consumer goods.
-                                </p>
+                                <a href="#tarif" onclick="switchTab('taiwan')" class="text-xs font-bold text-brand-navy hover:text-[#f95700] inline-flex items-center gap-1.5 pt-1">
+                                    <span data-i18n="net_view_taiwan">View Taiwan Routes</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </a>
                             </div>
-                            <a href="#tarif" onclick="switchTab('taiwan')" class="text-xs font-bold text-brand-navy hover:text-brand-orange inline-flex items-center gap-1.5">
-                                <span data-i18n="net_view_taiwan">View Taiwan Routes</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                            </a>
                         </div>
 
                         <!-- THAILAND -->
-                        <div class="bg-white/85 backdrop-blur-sm p-7 rounded-3xl border border-white/80 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-md transition-all flex flex-col justify-between">
-                            <div>
-                                <div class="flex items-center justify-between mb-4">
-                                    <span data-i18n="net_se_asia" class="text-xs font-bold uppercase tracking-widest text-slate-400">Southeast Asia</span>
-                                    <span data-i18n="net_sea_air" class="text-xs bg-slate-100 text-slate-700 px-2.5 py-1 rounded-full font-bold">Sea & Air</span>
+                        <div class="bg-white rounded-[26px] p-6 sm:p-7 border border-slate-100 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-lg transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[310px] group">
+                            <!-- Silk Flag Image in bottom right -->
+                            <img src="flag-clean-thailand.png" alt="" class="absolute right-0 bottom-0 pointer-events-none select-none z-0 object-contain object-bottom-right max-h-[82%] max-w-[62%] transition-transform duration-500 group-hover:scale-105" />
+
+                            <!-- Content -->
+                            <div class="relative z-10 flex flex-col justify-between h-full">
+                                <div>
+                                    <div class="flex items-center justify-between mb-4">
+                                        <span data-i18n="net_se_asia" class="text-xs font-bold uppercase tracking-wider text-slate-400">Southeast Asia</span>
+                                        <span data-i18n="net_sea_air" class="text-xs bg-slate-100 text-slate-600 px-3 py-1 rounded-full font-semibold">Sea & Air</span>
+                                    </div>
+                                    <h3 class="text-xl font-black text-brand-navy mb-1">THAILAND</h3>
+                                    <p data-i18n="net_thai_tag" class="text-xs font-medium text-slate-500 mb-3">Retail · Lifestyle · Consumer Goods</p>
+                                    <p data-i18n="net_thai_desc" class="text-xs text-slate-500 leading-relaxed max-w-[210px] mb-6">
+                                        Bangkok wholesale hubs, fashion accessories, automotive spare parts, and packaged snacks.
+                                    </p>
                                 </div>
-                                <h3 class="text-xl font-black text-brand-navy mb-1">THAILAND</h3>
-                                <p data-i18n="net_thai_tag" class="text-xs font-semibold text-slate-500 mb-4">Retail · Lifestyle · Consumer Goods</p>
-                                <p data-i18n="net_thai_desc" class="text-xs text-slate-600 leading-relaxed mb-6">
-                                    Bangkok wholesale hubs, fashion accessories, automotive spare parts, and packaged snacks.
-                                </p>
+                                <a href="#tarif" onclick="switchTab('bangkok')" class="text-xs font-bold text-brand-navy hover:text-[#f95700] inline-flex items-center gap-1.5 pt-1">
+                                    <span data-i18n="net_view_thai">View Thailand Routes</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </a>
                             </div>
-                            <a href="#tarif" onclick="switchTab('bangkok')" class="text-xs font-bold text-brand-navy hover:text-brand-orange inline-flex items-center gap-1.5">
-                                <span data-i18n="net_view_thai">View Thailand Routes</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                            </a>
                         </div>
 
                         <!-- SINGAPORE -->
-                        <div class="bg-white/85 backdrop-blur-sm p-7 rounded-3xl border border-white/80 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-md transition-all flex flex-col justify-between">
-                            <div>
-                                <div class="flex items-center justify-between mb-4">
-                                    <span data-i18n="net_transit" class="text-xs font-bold uppercase tracking-widest text-slate-400">Regional Transit</span>
-                                    <span data-i18n="net_sea_air" class="text-xs bg-slate-100 text-slate-700 px-2.5 py-1 rounded-full font-bold">Sea & Air</span>
+                        <div class="bg-white rounded-[26px] p-6 sm:p-7 border border-slate-100 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-lg transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[310px] group">
+                            <!-- Silk Flag Image in bottom right -->
+                            <img src="flag-clean-singapore.png" alt="" class="absolute right-0 bottom-0 pointer-events-none select-none z-0 object-contain object-bottom-right max-h-[82%] max-w-[62%] transition-transform duration-500 group-hover:scale-105" />
+
+                            <!-- Content -->
+                            <div class="relative z-10 flex flex-col justify-between h-full">
+                                <div>
+                                    <div class="flex items-center justify-between mb-4">
+                                        <span data-i18n="net_transit" class="text-xs font-bold uppercase tracking-wider text-slate-400">Regional Transit</span>
+                                        <span data-i18n="net_sea_air" class="text-xs bg-slate-100 text-slate-600 px-3 py-1 rounded-full font-semibold">Sea & Air</span>
+                                    </div>
+                                    <h3 class="text-xl font-black text-brand-navy mb-1">SINGAPORE</h3>
+                                    <p data-i18n="net_sg_tag" class="text-xs font-medium text-slate-500 mb-3">Trading · Distribution · Regional Supply</p>
+                                    <p data-i18n="net_sg_desc" class="text-xs text-slate-500 leading-relaxed max-w-[210px] mb-6">
+                                        Fast express transit for regional spare parts, electronic accessories, and urgent shipments.
+                                    </p>
                                 </div>
-                                <h3 class="text-xl font-black text-brand-navy mb-1">SINGAPORE</h3>
-                                <p data-i18n="net_sg_tag" class="text-xs font-semibold text-slate-500 mb-4">Trading · Distribution · Regional Supply</p>
-                                <p data-i18n="net_sg_desc" class="text-xs text-slate-600 leading-relaxed mb-6">
-                                    Fast express transit for regional spare parts, electronic accessories, and urgent shipments.
-                                </p>
+                                <a href="#tarif" onclick="switchTab('singapore')" class="text-xs font-bold text-brand-navy hover:text-[#f95700] inline-flex items-center gap-1.5 pt-1">
+                                    <span data-i18n="net_view_sg">View Singapore Routes</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </a>
                             </div>
-                            <a href="#tarif" onclick="switchTab('singapore')" class="text-xs font-bold text-brand-navy hover:text-brand-orange inline-flex items-center gap-1.5">
-                                <span data-i18n="net_view_sg">View Singapore Routes</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                            </a>
                         </div>
 
                         <!-- HONG KONG -->
-                        <div class="bg-white/85 backdrop-blur-sm p-7 rounded-3xl border border-white/80 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-md transition-all flex flex-col justify-between">
-                            <div>
-                                <div class="flex items-center justify-between mb-4">
-                                    <span data-i18n="net_gateway" class="text-xs font-bold uppercase tracking-widest text-slate-400">Global Gateway</span>
-                                    <span data-i18n="net_sea_air" class="text-xs bg-slate-100 text-slate-700 px-2.5 py-1 rounded-full font-bold">Sea & Air</span>
+                        <div class="bg-white rounded-[26px] p-6 sm:p-7 border border-slate-100 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-lg transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[310px] group">
+                            <!-- Silk Flag Image in bottom right -->
+                            <img src="flag-clean-hongkong.png" alt="" class="absolute right-0 bottom-0 pointer-events-none select-none z-0 object-contain object-bottom-right max-h-[82%] max-w-[62%] transition-transform duration-500 group-hover:scale-105" />
+
+                            <!-- Content -->
+                            <div class="relative z-10 flex flex-col justify-between h-full">
+                                <div>
+                                    <div class="flex items-center justify-between mb-4">
+                                        <span data-i18n="net_gateway" class="text-xs font-bold uppercase tracking-wider text-slate-400">Global Gateway</span>
+                                        <span data-i18n="net_sea_air" class="text-xs bg-slate-100 text-slate-600 px-3 py-1 rounded-full font-semibold">Sea & Air</span>
+                                    </div>
+                                    <h3 class="text-xl font-black text-brand-navy mb-1">HONG KONG</h3>
+                                    <p data-i18n="net_hk_tag" class="text-xs font-medium text-slate-500 mb-3">Trading · Electronics · Global Supply</p>
+                                    <p data-i18n="net_hk_desc" class="text-xs text-slate-500 leading-relaxed max-w-[210px] mb-6">
+                                        International re-export gateway for gadgets, luxury goods, and electronics.
+                                    </p>
                                 </div>
-                                <h3 class="text-xl font-black text-brand-navy mb-1">HONG KONG</h3>
-                                <p data-i18n="net_hk_tag" class="text-xs font-semibold text-slate-500 mb-4">Trading · Electronics · Global Supply</p>
-                                <p data-i18n="net_hk_desc" class="text-xs text-slate-600 leading-relaxed mb-6">
-                                    International re-export gateway for gadgets, luxury goods, and electronics.
-                                </p>
+                                <a href="#tarif" onclick="switchTab('hongkong')" class="text-xs font-bold text-brand-navy hover:text-[#f95700] inline-flex items-center gap-1.5 pt-1">
+                                    <span data-i18n="net_view_hk">View Hong Kong Routes</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </a>
                             </div>
-                            <a href="#tarif" onclick="switchTab('hongkong')" class="text-xs font-bold text-brand-navy hover:text-brand-orange inline-flex items-center gap-1.5">
-                                <span data-i18n="net_view_hk">View Hong Kong Routes</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                            </a>
                         </div>
 
                         <!-- AUSTRALIA -->
-                        <div class="bg-white/85 backdrop-blur-sm p-7 rounded-3xl border border-white/80 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-md transition-all flex flex-col justify-between">
-                            <div>
-                                <div class="flex items-center justify-between mb-4">
-                                    <span data-i18n="net_oceania" class="text-xs font-bold uppercase tracking-widest text-slate-400">Oceania</span>
-                                    <span data-i18n="net_sea_air" class="text-xs bg-slate-100 text-slate-700 px-2.5 py-1 rounded-full font-bold">Sea & Air</span>
+                        <div class="bg-white rounded-[26px] p-6 sm:p-7 border border-slate-100 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-lg transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[310px] group">
+                            <!-- Silk Flag Image in bottom right -->
+                            <img src="flag-clean-australia.png" alt="" class="absolute right-0 bottom-0 pointer-events-none select-none z-0 object-contain object-bottom-right max-h-[82%] max-w-[62%] transition-transform duration-500 group-hover:scale-105" />
+
+                            <!-- Content -->
+                            <div class="relative z-10 flex flex-col justify-between h-full">
+                                <div>
+                                    <div class="flex items-center justify-between mb-4">
+                                        <span data-i18n="net_oceania" class="text-xs font-bold uppercase tracking-wider text-slate-400">Oceania</span>
+                                        <span data-i18n="net_sea_air" class="text-xs bg-slate-100 text-slate-600 px-3 py-1 rounded-full font-semibold">Sea & Air</span>
+                                    </div>
+                                    <h3 class="text-xl font-black text-brand-navy mb-1">AUSTRALIA</h3>
+                                    <p data-i18n="net_au_tag" class="text-xs font-medium text-slate-500 mb-3">Regional Supply · Specialty Goods · Trading</p>
+                                    <p data-i18n="net_au_desc" class="text-xs text-slate-500 leading-relaxed max-w-[210px] mb-6">
+                                        Health supplements, lifestyle products, honey, specialty foods, and natural goods.
+                                    </p>
                                 </div>
-                                <h3 class="text-xl font-black text-brand-navy mb-1">AUSTRALIA</h3>
-                                <p data-i18n="net_au_tag" class="text-xs font-semibold text-slate-500 mb-4">Regional Supply · Specialty Goods · Trading</p>
-                                <p data-i18n="net_au_desc" class="text-xs text-slate-600 leading-relaxed mb-6">
-                                    Health supplements, lifestyle products, honey, specialty foods, and natural goods.
-                                </p>
+                                <a href="#tarif" onclick="switchTab('aussie')" class="text-xs font-bold text-brand-navy hover:text-[#f95700] inline-flex items-center gap-1.5 pt-1">
+                                    <span data-i18n="net_view_au">View Australia Routes</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </a>
                             </div>
-                            <a href="#tarif" onclick="switchTab('aussie')" class="text-xs font-bold text-brand-navy hover:text-brand-orange inline-flex items-center gap-1.5">
-                                <span data-i18n="net_view_au">View Australia Routes</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                            </a>
                         </div>
                     </div>
                 </div>
