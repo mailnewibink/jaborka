@@ -205,10 +205,10 @@
                         <div id="kpi-approved-quotes" class="text-3xl font-black text-emerald-400">1</div>
                         <div class="text-[11px] text-slate-400 mt-1">Active Deals</div>
                     </div>
-                    <div class="bg-slate-900 p-5 rounded-2xl border border-rose-900/40 bg-rose-950/10">
-                        <div class="text-xs font-bold text-rose-300 uppercase tracking-wider mb-2">Network Gaps</div>
-                        <div id="kpi-gaps" class="text-3xl font-black text-rose-400">4</div>
-                        <div class="text-[11px] text-rose-400/80 font-semibold mt-1">Origins need partner</div>
+                    <div id="kpi-gaps-card" class="bg-slate-900 p-5 rounded-2xl border border-emerald-900/40 bg-emerald-950/10">
+                        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Network Gaps</div>
+                        <div id="kpi-gaps" class="text-3xl font-black text-emerald-400">0</div>
+                        <div id="kpi-gaps-subtitle" class="text-[11px] text-emerald-400/80 font-semibold mt-1">100% Corridors Covered</div>
                     </div>
                 </div>
 
@@ -546,26 +546,9 @@
                     </div>
                 </div>
 
-                <!-- Network Gaps Card -->
-                <div class="p-8 rounded-3xl bg-gradient-to-r from-rose-950/20 via-slate-900 to-slate-900 border border-rose-900/40 space-y-4">
-                    <div class="flex items-center gap-2.5">
-                        <span class="w-3 h-3 rounded-full bg-rose-500 animate-ping"></span>
-                        <h3 class="text-lg font-bold text-rose-300">Network Gap Alert: Origins Without Active Direct Partners</h3>
-                    </div>
-                    <p class="text-xs text-slate-400 max-w-2xl leading-relaxed">
-                        Koridor berikut (Thailand, Singapore, Australia) belum memiliki forwarder partner langsung yang terikat kontrak all-in. Saat ini rute dialihkan melalui konsolidasi sekunder. Tambahkan partner baru untuk mengaktifkan rute ini secara optimal.
-                    </p>
-                    <div class="flex flex-wrap gap-3 pt-2">
-                        <span class="px-4 py-2 rounded-xl bg-slate-800 text-rose-300 text-xs font-bold border border-rose-900/50 flex items-center gap-2">
-                            <i class="fa-solid fa-triangle-exclamation"></i> Thailand (Bangkok)
-                        </span>
-                        <span class="px-4 py-2 rounded-xl bg-slate-800 text-rose-300 text-xs font-bold border border-rose-900/50 flex items-center gap-2">
-                            <i class="fa-solid fa-triangle-exclamation"></i> Singapore Hub
-                        </span>
-                        <span class="px-4 py-2 rounded-xl bg-slate-800 text-rose-300 text-xs font-bold border border-rose-900/50 flex items-center gap-2">
-                            <i class="fa-solid fa-triangle-exclamation"></i> Australia (Sydney/Melbourne)
-                        </span>
-                    </div>
+                <!-- Dynamic Network Coverage & Gaps Status Container -->
+                <div id="network-gaps-card-container">
+                    <!-- Populated dynamically via renderNetworkMatrix() -->
                 </div>
             </section>
 
@@ -950,22 +933,22 @@
                     name: "Blessindo Cargo Express",
                     status: "Active",
                     contact: "+62 812 8899 7711 (Anton - Ops Jakarta)",
-                    notes: "Direct lines for Taiwan electronic components and Korea skincare / cosmetics cargo.",
-                    origins: ["China", "Guangzhou", "South Korea", "Taiwan"],
+                    notes: "Direct lines for China, Singapore, Bangkok, Korea, Hong Kong, Taiwan, Australia (Sea & Air Freight).",
+                    origins: ["Guangzhou", "Yiwu", "Shanghai", "Singapore", "Bangkok", "Korea", "Hongkong", "Taiwan", "Aussie"],
                     services: ["LCL", "Door-to-Door", "Special Cargo", "Sea Freight", "Air Freight"],
-                    updatedAt: "2026-10-05T14:20:00Z"
+                    updatedAt: "2026-10-06T14:20:00Z"
                 }
             ],
             routes: [
                 { id: "route-gz", origin: "China", originCity: "Guangzhou", destination: "Indonesia", status: "Active", partnerIds: ["partner-rts", "partner-blessindo"] },
-                { id: "route-yw", origin: "China", originCity: "Yiwu", destination: "Indonesia", status: "Active", partnerIds: ["partner-rts"] },
-                { id: "route-sh", origin: "China", originCity: "Shanghai", destination: "Indonesia", status: "Active", partnerIds: ["partner-rts"] },
-                { id: "route-sg", origin: "Singapore", originCity: "Singapore", destination: "Indonesia", status: "Active", partnerIds: [] },
-                { id: "route-bkk", origin: "Thailand", originCity: "Bangkok", destination: "Indonesia", status: "Active", partnerIds: [] },
-                { id: "route-kr", origin: "South Korea", originCity: "Seoul/Incheon", destination: "Indonesia", status: "Active", partnerIds: ["partner-rts", "partner-blessindo"] },
-                { id: "route-hk", origin: "Hong Kong", originCity: "Hong Kong", destination: "Indonesia", status: "Active", partnerIds: ["partner-rts"] },
+                { id: "route-yw", origin: "China", originCity: "Yiwu", destination: "Indonesia", status: "Active", partnerIds: ["partner-rts", "partner-blessindo"] },
+                { id: "route-sh", origin: "China", originCity: "Shanghai", destination: "Indonesia", status: "Active", partnerIds: ["partner-blessindo"] },
+                { id: "route-sg", origin: "Singapore", originCity: "Singapore", destination: "Indonesia", status: "Active", partnerIds: ["partner-blessindo"] },
+                { id: "route-bkk", origin: "Thailand", originCity: "Bangkok", destination: "Indonesia", status: "Active", partnerIds: ["partner-blessindo"] },
+                { id: "route-kr", origin: "South Korea", originCity: "Seoul/Incheon", destination: "Indonesia", status: "Active", partnerIds: ["partner-blessindo"] },
+                { id: "route-hk", origin: "Hong Kong", originCity: "Hong Kong", destination: "Indonesia", status: "Active", partnerIds: ["partner-blessindo"] },
                 { id: "route-tw", origin: "Taiwan", originCity: "Taipei", destination: "Indonesia", status: "Active", partnerIds: ["partner-blessindo"] },
-                { id: "route-au", origin: "Australia", originCity: "Sydney/Melbourne", destination: "Indonesia", status: "Active", partnerIds: [] }
+                { id: "route-au", origin: "Australia", originCity: "Sydney/Melbourne", destination: "Indonesia", status: "Active", partnerIds: ["partner-blessindo"] }
             ],
             rateCards: [],
             rateHistory: [],
@@ -1000,6 +983,13 @@
 
             // Refresh UI Views
             renderAllViews();
+
+            // Check URL query param for active view
+            const urlParams = new URLSearchParams(window.location.search);
+            const viewParam = urlParams.get('view');
+            if (viewParam && ['dashboard', 'partners', 'routes', 'ratecards', 'history', 'quotations', 'network'].includes(viewParam)) {
+                switchView(viewParam);
+            }
         }
 
         function renderAllViews() {
@@ -1071,7 +1061,27 @@
 
             // Network Gaps
             const gaps = (v2.routes || []).filter(r => !r.partnerIds || r.partnerIds.length === 0).length;
-            document.getElementById('kpi-gaps').textContent = gaps;
+            const kpiGapsEl = document.getElementById('kpi-gaps');
+            const kpiGapsCard = document.getElementById('kpi-gaps-card');
+            const kpiGapsSub = document.getElementById('kpi-gaps-subtitle');
+            if (kpiGapsEl) kpiGapsEl.textContent = gaps;
+            if (kpiGapsCard) {
+                if (gaps === 0) {
+                    kpiGapsCard.className = 'bg-slate-900 p-5 rounded-2xl border border-emerald-900/40 bg-emerald-950/10';
+                    if (kpiGapsEl) kpiGapsEl.className = 'text-3xl font-black text-emerald-400';
+                    if (kpiGapsSub) {
+                        kpiGapsSub.className = 'text-[11px] text-emerald-400/80 font-semibold mt-1';
+                        kpiGapsSub.textContent = '100% Corridors Covered';
+                    }
+                } else {
+                    kpiGapsCard.className = 'bg-slate-900 p-5 rounded-2xl border border-rose-900/40 bg-rose-950/10';
+                    if (kpiGapsEl) kpiGapsEl.className = 'text-3xl font-black text-rose-400';
+                    if (kpiGapsSub) {
+                        kpiGapsSub.className = 'text-[11px] text-rose-400/80 font-semibold mt-1';
+                        kpiGapsSub.textContent = 'Origins need partner';
+                    }
+                }
+            }
         }
 
         function renderActivities() {
@@ -1326,6 +1336,70 @@
                     </tr>
                 `;
             }).join('');
+
+            // Dynamic Network Gaps Container
+            const gapCardContainer = document.getElementById('network-gaps-card-container');
+            if (gapCardContainer) {
+                const gaps = routes.filter(r => !r.partnerIds || r.partnerIds.length === 0);
+                if (gaps.length === 0) {
+                    gapCardContainer.innerHTML = `
+                        <div class="p-8 rounded-3xl bg-gradient-to-r from-emerald-950/30 via-slate-900 to-slate-900 border border-emerald-800/40 space-y-4">
+                            <div class="flex items-center justify-between flex-wrap gap-4">
+                                <div class="flex items-center gap-3">
+                                    <span class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center border border-emerald-500/30 text-sm font-bold">
+                                        <i class="fa-solid fa-shield-check"></i>
+                                    </span>
+                                    <div>
+                                        <h3 class="text-base sm:text-lg font-bold text-emerald-300">100% Network Coverage: Semua Koridor Aktif Ter-cover</h3>
+                                        <p class="text-xs text-slate-400 mt-0.5">
+                                            Seluruh rute origin Asia-Pasifik (9 koridor) telah terhubung dengan direct forwarder partner resmi (PT. Blessindo Cargo & RTS Global Logistics).
+                                        </p>
+                                    </div>
+                                </div>
+                                <span class="px-3.5 py-1.5 rounded-full bg-emerald-500/10 text-emerald-300 text-xs font-bold border border-emerald-500/30 flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span> 0 Network Gaps
+                                </span>
+                            </div>
+                            <div class="flex flex-wrap gap-2.5 pt-1">
+                                <span class="px-3.5 py-1.5 rounded-xl bg-slate-800 text-slate-300 text-xs font-medium border border-slate-700/60 flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-emerald-400"></i> Singapore Hub: <strong class="text-white">PT. Blessindo Cargo</strong>
+                                </span>
+                                <span class="px-3.5 py-1.5 rounded-xl bg-slate-800 text-slate-300 text-xs font-medium border border-slate-700/60 flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-emerald-400"></i> Thailand (Bangkok): <strong class="text-white">PT. Blessindo Cargo</strong>
+                                </span>
+                                <span class="px-3.5 py-1.5 rounded-xl bg-slate-800 text-slate-300 text-xs font-medium border border-slate-700/60 flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-emerald-400"></i> Australia (Sydney/Melbourne): <strong class="text-white">PT. Blessindo Cargo</strong>
+                                </span>
+                                <span class="px-3.5 py-1.5 rounded-xl bg-slate-800 text-slate-300 text-xs font-medium border border-slate-700/60 flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-emerald-400"></i> Korea, HK, Taiwan, Shanghai: <strong class="text-white">PT. Blessindo Cargo</strong>
+                                </span>
+                                <span class="px-3.5 py-1.5 rounded-xl bg-slate-800 text-slate-300 text-xs font-medium border border-slate-700/60 flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-emerald-400"></i> Guangzhou & Yiwu: <strong class="text-white">Blessindo & RTS</strong>
+                                </span>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    gapCardContainer.innerHTML = `
+                        <div class="p-8 rounded-3xl bg-gradient-to-r from-rose-950/20 via-slate-900 to-slate-900 border border-rose-900/40 space-y-4">
+                            <div class="flex items-center gap-2.5">
+                                <span class="w-3 h-3 rounded-full bg-rose-500 animate-ping"></span>
+                                <h3 class="text-lg font-bold text-rose-300">Network Gap Alert: Koridor Tanpa Partner Aktif</h3>
+                            </div>
+                            <p class="text-xs text-slate-400 max-w-2xl leading-relaxed">
+                                Koridor berikut belum memiliki forwarder partner langsung yang terikat kontrak rate card aktif. Tambahkan partner untuk mengaktifkan rute ini secara optimal.
+                            </p>
+                            <div class="flex flex-wrap gap-3 pt-2">
+                                ${gaps.map(g => `
+                                    <span class="px-4 py-2 rounded-xl bg-slate-800 text-rose-300 text-xs font-bold border border-rose-900/50 flex items-center gap-2">
+                                        <i class="fa-solid fa-triangle-exclamation"></i> ${g.origin} (${g.originCity})
+                                    </span>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                }
+            }
         }
 
         // 10. RATE ENGINE CALCULATION LOGIC
