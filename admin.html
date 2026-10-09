@@ -279,41 +279,130 @@
 
 
             <!-- ========================================== -->
-            <!-- 2. PARTNERS VIEW                           -->
+            <!-- 2. PARTNERS VIEW (PARTNER DIRECTORY)       -->
             <!-- ========================================== -->
             <section id="view-section-partners" class="space-y-6 hidden">
-                <div class="flex items-center justify-between">
+                <!-- Top Header & Filter Controls (Exact Match of Reference Screenshot) -->
+                <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4">
                     <div>
-                        <h2 class="text-2xl font-black text-white">Operational Partners</h2>
-                        <p class="text-xs text-slate-400 mt-1">Manage JABORKA's operational partner network (RTS, Blessindo, and regional forwarders).</p>
+                        <h2 class="text-2xl font-black text-white">Rate Cards & Rate Engine</h2>
+                        <p class="text-xs text-slate-400 mt-1">Master operational pricing: Partner Cost + Risk Buffer + JABORKA Margin = Customer Selling Price.</p>
                     </div>
-                    <div class="flex items-center gap-3">
-                        <button onclick="openPdfUploaderModal()" class="px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold rounded-xl transition-all flex items-center gap-2 border border-slate-700 shadow-sm">
-                            <i class="fa-solid fa-file-pdf text-rose-400"></i>
-                            <span>Upload PDF Price List</span>
+                    <div class="flex items-center flex-wrap gap-2 shrink-0">
+                        <select id="filter-partner-dir-partner" onchange="renderPartnerDirectoryRates()" class="bg-slate-800 border border-slate-700 text-xs font-bold text-white rounded-xl px-3 py-2.5 focus:outline-none focus:ring-1 focus:ring-brand-orange">
+                            <option value="ALL">All Partners</option>
+                            <option value="partner-rts">RTS Global Logistics</option>
+                            <option value="partner-blessindo">Blessindo Cargo</option>
+                        </select>
+                        <select id="filter-partner-dir-route" onchange="renderPartnerDirectoryRates()" class="bg-slate-800 border border-slate-700 text-xs font-bold text-white rounded-xl px-3 py-2.5 focus:outline-none focus:ring-1 focus:ring-brand-orange">
+                            <option value="ALL">All Routes</option>
+                            <option value="guangzhou">Guangzhou, China</option>
+                            <option value="yiwu">Yiwu, China</option>
+                            <option value="shanghai">Shanghai, China</option>
+                            <option value="korea">South Korea</option>
+                            <option value="taiwan">Taiwan</option>
+                            <option value="bangkok">Bangkok, Thailand</option>
+                            <option value="singapore">Singapore</option>
+                            <option value="hongkong">Hong Kong</option>
+                            <option value="aussie">Australia</option>
+                        </select>
+                        <button onclick="runBestRateEngineAndPublish()" class="px-3.5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-xl transition-all flex items-center gap-1.5 shadow-sm whitespace-nowrap shrink-0">
+                            <i class="fa-solid fa-bolt"></i>
+                            <span>Pick Best Rates & Publish</span>
                         </button>
-                        <button onclick="openAddPartnerModal()" class="px-4 py-2.5 bg-brand-orange hover:bg-orange-600 text-white text-xs font-bold rounded-xl transition-all flex items-center gap-2 shadow-sm">
-                        <i class="fa-solid fa-plus"></i>
-                        <span>Add New Partner</span>
-                    </button>
+                        <button onclick="openRateCardModal()" class="px-3.5 py-2.5 bg-brand-orange hover:bg-orange-600 text-white text-xs font-bold rounded-xl transition-all flex items-center gap-1.5 shadow-sm whitespace-nowrap shrink-0">
+                            <i class="fa-solid fa-plus"></i>
+                            <span>New Rate Card</span>
+                        </button>
+                    </div>
                 </div>
 
-                <div class="bg-slate-900 rounded-3xl border border-slate-800 overflow-hidden">
+                <!-- Rate Engine Formula Ribbon (Exact Match of Reference Screenshot) -->
+                <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 flex flex-wrap items-center justify-between gap-4 text-xs font-semibold">
+                    <div class="flex items-center gap-2 text-slate-300 flex-wrap">
+                        <span class="w-2.5 h-2.5 rounded-full bg-brand-orange"></span>
+                        <span class="font-bold text-white">Rate Engine Formula:</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800 text-amber-300">Partner Cost</span>
+                        <span>+</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800 text-sky-300">Risk Buffer</span>
+                        <span>+</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800 text-emerald-300">JABORKA Margin</span>
+                        <span>+</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800 text-purple-300">Other Cost</span>
+                        <span>=</span>
+                        <span class="px-2 py-0.5 rounded bg-brand-orange/20 text-brand-orange font-bold">Selling Price</span>
+                    </div>
+                    <div class="text-[11px] text-slate-500">
+                        *Customer-facing public site only sees Selling Price.
+                    </div>
+                </div>
+
+                <!-- View Sub-tabs: Rate Cards (Default) vs Partner Directory Profiles -->
+                <div class="flex items-center justify-between border-b border-slate-800 pb-3 flex-wrap gap-3">
+                    <div class="flex items-center gap-2">
+                        <button onclick="togglePartnerDirView('rates')" id="tab-pdir-rates" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-800 text-white border border-slate-700 flex items-center gap-2 transition-all">
+                            <i class="fa-solid fa-credit-card text-brand-orange"></i>
+                            <span>Direct Partner Rates (<span id="pdir-rates-count">42</span>)</span>
+                        </button>
+                        <button onclick="togglePartnerDirView('profiles')" id="tab-pdir-profiles" class="px-4 py-2 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-slate-800/60 border border-transparent flex items-center gap-2 transition-all">
+                            <i class="fa-solid fa-building text-sky-400"></i>
+                            <span>Forwarder Profiles (<span id="pdir-profiles-count">2</span>)</span>
+                        </button>
+                    </div>
+                    <div class="flex items-center gap-2.5">
+                        <button onclick="openAddPartnerModal()" class="px-3.5 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-semibold rounded-xl transition-all border border-slate-700/80 flex items-center gap-1.5 shadow-xs">
+                            <i class="fa-solid fa-handshake text-brand-orange"></i>
+                            <span>New Partner</span>
+                        </button>
+                        <button onclick="openPdfUploaderModal()" class="px-3.5 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-semibold rounded-xl transition-all border border-slate-700/80 flex items-center gap-1.5 shadow-xs">
+                            <i class="fa-solid fa-file-pdf text-rose-400"></i>
+                            <span>Upload PDF</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Sub-view 1: Direct Partner Rates Table (100% MATCH OF REFERENCE SCREENSHOT) -->
+                <div id="pdir-rates-container" class="bg-slate-900 rounded-3xl border border-slate-800 overflow-hidden">
                     <div class="overflow-x-auto">
                         <table class="w-full text-left text-sm text-slate-300">
                             <thead class="bg-slate-800/60 text-xs font-bold uppercase text-slate-400 border-b border-slate-800">
                                 <tr>
                                     <th class="py-4 px-6">Partner</th>
-                                    <th class="py-4 px-3 text-center">Status Engine</th>
+                                    <th class="py-4 px-3 text-center">Engine Selection</th>
+                                    <th class="py-4 px-4">Route</th>
+                                    <th class="py-4 px-6">Category / Cargo</th>
+                                    <th class="py-4 px-3 text-center">Unit</th>
+                                    <th class="py-4 px-4 text-right text-amber-400">Partner Cost</th>
+                                    <th class="py-4 px-4 text-right text-emerald-400">Margin</th>
+                                    <th class="py-4 px-5 text-right font-black text-white">JABORKA Price</th>
+                                    <th class="py-4 px-3 text-center">Version</th>
+                                    <th class="py-4 px-6 text-right">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-partner-dir-rates-body" class="divide-y divide-slate-800/80">
+                                <!-- Dynamic rate card rows matching the screenshot -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Sub-view 2: Forwarder Directory Profiles Table -->
+                <div id="pdir-profiles-container" class="bg-slate-900 rounded-3xl border border-slate-800 overflow-hidden hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm text-slate-300">
+                            <thead class="bg-slate-800/60 text-xs font-bold uppercase text-slate-400 border-b border-slate-800">
+                                <tr>
+                                    <th class="py-4 px-6">Partner</th>
+                                    <th class="py-4 px-3 text-center">Engine Status</th>
                                     <th class="py-4 px-4">Status</th>
                                     <th class="py-4 px-6">Coverage Origins</th>
-                                    <th class="py-4 px-4 text-center">Active Rates</th>
-                                    <th class="py-4 px-4">Contact</th>
+                                    <th class="py-4 px-4 text-center text-amber-400 font-bold">Active Rates</th>
+                                    <th class="py-4 px-4">Contact / PIC</th>
                                     <th class="py-4 px-6 text-right">Actions</th>
                                 </tr>
                             </thead>
                             <tbody id="table-partners-body" class="divide-y divide-slate-800/80">
-                                <!-- Dynamic rows -->
+                                <!-- Dynamic partner rows -->
                             </tbody>
                         </table>
                     </div>
@@ -996,6 +1085,7 @@
             updateDashboardKPIs();
             renderActivities();
             renderPartners();
+            renderPartnerDirectoryRates();
             renderRoutes();
             renderRateCards();
             renderRateHistory();
@@ -1102,32 +1192,143 @@
             `).join('');
         }
 
-        // 4. PARTNERS RENDERER
+        // 4. PARTNER DIRECTORY (RATES & PROFILES)
+        let activePartnerDirView = 'rates';
+
+        function togglePartnerDirView(mode) {
+            activePartnerDirView = mode;
+            const ratesContainer = document.getElementById('pdir-rates-container');
+            const profilesContainer = document.getElementById('pdir-profiles-container');
+            const tabRates = document.getElementById('tab-pdir-rates');
+            const tabProfiles = document.getElementById('tab-pdir-profiles');
+
+            if (mode === 'rates') {
+                if (ratesContainer) ratesContainer.classList.remove('hidden');
+                if (profilesContainer) profilesContainer.classList.add('hidden');
+                if (tabRates) {
+                    tabRates.className = "px-4 py-2 rounded-xl text-xs font-bold bg-slate-800 text-white border border-slate-700 flex items-center gap-2 transition-all";
+                }
+                if (tabProfiles) {
+                    tabProfiles.className = "px-4 py-2 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-slate-800/60 border border-transparent flex items-center gap-2 transition-all";
+                }
+                renderPartnerDirectoryRates();
+            } else {
+                if (ratesContainer) ratesContainer.classList.add('hidden');
+                if (profilesContainer) profilesContainer.classList.remove('hidden');
+                if (tabRates) {
+                    tabRates.className = "px-4 py-2 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-slate-800/60 border border-transparent flex items-center gap-2 transition-all";
+                }
+                if (tabProfiles) {
+                    tabProfiles.className = "px-4 py-2 rounded-xl text-xs font-bold bg-slate-800 text-white border border-slate-700 flex items-center gap-2 transition-all";
+                }
+                renderPartners();
+            }
+        }
+
+        function renderPartnerDirectoryRates() {
+            const tbody = document.getElementById('table-partner-dir-rates-body');
+            if (!tbody) return;
+
+            const partnerFilterEl = document.getElementById('filter-partner-dir-partner');
+            const routeFilterEl = document.getElementById('filter-partner-dir-route');
+            const partnerFilter = partnerFilterEl ? partnerFilterEl.value : 'ALL';
+            const routeFilter = routeFilterEl ? routeFilterEl.value : 'ALL';
+
+            let cards = masterData._v2?.rateCards || [];
+            const totalCount = cards.length;
+            const countEl = document.getElementById('pdir-rates-count');
+            if (countEl) countEl.textContent = totalCount;
+
+            if (partnerFilter !== 'ALL') {
+                cards = cards.filter(c => c.partnerId === partnerFilter);
+            }
+            if (routeFilter !== 'ALL') {
+                cards = cards.filter(c => c.routeKey.toLowerCase().includes(routeFilter.toLowerCase()));
+            }
+
+            tbody.innerHTML = cards.map(c => {
+                const partner = (masterData._v2?.partners || []).find(p => p.id === c.partnerId);
+                const partnerName = partner ? partner.name : (c.partnerId === 'partner-rts' ? 'RTS Global Logistics' : 'Blessindo Cargo Express');
+                const isRTS = c.partnerId === 'partner-rts';
+
+                // Engine selection tag (Red for RTS, Blue for Blessindo matching the screenshot)
+                const engineTag = isRTS
+                    ? '<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold bg-rose-500/20 text-rose-400 border border-rose-500/30 whitespace-nowrap"><span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span>RTS (China Hub)</span>'
+                    : '<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold bg-sky-500/20 text-sky-400 border border-sky-500/30 whitespace-nowrap"><span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span>Blessindo (Official)</span>';
+
+                return `
+                    <tr class="hover:bg-slate-800/40 transition-colors border-b border-slate-800/60">
+                        <td class="py-3.5 px-6 whitespace-nowrap">
+                            <span class="font-bold text-white text-xs block leading-tight">${partnerName}</span>
+                            <span class="text-[10px] text-slate-500 font-semibold uppercase tracking-wider">${c.service || 'SEA FREIGHT'}</span>
+                        </td>
+                        <td class="py-3.5 px-3 text-center whitespace-nowrap">${engineTag}</td>
+                        <td class="py-3.5 px-4 text-xs font-semibold text-slate-300 capitalize whitespace-nowrap">${c.routeKey} → ID</td>
+                        <td class="py-3.5 px-6">
+                            <div class="font-bold text-slate-100 text-xs sm:text-sm leading-tight">${c.category}</div>
+                            <div class="text-[10px] text-slate-500 mt-0.5">Min: ${c.minOrder || '0.1 M³'}</div>
+                        </td>
+                        <td class="py-3.5 px-3 text-center font-bold text-xs text-slate-400 whitespace-nowrap">${c.unit}</td>
+                        <td class="py-3.5 px-4 text-right font-mono font-bold text-amber-400 text-xs whitespace-nowrap">${formatIDR(c.partnerCost)}</td>
+                        <td class="py-3.5 px-4 text-right font-mono font-bold text-emerald-400 text-xs whitespace-nowrap">+${formatIDR(c.marginValue)}</td>
+                        <td class="py-3.5 px-5 text-right font-mono font-black text-white text-xs sm:text-sm whitespace-nowrap">${formatIDR(c.sellingPrice)}</td>
+                        <td class="py-3.5 px-3 text-center whitespace-nowrap">
+                            <span class="px-2 py-0.5 rounded bg-rose-950/40 text-[10px] font-mono text-rose-400 border border-rose-900/60">${c.version || 'V2026.10.07'}</span>
+                        </td>
+                        <td class="py-3.5 px-6 text-right whitespace-nowrap">
+                            <button onclick="editRateCard('${c.id}')" class="px-3.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-300 transition-all border border-slate-700/80">Edit</button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function filterPartnerRatesAndSwitch(partnerId) {
+            togglePartnerDirView('rates');
+            const select = document.getElementById('filter-partner-dir-partner');
+            if (select) {
+                select.value = partnerId;
+                renderPartnerDirectoryRates();
+            }
+        }
+
         function renderPartners() {
             const tbody = document.getElementById('table-partners-body');
+            if (!tbody) return;
             const partners = masterData._v2?.partners || [];
+
+            const profCountEl = document.getElementById('pdir-profiles-count');
+            if (profCountEl) profCountEl.textContent = partners.length;
+
             tbody.innerHTML = partners.map(p => {
                 const activeRates = (masterData._v2?.rateCards || []).filter(r => r.partnerId === p.id).length;
+                const isRTS = p.id === 'partner-rts';
+                const engineTag = isRTS
+                    ? '<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold bg-rose-500/20 text-rose-400 border border-rose-500/30 whitespace-nowrap"><span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span>Primary China Hub</span>'
+                    : '<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold bg-sky-500/20 text-sky-400 border border-sky-500/30 whitespace-nowrap"><span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span>Multi-Country Direct</span>';
+
                 return `
                     <tr class="hover:bg-slate-800/30 transition-colors">
-                        <td class="py-4 px-6">
+                        <td class="py-4 px-6 whitespace-nowrap">
                             <div class="font-bold text-white text-sm">${p.name}</div>
                             <div class="text-[11px] font-mono text-brand-orange font-bold">${p.code}</div>
                         </td>
-                        <td class="py-4 px-4">
+                        <td class="py-4 px-3 text-center whitespace-nowrap">${engineTag}</td>
+                        <td class="py-4 px-4 whitespace-nowrap">
                             <span class="px-2.5 py-1 rounded-full text-[10px] font-bold ${p.status === 'Active' ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'bg-slate-800 text-slate-400'}">
                                 ${p.status}
                             </span>
                         </td>
                         <td class="py-4 px-6">
-                            <div class="flex flex-wrap gap-1 max-w-xs">
+                            <div class="flex flex-wrap gap-1 max-w-sm">
                                 ${(p.origins || []).map(o => `<span class="px-2 py-0.5 rounded-md bg-slate-800 text-[10px] text-slate-300 border border-slate-700">${o}</span>`).join('')}
                             </div>
                         </td>
-                        <td class="py-4 px-4 text-center font-bold text-white">${activeRates}</td>
-                        <td class="py-4 px-4 text-xs text-slate-400">${p.contact || '-'}</td>
-                        <td class="py-4 px-6 text-right">
-                            <button onclick="editPartner('${p.id}')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-200">Edit</button>
+                        <td class="py-4 px-4 text-center font-bold text-amber-400 font-mono text-xs whitespace-nowrap">${activeRates} Rates</td>
+                        <td class="py-4 px-4 text-xs text-slate-400 whitespace-nowrap">${p.contact || '-'}</td>
+                        <td class="py-4 px-6 text-right whitespace-nowrap">
+                            <button onclick="filterPartnerRatesAndSwitch('${p.id}')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-bold text-sky-400 border border-slate-700 mr-1.5">View Rates</button>
+                            <button onclick="editPartner('${p.id}')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-200 border border-slate-700">Edit</button>
                         </td>
                     </tr>
                 `;
