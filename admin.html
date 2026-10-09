@@ -1864,12 +1864,12 @@
             currentQuoteForShare = q;
             
             // Clean customer presentation: No RTS/Blessindo, no partner cost, no margin!
-            const text = `*OFFICIAL IMPORT QUOTATION — JABORKA*
+            const text = `*IMPORT QUOTATION — JABORKA*
 No. Referensi: ${q.id}
 Tanggal: ${new Date(q.createdAt).toLocaleDateString('id-ID')}
 Valid Sampai: ${q.validUntil}
 
-Kepada: ${q.customerName} ${q.customerCompany ? `(${q.customerCompany})` : ''}
+Kepada: ${q.customerName}${q.customerCompany ? ` (${q.customerCompany})` : ''}
 
 *RINCIAN PENGIRIMAN:*
 • Rute: ${q.routeKey.toUpperCase()} → INDONESIA (Door-to-Door)
@@ -1881,9 +1881,10 @@ Kepada: ${q.customerName} ${q.customerCompany ? `(${q.customerCompany})` : ''}
 *${formatIDR(q.sellingPriceTotal)}* (All-In Door to Door)
 
 *Ketentuan Layanan:*
-1. Tarif sudah mencakup ongkos angkut internasional, customs clearance, pajak impor, dan pengantaran ke alamat tujuan.
+1. Tarif masih bersifat estimasi dan tidak mengikat
 2. Estimasi berlaku sesuai jadwal closing gudang asal.
 3. Barang wajib melampirkan Invoice & Packing List sebelum kirim ke gudang.
+4. Harga bisa sewaktu-waktu berubah dan dengan atau tanpa pemberitahuan.
 
 Konsultasi & Konfirmasi Jadwal:
 Customer Care — JABORKA
