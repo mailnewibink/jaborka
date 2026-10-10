@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jaborka - Import Easy | Jasa Impor Borongan Door-to-Door</title>
-    <meta name="description" content="jaborka (jbrk) Door to Door Cargo Service - Import Easy. Solusi impor borongan udara & laut dari China, Singapore, Bangkok, Korea, Taiwan, HK & Australia.">
+    <meta name="description" content="jaborka (jbrk) Door to Door Cargo Service - Import Easy. Solusi impor borongan udara & laut dari China, Singapore, Bangkok, Korea Selatan, Taiwan, HK & Australia.">
     <link rel="icon" type="image/png" href="logo.png">
     
     <!-- Tailwind CSS -->
@@ -209,7 +209,7 @@
                     <span>Yiwu</span> <span class="text-brand-orange text-[9px]">★</span>
                     <span>Singapore</span> <span class="text-brand-orange text-[9px]">★</span>
                     <span>Bangkok</span> <span class="text-brand-orange text-[9px]">★</span>
-                    <span>Korea</span> <span class="text-brand-orange text-[9px]">★</span>
+                    <span data-i18n="ticker_korea">South Korea</span> <span class="text-brand-orange text-[9px]">★</span>
                     <span>Hongkong</span> <span class="text-brand-orange text-[9px]">★</span>
                     <span>Shanghai</span> <span class="text-brand-orange text-[9px]">★</span>
                     <span>Taiwan</span> <span class="text-brand-orange text-[9px]">★</span>
@@ -223,7 +223,7 @@
                         <span>Yiwu</span> <span class="text-brand-orange text-[8px]">★</span>
                         <span>Singapore</span> <span class="text-brand-orange text-[8px]">★</span>
                         <span>Bangkok</span> <span class="text-brand-orange text-[8px]">★</span>
-                        <span>Korea</span> <span class="text-brand-orange text-[8px]">★</span>
+                        <span data-i18n="ticker_korea">South Korea</span> <span class="text-brand-orange text-[8px]">★</span>
                         <span>Hongkong</span> <span class="text-brand-orange text-[8px]">★</span>
                         <span>Shanghai</span> <span class="text-brand-orange text-[8px]">★</span>
                         <span>Taiwan</span> <span class="text-brand-orange text-[8px]">★</span>
@@ -271,7 +271,7 @@
                     </p>
 
                     <p data-i18n="manifesto_p2" class="text-sm sm:text-base text-slate-400 font-normal max-w-2xl mx-auto mb-12 leading-relaxed">
-                        You source goods from suppliers in China, Korea, Taiwan, Thailand, Singapore, Hong Kong, or Australia. JABORKA orchestrates the routing, clearance, and door-to-door import through our unified partner network.
+                        You source goods from suppliers in China, South Korea, Taiwan, Thailand, Singapore, Hong Kong, or Australia. JABORKA orchestrates the routing, clearance, and door-to-door import through our unified partner network.
                     </p>
 
                     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -617,7 +617,7 @@
                                     </p>
                                 </div>
                                 <a href="#tarif" onclick="switchTab('korea')" class="text-xs font-bold text-brand-navy hover:text-[#f95700] inline-flex items-center gap-1.5 pt-1">
-                                    <span data-i18n="net_view_korea">View Korea Routes</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                    <span data-i18n="net_view_korea">View South Korea Routes</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
                                 </a>
                             </div>
                         </div>
@@ -1257,7 +1257,7 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800">
                             <span data-i18n="state_reg1" class="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-2">EAST ASIA</span>
-                            <p class="text-sm font-bold text-white">China · Hong Kong · South Korea · Taiwan</p>
+                            <p class="text-sm font-bold text-white" data-i18n="state_reg1_desc">China · Hong Kong · South Korea · Taiwan</p>
                         </div>
                         <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800">
                             <span data-i18n="state_reg2" class="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-2">SOUTHEAST ASIA</span>
@@ -1306,7 +1306,7 @@
                             <ul class="space-y-2.5 text-xs text-slate-400">
                                 <li><a href="#tarif" onclick="switchTab('guangzhou')" class="hover:text-white transition-colors">China</a></li>
                                 <li><a href="#tarif" onclick="switchTab('hongkong')" class="hover:text-white transition-colors">Hong Kong</a></li>
-                                <li><a href="#tarif" onclick="switchTab('korea')" class="hover:text-white transition-colors">South Korea</a></li>
+                                <li><a href="#tarif" onclick="switchTab('korea')" class="hover:text-white transition-colors" data-i18n="footer_net_korea">South Korea</a></li>
                                 <li><a href="#tarif" onclick="switchTab('taiwan')" class="hover:text-white transition-colors">Taiwan</a></li>
                                 <li><a href="#tarif" onclick="switchTab('singapore')" class="hover:text-white transition-colors">Singapore</a></li>
                                 <li><a href="#tarif" onclick="switchTab('bangkok')" class="hover:text-white transition-colors">Thailand</a></li>
@@ -1374,11 +1374,12 @@
                 hero_metric1_title: "ALL-IN IMPORT",
                 hero_metric1_sub: "Multiple Origins",
                 hero_metric2_sub: "Asia-Pacific Origins",
+                ticker_korea: "South Korea",
 
                 manifesto_pill: "ONE PARTNER. MULTIPLE ORIGINS.",
                 manifesto_h2: "ONE PARTNER.<br class=\"hidden sm:block\"><span class=\"text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500\">MULTIPLE ORIGINS.</span>",
                 manifesto_p1: "One point of contact for your import needs across Asia-Pacific.",
-                manifesto_p2: "You source goods from suppliers in China, Korea, Taiwan, Thailand, Singapore, Hong Kong, or Australia. JABORKA orchestrates the routing, clearance, and door-to-door import through our unified partner network.",
+                manifesto_p2: "You source goods from suppliers in China, South Korea, Taiwan, Thailand, Singapore, Hong Kong, or Australia. JABORKA orchestrates the routing, clearance, and door-to-door import through our unified partner network.",
                 manifesto_btn_calc: "Calculate Import Cost",
                 manifesto_btn_net: "Explore Route Network",
 
@@ -1448,7 +1449,7 @@
                 net_name_korea: "SOUTH KOREA",
                 net_korea_tag: "Beauty · Cosmetics · Fashion",
                 net_korea_desc: "Direct air courier and consolidated sea routes for K-beauty, skincare, and apparel.",
-                net_view_korea: "View Korea Routes",
+                net_view_korea: "View South Korea Routes",
                 net_taiwan_tag: "Electronics · Components · Specialty Goods",
                 net_taiwan_desc: "Precision electronic components, hardware, industrial supplies, and consumer goods.",
                 net_view_taiwan: "View Taiwan Routes",
@@ -1566,6 +1567,7 @@
                 state_h3: "Our Network across Asia-Pacific",
                 state_sub: "Connecting Indonesia to major industrial, trading, and regional supply epicenters.",
                 state_reg1: "EAST ASIA",
+                state_reg1_desc: "China · Hong Kong · South Korea · Taiwan",
                 state_reg2: "SOUTHEAST ASIA",
                 state_reg3: "OCEANIA",
                 state_reg4: "CHINA ORIGINS",
@@ -1574,6 +1576,7 @@
                 footer_desc: "Simplifying import freight from Asia to Indonesia. One unified partner connecting your business to verified origins across Asia-Pacific.",
                 footer_support: "CS JABORKA: Official Support",
                 footer_col_net: "NETWORK",
+                footer_net_korea: "South Korea",
                 footer_col_china: "CHINA ORIGINS",
                 footer_col_srv: "SERVICES",
                 footer_srv1: "Import All-In",
@@ -1599,11 +1602,12 @@
                 hero_metric1_title: "IMPOR ALL-IN",
                 hero_metric1_sub: "Banyak Negara Asal",
                 hero_metric2_sub: "Asal Asia-Pasifik",
+                ticker_korea: "Korea Selatan",
 
                 manifesto_pill: "SATU MITRA. BANYAK NEGARA ASAL.",
                 manifesto_h2: "SATU MITRA.<br class=\"hidden sm:block\"><span class=\"text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500\">BANYAK NEGARA ASAL.</span>",
                 manifesto_p1: "Satu pintu koordinasi untuk seluruh kebutuhan impor Anda di Asia-Pasifik.",
-                manifesto_p2: "Anda mencari barang dari supplier di China, Korea, Taiwan, Thailand, Singapore, Hong Kong, atau Australia. JABORKA mengelola rute, kepabeanan, dan pengiriman door-to-door melalui jaringan mitra terpadu kami.",
+                manifesto_p2: "Anda mencari barang dari supplier di China, Korea Selatan, Taiwan, Thailand, Singapore, Hong Kong, atau Australia. JABORKA mengelola rute, kepabeanan, dan pengiriman door-to-door melalui jaringan mitra terpadu kami.",
                 manifesto_btn_calc: "Simulasi Biaya Impor",
                 manifesto_btn_net: "Jelajahi Jaringan Rute",
 
@@ -1672,8 +1676,8 @@
                 net_east_asia: "Asia Timur",
                 net_name_korea: "KOREA SELATAN",
                 net_korea_tag: "Kecantikan · Kosmetik · Busana",
-                net_korea_desc: "Rute kurir udara ekspres dan konsolidasi laut untuk produk skincare, kosmetik Korea, dan busana.",
-                net_view_korea: "Lihat Rute Korea",
+                net_korea_desc: "Rute kurir udara ekspres dan konsolidasi laut untuk produk skincare, kosmetik Korea Selatan, dan busana.",
+                net_view_korea: "Lihat Rute Korea Selatan",
                 net_taiwan_tag: "Elektronik · Komponen · Produk Khusus",
                 net_taiwan_desc: "Komponen elektronik presisi, perangkat keras, kebutuhan industri, dan barang konsumen.",
                 net_view_taiwan: "Lihat Rute Taiwan",
@@ -1747,7 +1751,7 @@
                 rates_badge: "Tarif Impor Terkurasi",
                 rates_h2: "RUTE IMPOR",
                 rates_sub: "Kartu rute terkurasi dengan tarif indikatif di koridor terverifikasi Asia-Pasifik. Penawaran final diverifikasi per pengiriman.",
-                tab_korea: "Korea",
+                tab_korea: "Korea Selatan",
                 rates_card_badge: "Koridor Terkurasi",
                 rates_card_sub: "Tarif indikatif all-in door-to-door. Berlaku verifikasi sebelum pengiriman.",
                 rates_est_air: "Est. Udara",
@@ -1791,6 +1795,7 @@
                 state_h3: "Jaringan Kami di Asia-Pacific",
                 state_sub: "Menghubungkan Indonesia dengan pusat industri, perdagangan, dan rantai pasok regional utama.",
                 state_reg1: "ASIA TIMUR",
+                state_reg1_desc: "China · Hong Kong · Korea Selatan · Taiwan",
                 state_reg2: "ASIA TENGGARA",
                 state_reg3: "OSEANIA",
                 state_reg4: "GUDANG ASAL CHINA",
@@ -1799,6 +1804,7 @@
                 footer_desc: "Mempermudah pengiriman kargo impor dari Asia ke Indonesia. Satu mitra terpadu yang menghubungkan bisnis Anda ke berbagai titik asal terverifikasi di Asia-Pasifik.",
                 footer_support: "CS JABORKA: Layanan Resmi",
                 footer_col_net: "JARINGAN",
+                footer_net_korea: "Korea Selatan",
                 footer_col_china: "ASAL CHINA",
                 footer_col_srv: "LAYANAN",
                 footer_srv1: "Impor All-In",
@@ -2043,6 +2049,9 @@
 
             const container = document.getElementById('pricing-content');
             const t = translations[currentLang];
+            const routeTitle = (country === 'korea')
+                ? (currentLang === 'en' ? 'South Korea → Indonesia' : 'Korea Selatan → Indonesia')
+                : data.title;
             
             let listHTML = '';
             data.items.forEach(item => {
@@ -2055,8 +2064,8 @@
                 const minText = formatMinShipment(item.min, currentLang);
                 
                 const waMessage = currentLang === 'en'
-                    ? `Halo JABORKA, I would like to check quota and rate estimate for ${data.title} under category: ${categoryName}.`
-                    : `Halo JABORKA, saya ingin cek kuota dan estimasi rute ${data.title} untuk kategori: ${categoryName}.`;
+                    ? `Halo JABORKA, I would like to check quota and rate estimate for ${routeTitle} under category: ${categoryName}.`
+                    : `Halo JABORKA, saya ingin cek kuota dan estimasi rute ${routeTitle} untuk kategori: ${categoryName}.`;
                 
                 const waText = encodeURIComponent(waMessage);
 
@@ -2086,7 +2095,7 @@
                 <div class="flex flex-col md:flex-row md:items-center justify-between pb-6 mb-6 border-b border-slate-100 gap-4">
                     <div>
                         <span class="text-xs font-bold uppercase tracking-widest text-brand-orange">${t.rates_card_badge}</span>
-                        <h3 class="text-2xl sm:text-3xl font-black text-brand-navy mt-0.5">${data.title}</h3>
+                        <h3 class="text-2xl sm:text-3xl font-black text-brand-navy mt-0.5">${routeTitle}</h3>
                         <p class="text-xs text-slate-500 mt-1">${t.rates_card_sub}</p>
                     </div>
                     <div class="flex gap-3 shrink-0">
@@ -2301,7 +2310,9 @@
             }
 
             // Format Pesan WhatsApp Lengkap
-            const originTitle = originData?.title || origin.toUpperCase();
+            const originTitle = (origin === 'korea')
+                ? (currentLang === 'en' ? 'South Korea → Indonesia' : 'Korea Selatan → Indonesia')
+                : (originData?.title || origin.toUpperCase());
             let cargoSpecText = '';
             if (calcInputMode === 'dimensi') {
                 cargoSpecText = `• Dimensi: ${p} x ${l} x ${h} cm (${koli} Koli)\n• Volume: ${cbm.toFixed(2)} CBM\n• Berat Total: ${weight} Kg (${Math.round(weightPerKoli)} Kg/Koli)`;
