@@ -1656,7 +1656,7 @@
         "bestPartnerColor": "red",
         "unitPrice": 5000000,
         "totalEstimate": 12500000,
-        "status": "Accepted",
+        "status": "Approved",
         "createdAt": "2026-10-06T10:30:00Z",
         "validUntil": "2026-10-20"
       },
@@ -1677,6 +1677,31 @@
         "status": "Sent",
         "createdAt": "2026-10-07T08:15:00Z",
         "validUntil": "2026-10-21"
+      }
+    ],
+    "invoices": [
+      {
+        "id": "INV-JBRK-2610-001",
+        "quotationId": "JBRK-Q-000101",
+        "customerName": "PT Sumber Makmur Retail",
+        "customerPhone": "081234567890",
+        "customerCompany": "PT Sumber Makmur Retail",
+        "customerAddress": "Rukan Sentra Niaga Blok B No. 12, Jakarta Barat",
+        "routeKey": "guangzhou",
+        "cargo": "Laut Tas & Sepatu",
+        "volume": 2.5,
+        "unit": "CBM",
+        "unitPrice": 5000000,
+        "total": 12500000,
+        "invoiceDate": "2026-10-10",
+        "dueDate": "2026-10-17",
+        "paymentStatus": "Paid",
+        "paymentProof": "",
+        "paymentProofName": "bukti_transfer_bca_12.5jt.jpg",
+        "paidAt": "2026-10-10T14:30:00Z",
+        "remarks": "Pembayaran lunas via transfer BCA PT Jaborka. Jadwal closing kapal ETD 15 Okt, estimasi tiba Jakarta 22 Okt.",
+        "createdAt": "2026-10-10T11:00:00Z",
+        "updatedAt": "2026-10-10T14:30:00Z"
       }
     ],
     "activities": [
