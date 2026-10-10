@@ -902,7 +902,10 @@
                                     </select>
                                 </div>
                                 <div class="space-y-2">
-                                    <label data-i18n="calc_label_mode" class="text-xs font-bold text-slate-300 uppercase tracking-wider">Shipping Mode</label>
+                                    <div class="flex items-center justify-between">
+                                        <label data-i18n="calc_label_mode" class="text-xs font-bold text-slate-300 uppercase tracking-wider">Shipping Mode</label>
+                                        <span id="calc-mode-notice" class="text-[10px] text-amber-300 font-semibold px-2 py-0.5 rounded-md bg-amber-400/10 border border-amber-400/20 hidden"></span>
+                                    </div>
                                     <select id="calc-mode" class="w-full bg-[#122848] border border-blue-700/60 rounded-xl px-4 py-3.5 text-sm font-semibold text-white focus:outline-none focus:ring-2 focus:ring-brand-orange transition-all shadow-inner">
                                         <option class="bg-[#0b1a30] text-white" value="laut" id="calc-opt-sea" selected>Sea Freight (Per CBM)</option>
                                         <option class="bg-[#0b1a30] text-white" value="udara" id="calc-opt-air">Air Freight (Per Kg)</option>
@@ -1988,12 +1991,11 @@
             "aussie": {
                 "title": "Australia → Indonesia",
                 "estUdara": "± 5-7 Hari",
-                "estLaut": "± 4-6 Minggu",
+                "estLaut": "-",
                 "items": [
-                    { "name": "Udara Umum", "price": "Rp 260.000 / Kg", "min": "2 KG" },
-                    { "name": "Laut Umum", "price": "Rp 12.000.000 / m³", "min": "0,1 M³" }
+                    { "name": "Udara", "price": "Rp 430.000 / Kg", "min": "5 KG" }
                 ],
-                "calcData": { "udara": 260000, "laut": 12000000 }
+                "calcData": { "udara": 430000, "laut": 0 }
             }
         };
 
@@ -2131,6 +2133,67 @@
 
         const calcResult = document.getElementById('calc-result');
         const calcWhatsapp = document.getElementById('calc-whatsapp');
+        const calcModeNotice = document.getElementById('calc-mode-notice');
+
+        function updateAvailableModes() {
+            if (!calcOrigin || !calcMode) return;
+            const origin = calcOrigin.value;
+            const originData = pricingDB[origin];
+            const t = translations[currentLang] || translations.id;
+
+            // Cek ketersediaan moda pengiriman:
+            // Australia tidak ada jalur laut (calcData.laut = 0, estLaut = '-')
+            // Yiwu tidak ada jalur udara (calcData.udara = 0, estUdara = '-')
+            const hasSea = origin !== 'aussie' && Boolean(originData?.calcData?.laut > 0) && (originData?.estLaut !== '-');
+            const hasAir = origin !== 'yiwu' && Boolean(originData?.calcData?.udara > 0) && (originData?.estUdara !== '-');
+
+            const prevSelected = calcMode.value;
+            calcMode.innerHTML = '';
+
+            if (hasSea) {
+                const optSea = document.createElement('option');
+                optSea.className = 'bg-[#0b1a30] text-white';
+                optSea.value = 'laut';
+                optSea.id = 'calc-opt-sea';
+                optSea.textContent = t.calc_mode_sea || 'Sea Freight (Per CBM)';
+                calcMode.appendChild(optSea);
+            }
+
+            if (hasAir) {
+                const optAir = document.createElement('option');
+                optAir.className = 'bg-[#0b1a30] text-white';
+                optAir.value = 'udara';
+                optAir.id = 'calc-opt-air';
+                optAir.textContent = t.calc_mode_air || 'Air Freight (Per Kg)';
+                calcMode.appendChild(optAir);
+            }
+
+            // Pertahankan pilihan pengguna jika masih ada, atau otomatis pilih opsi yang tersedia
+            if (prevSelected === 'udara' && hasAir) {
+                calcMode.value = 'udara';
+            } else if (prevSelected === 'laut' && hasSea) {
+                calcMode.value = 'laut';
+            } else if (hasSea) {
+                calcMode.value = 'laut';
+            } else if (hasAir) {
+                calcMode.value = 'udara';
+            }
+
+            // Tampilkan badge notifikasi jika rute hanya memiliki satu moda transportasi
+            if (calcModeNotice) {
+                if (hasAir && !hasSea) {
+                    calcModeNotice.classList.remove('hidden');
+                    calcModeNotice.innerText = currentLang === 'en' ? 'Only Air Freight' : 'Hanya Jalur Udara';
+                } else if (hasSea && !hasAir) {
+                    calcModeNotice.classList.remove('hidden');
+                    calcModeNotice.innerText = currentLang === 'en' ? 'Only Sea Freight' : 'Hanya Jalur Laut';
+                } else {
+                    calcModeNotice.classList.add('hidden');
+                    calcModeNotice.innerText = '';
+                }
+            }
+        }
+        window.updateAvailableModes = updateAvailableModes;
 
         function setCalcInputMode(mode) {
             calcInputMode = mode;
@@ -2259,7 +2322,10 @@
             }
         }
 
-        calcOrigin?.addEventListener('change', updateCalculator);
+        calcOrigin?.addEventListener('change', () => {
+            updateAvailableModes();
+            updateCalculator();
+        });
         calcMode?.addEventListener('change', updateCalculator);
         calcLength?.addEventListener('input', updateCalculator);
         calcWidth?.addEventListener('input', updateCalculator);
@@ -2303,14 +2369,11 @@
                 badgeTextEl.textContent = t.hero_badge;
             }
 
-            // Update Calculator Dropdowns
-            const optSea = document.getElementById('calc-opt-sea');
-            const optAir = document.getElementById('calc-opt-air');
+            // Update Calculator Available Modes & Dropdowns
+            updateAvailableModes();
             const optKorea = document.getElementById('calc-opt-korea');
             const tabKorea = document.getElementById('tab-label-korea');
 
-            if (optSea) optSea.textContent = t.calc_mode_sea;
-            if (optAir) optAir.textContent = t.calc_mode_air;
             if (optKorea) optKorea.textContent = t.calc_opt_korea;
             if (tabKorea) tabKorea.textContent = t.tab_korea;
 
@@ -2398,6 +2461,7 @@
                     if (data && typeof data === 'object' && Object.keys(data).length > 0) {
                         pricingDB = data;
                         switchTab(currentTabKey);
+                        updateAvailableModes();
                         updateCalculator();
                     }
                 })
