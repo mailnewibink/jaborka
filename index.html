@@ -988,12 +988,19 @@
 
                                 <!-- Container B: Mode CBM Langsung -->
                                 <div id="calc-cbm-container" class="bg-[#122848]/60 p-5 rounded-2xl border border-blue-800/60 space-y-4 hidden">
-                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
                                         <div class="space-y-1.5">
                                             <span data-i18n="calc_lbl_cbm" class="text-[11px] font-bold text-slate-300 uppercase">Volume (CBM / M³)</span>
                                             <div class="relative">
                                                 <input type="number" id="calc-direct-cbm" value="1" min="0.01" step="0.01" class="w-full bg-[#0b1a30] border border-blue-700/60 rounded-xl px-4 py-3 text-sm font-semibold text-white focus:outline-none focus:ring-2 focus:ring-brand-orange pr-14">
                                                 <span class="absolute right-4 top-1/2 -translate-y-1/2 text-sm text-blue-300 font-bold">CBM</span>
+                                            </div>
+                                        </div>
+                                        <div class="space-y-1.5">
+                                            <span data-i18n="calc_lbl_qty" class="text-[11px] font-bold text-slate-300 uppercase">Jumlah Koli</span>
+                                            <div class="relative">
+                                                <input type="number" id="calc-direct-koli" value="1" min="1" step="1" class="w-full bg-[#0b1a30] border border-blue-700/60 rounded-xl px-4 py-3 text-sm font-semibold text-white focus:outline-none focus:ring-2 focus:ring-brand-orange pr-14">
+                                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-sm text-blue-300 font-bold">koli</span>
                                             </div>
                                         </div>
                                         <div class="space-y-1.5">
@@ -1006,16 +1013,16 @@
                                     </div>
                                 </div>
 
-                                <!-- Overweight Alert Box (Visible when weight > 600kg in 1 CBM) -->
+                                <!-- Overweight Alert Box (Visible when weight per koli > 600kg) -->
                                 <div id="calc-overweight-alert" class="p-4 rounded-2xl bg-amber-950/40 border border-amber-500/50 space-y-2.5 transition-all hidden">
                                     <div class="flex items-center gap-2.5 text-amber-300 font-bold text-xs sm:text-sm">
                                         <span class="w-6 h-6 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
                                             <i class="fa-solid fa-triangle-exclamation"></i>
                                         </span>
-                                        <span data-i18n="calc_overweight_title">Perhatian: Kelebihan Berat (> 600 Kg / 1 CBM)</span>
+                                        <span data-i18n="calc_overweight_title">Perhatian: Kelebihan Berat (> 600 Kg / Koli)</span>
                                     </div>
                                     <p id="calc-overweight-text" class="text-xs text-amber-200/90 leading-relaxed pl-8">
-                                        Berat kargo Anda melebihi rasio standar 600 Kg per 1 CBM. Muatan berat (heavy cargo) memerlukan penanganan dan penyesuaian tarif khusus, silakan hubungi CS kami.
+                                        Berat barang Anda melebihi batas reguler 600 Kg dalam 1 koli. Muatan berat (heavy piece) memerlukan penanganan dan peralatan khusus, silakan hubungi CS kami.
                                     </p>
                                     <div class="pl-8 pt-1">
                                         <a id="calc-overweight-cs-btn" href="https://wa.me/628816161244?text=Halo%20JABORKA,%20saya%20ingin%20konsultasi%20kargo%20kelebihan%20berat" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-black transition-all shadow-md">
@@ -1497,8 +1504,8 @@
                 calc_lbl_cbm: "Volume (CBM / M³)",
                 calc_formula_hint: "Formula: (L × W × H / 1,000,000) × Boxes",
                 calc_calculated_cbm: "Calculated Volume:",
-                calc_overweight_title: "Notice: Overweight Cargo (> 600 Kg / 1 CBM)",
-                calc_overweight_desc: "Your cargo weight exceeds the standard 600 Kg per 1 CBM threshold. Heavy cargo requires special handling and rate verification, please consult our CS team.",
+                calc_overweight_title: "Notice: Overweight Cargo (> 600 Kg / Piece)",
+                calc_overweight_desc: "The weight per package exceeds 600 Kg. Heavy cargo requires special handling and equipment, please consult our CS team.",
                 calc_overweight_btn: "Consult Overweight Cargo via CS",
                 calc_label_amount: "Quantity / Volume",
                 calc_mode_sea: "Sea Freight (Per CBM)",
@@ -1722,8 +1729,8 @@
                 calc_lbl_cbm: "Volume (CBM / M³)",
                 calc_formula_hint: "Rumus: (P × L × T / 1.000.000) × Koli",
                 calc_calculated_cbm: "Hasil Volume:",
-                calc_overweight_title: "Perhatian: Kelebihan Berat (> 600 Kg / 1 CBM)",
-                calc_overweight_desc: "Berat kargo Anda melebihi rasio standar 600 Kg per 1 CBM. Muatan berat (heavy cargo) memerlukan penanganan dan penyesuaian tarif khusus, silakan hubungi CS kami.",
+                calc_overweight_title: "Perhatian: Kelebihan Berat (> 600 Kg / Koli)",
+                calc_overweight_desc: "Berat barang Anda melebihi batas 600 Kg per koli. Muatan berat (heavy cargo) memerlukan penanganan dan peralatan khusus, silakan hubungi CS kami.",
                 calc_overweight_btn: "Konsultasi Kargo Berat via CS",
                 calc_label_amount: "Jumlah / Kuantitas",
                 calc_mode_sea: "Laut / Sea Freight (Per M³)",
@@ -2110,6 +2117,7 @@
         const calcDimCbmBadge = document.getElementById('calc-dim-cbm-badge');
 
         const calcDirectCbm = document.getElementById('calc-direct-cbm');
+        const calcDirectKoli = document.getElementById('calc-direct-koli');
         const calcDirectWeight = document.getElementById('calc-direct-weight');
 
         const calcDimContainer = document.getElementById('calc-dim-container');
@@ -2172,26 +2180,27 @@
                 }
             } else {
                 cbm = parseFloat(calcDirectCbm?.value) || 0;
+                koli = parseFloat(calcDirectKoli?.value) || 1;
                 weight = parseFloat(calcDirectWeight?.value) || 0;
             }
 
-            // Cek Rasio Kelebihan Berat: Berat / CBM > 600 Kg per 1 CBM
-            const weightRatio = cbm > 0 ? (weight / cbm) : 0;
-            const isOverweight = cbm > 0 && weightRatio > 600;
+            // Cek Kelebihan Berat: Jika berat 1 koli lebih dari 600 Kg
+            const weightPerKoli = koli > 0 ? (weight / koli) : weight;
+            const isOverweight = weightPerKoli > 600;
 
             if (calcOverweightAlert) {
                 if (isOverweight) {
                     calcOverweightAlert.classList.remove('hidden');
-                    const ratioRounded = Math.round(weightRatio);
+                    const wKoliRounded = Math.round(weightPerKoli);
                     if (calcOverweightText) {
                         calcOverweightText.innerHTML = currentLang === 'en'
-                            ? `Your cargo weight (<strong>${weight} Kg</strong> for <strong>${cbm.toFixed(2)} CBM</strong>, averaging <strong>${ratioRounded} Kg/CBM</strong>) exceeds the standard regular limit of 600 Kg per 1 CBM. Heavy cargo requires special handling and adjusted freight rates. Please consult our CS.`
-                            : `Berat kargo Anda (<strong>${weight} Kg</strong> untuk <strong>${cbm.toFixed(2)} CBM</strong>, rata-rata <strong>${ratioRounded} Kg/CBM</strong>) terdeteksi melebihi batas standar reguler 600 Kg per 1 CBM. Muatan berat (heavy cargo) memerlukan penanganan dan penyesuaian tarif khusus, silakan hubungi CS kami.`;
+                            ? `Your cargo weight per package (<strong>${wKoliRounded} Kg / piece</strong> across ${koli} piece(s), total <strong>${weight} Kg</strong>) exceeds the standard regular limit of 600 Kg per piece. Heavy cargo requires special handling and equipment, please consult our CS.`
+                            : `Berat barang Anda (<strong>${wKoliRounded} Kg / koli</strong> dari ${koli} koli, total <strong>${weight} Kg</strong>) terdeteksi melebihi batas reguler 600 Kg per 1 koli. Muatan berat (heavy piece) memerlukan penanganan dan alat khusus, silakan hubungi CS kami.`;
                     }
                     if (calcOverweightCsBtn) {
                         const alertMsg = currentLang === 'en'
-                            ? `Halo JABORKA, I would like to consult overweight cargo from ${origin.toUpperCase()}: ${cbm.toFixed(2)} CBM, Weight: ${weight} Kg (Ratio: ${ratioRounded} Kg/CBM).`
-                            : `Halo JABORKA, saya ingin konsultasi pengiriman kargo kelebihan berat dari ${origin.toUpperCase()}: ${cbm.toFixed(2)} CBM, Berat: ${weight} Kg (Rata-rata: ${ratioRounded} Kg/CBM).`;
+                            ? `Halo JABORKA, I would like to consult overweight cargo from ${origin.toUpperCase()}: ${wKoliRounded} Kg per piece (${koli} piece(s), Total ${weight} Kg, Volume: ${cbm.toFixed(2)} CBM).`
+                            : `Halo JABORKA, saya ingin konsultasi pengiriman kargo berat dari ${origin.toUpperCase()}: ${wKoliRounded} Kg per koli (${koli} koli, Total ${weight} Kg, Volume: ${cbm.toFixed(2)} CBM).`;
                         calcOverweightCsBtn.href = `https://wa.me/628816161244?text=${encodeURIComponent(alertMsg)}`;
                     }
                 } else {
@@ -2232,13 +2241,13 @@
             const originTitle = originData?.title || origin.toUpperCase();
             let cargoSpecText = '';
             if (calcInputMode === 'dimensi') {
-                cargoSpecText = `• Dimensi: ${p} x ${l} x ${h} cm (${koli} Koli)\n• Volume: ${cbm.toFixed(2)} CBM\n• Berat Total: ${weight} Kg`;
+                cargoSpecText = `• Dimensi: ${p} x ${l} x ${h} cm (${koli} Koli)\n• Volume: ${cbm.toFixed(2)} CBM\n• Berat Total: ${weight} Kg (${Math.round(weightPerKoli)} Kg/Koli)`;
             } else {
-                cargoSpecText = `• Volume: ${cbm.toFixed(2)} CBM\n• Berat Total: ${weight} Kg`;
+                cargoSpecText = `• Volume: ${cbm.toFixed(2)} CBM (${koli} Koli)\n• Berat Total: ${weight} Kg (${Math.round(weightPerKoli)} Kg/Koli)`;
             }
 
             if (isOverweight) {
-                cargoSpecText += `\n• Status: Overweight (${Math.round(weightRatio)} Kg/CBM > 600 Kg/CBM)`;
+                cargoSpecText += `\n• Status: Overweight (${Math.round(weightPerKoli)} Kg/Koli > 600 Kg)`;
             }
 
             const waBookingMsg = currentLang === 'en'
@@ -2258,6 +2267,7 @@
         calcKoli?.addEventListener('input', updateCalculator);
         calcWeightDim?.addEventListener('input', updateCalculator);
         calcDirectCbm?.addEventListener('input', updateCalculator);
+        calcDirectKoli?.addEventListener('input', updateCalculator);
         calcDirectWeight?.addEventListener('input', updateCalculator);
 
         // 6. LANGUAGE SWITCHER IMPLEMENTATION
