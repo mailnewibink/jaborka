@@ -884,33 +884,145 @@
                             </svg>
                         </div>
 
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 relative z-10">
-                            <div class="space-y-2">
-                                <label data-i18n="calc_label_origin" class="text-xs font-bold text-slate-300 uppercase tracking-wider">Origin Country / City</label>
-                                <select id="calc-origin" class="w-full bg-[#122848] border border-blue-700/60 rounded-xl px-4 py-3.5 text-sm font-semibold text-white focus:outline-none focus:ring-2 focus:ring-brand-orange transition-all shadow-inner">
-                                    <option class="bg-[#0b1a30] text-white" value="guangzhou" selected>Guangzhou, China</option>
-                                    <option class="bg-[#0b1a30] text-white" value="yiwu">Yiwu, China</option>
-                                    <option class="bg-[#0b1a30] text-white" value="singapore">Singapore</option>
-                                    <option class="bg-[#0b1a30] text-white" value="bangkok">Bangkok, Thailand</option>
-                                    <option class="bg-[#0b1a30] text-white" value="korea" id="calc-opt-korea">South Korea</option>
-                                    <option class="bg-[#0b1a30] text-white" value="hongkong">Hong Kong</option>
-                                    <option class="bg-[#0b1a30] text-white" value="shanghai">Shanghai, China</option>
-                                    <option class="bg-[#0b1a30] text-white" value="taiwan">Taiwan</option>
-                                    <option class="bg-[#0b1a30] text-white" value="aussie">Australia</option>
-                                </select>
+                        <div class="space-y-6 mb-8 relative z-10">
+                            <!-- Top Row: Origin & Shipping Mode -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label data-i18n="calc_label_origin" class="text-xs font-bold text-slate-300 uppercase tracking-wider">Origin Country / City</label>
+                                    <select id="calc-origin" class="w-full bg-[#122848] border border-blue-700/60 rounded-xl px-4 py-3.5 text-sm font-semibold text-white focus:outline-none focus:ring-2 focus:ring-brand-orange transition-all shadow-inner">
+                                        <option class="bg-[#0b1a30] text-white" value="guangzhou" selected>Guangzhou, China</option>
+                                        <option class="bg-[#0b1a30] text-white" value="yiwu">Yiwu, China</option>
+                                        <option class="bg-[#0b1a30] text-white" value="singapore">Singapore</option>
+                                        <option class="bg-[#0b1a30] text-white" value="bangkok">Bangkok, Thailand</option>
+                                        <option class="bg-[#0b1a30] text-white" value="korea" id="calc-opt-korea">South Korea</option>
+                                        <option class="bg-[#0b1a30] text-white" value="hongkong">Hong Kong</option>
+                                        <option class="bg-[#0b1a30] text-white" value="shanghai">Shanghai, China</option>
+                                        <option class="bg-[#0b1a30] text-white" value="taiwan">Taiwan</option>
+                                        <option class="bg-[#0b1a30] text-white" value="aussie">Australia</option>
+                                    </select>
+                                </div>
+                                <div class="space-y-2">
+                                    <label data-i18n="calc_label_mode" class="text-xs font-bold text-slate-300 uppercase tracking-wider">Shipping Mode</label>
+                                    <select id="calc-mode" class="w-full bg-[#122848] border border-blue-700/60 rounded-xl px-4 py-3.5 text-sm font-semibold text-white focus:outline-none focus:ring-2 focus:ring-brand-orange transition-all shadow-inner">
+                                        <option class="bg-[#0b1a30] text-white" value="laut" id="calc-opt-sea" selected>Sea Freight (Per CBM)</option>
+                                        <option class="bg-[#0b1a30] text-white" value="udara" id="calc-opt-air">Air Freight (Per Kg)</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div class="space-y-2">
-                                <label data-i18n="calc_label_mode" class="text-xs font-bold text-slate-300 uppercase tracking-wider">Shipping Mode</label>
-                                <select id="calc-mode" class="w-full bg-[#122848] border border-blue-700/60 rounded-xl px-4 py-3.5 text-sm font-semibold text-white focus:outline-none focus:ring-2 focus:ring-brand-orange transition-all shadow-inner">
-                                    <option class="bg-[#0b1a30] text-white" value="laut" id="calc-opt-sea" selected>Sea Freight (Per CBM)</option>
-                                    <option class="bg-[#0b1a30] text-white" value="udara" id="calc-opt-air">Air Freight (Per Kg)</option>
-                                </select>
-                            </div>
-                            <div class="space-y-2">
-                                <label data-i18n="calc_label_amount" class="text-xs font-bold text-slate-300 uppercase tracking-wider">Quantity / Volume</label>
-                                <div class="relative">
-                                    <input type="number" id="calc-amount" value="1" min="0.1" step="0.1" class="w-full bg-[#122848] border border-blue-700/60 rounded-xl px-4 py-3.5 text-sm font-semibold text-white focus:outline-none focus:ring-2 focus:ring-brand-orange transition-all shadow-inner">
-                                    <span id="calc-unit-label" class="absolute right-4 top-1/2 -translate-y-1/2 text-sm text-blue-300 font-bold">M³</span>
+
+                            <!-- Row 2: Detail Barang (Cargo Details) Container with Interactive Mode Toggle -->
+                            <div class="space-y-4 pt-1">
+                                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                                    <label data-i18n="calc_label_cargo_details" class="text-xs font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2">
+                                        <i class="fa-solid fa-boxes-stacked text-brand-orange"></i>
+                                        <span>Detail Barang</span>
+                                    </label>
+                                    <!-- Toggle Mode: Dimensi vs CBM Langsung -->
+                                    <div class="inline-flex p-1 bg-[#122848] rounded-xl border border-blue-700/60 shrink-0">
+                                        <button type="button" id="btn-mode-dimensi" onclick="setCalcInputMode('dimensi')" class="px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all bg-brand-orange text-white shadow-xs">
+                                            <i class="fa-solid fa-ruler-combined mr-1.5"></i><span data-i18n="calc_tab_dimensions">Baru Tahu Ukuran (Dimensi)</span>
+                                        </button>
+                                        <button type="button" id="btn-mode-cbm" onclick="setCalcInputMode('cbm')" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition-all">
+                                            <i class="fa-solid fa-cube mr-1.5"></i><span data-i18n="calc_tab_direct_cbm">Sudah Tahu CBM</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Container A: Mode Dimensi (Panjang, Lebar, Tinggi, Koli, Berat) -->
+                                <div id="calc-dim-container" class="bg-[#122848]/60 p-5 rounded-2xl border border-blue-800/60 space-y-4">
+                                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5">
+                                        <!-- Panjang -->
+                                        <div class="space-y-1.5">
+                                            <span data-i18n="calc_lbl_length" class="text-[11px] font-bold text-slate-300 uppercase">Panjang (P)</span>
+                                            <div class="relative">
+                                                <input type="number" id="calc-length" value="100" min="1" step="1" class="w-full bg-[#0b1a30] border border-blue-700/60 rounded-xl px-3 py-2.5 text-sm font-semibold text-white focus:outline-none focus:ring-2 focus:ring-brand-orange pr-9">
+                                                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-blue-300 font-bold">cm</span>
+                                            </div>
+                                        </div>
+                                        <!-- Lebar -->
+                                        <div class="space-y-1.5">
+                                            <span data-i18n="calc_lbl_width" class="text-[11px] font-bold text-slate-300 uppercase">Lebar (L)</span>
+                                            <div class="relative">
+                                                <input type="number" id="calc-width" value="100" min="1" step="1" class="w-full bg-[#0b1a30] border border-blue-700/60 rounded-xl px-3 py-2.5 text-sm font-semibold text-white focus:outline-none focus:ring-2 focus:ring-brand-orange pr-9">
+                                                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-blue-300 font-bold">cm</span>
+                                            </div>
+                                        </div>
+                                        <!-- Tinggi -->
+                                        <div class="space-y-1.5">
+                                            <span data-i18n="calc_lbl_height" class="text-[11px] font-bold text-slate-300 uppercase">Tinggi (T)</span>
+                                            <div class="relative">
+                                                <input type="number" id="calc-height" value="100" min="1" step="1" class="w-full bg-[#0b1a30] border border-blue-700/60 rounded-xl px-3 py-2.5 text-sm font-semibold text-white focus:outline-none focus:ring-2 focus:ring-brand-orange pr-9">
+                                                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-blue-300 font-bold">cm</span>
+                                            </div>
+                                        </div>
+                                        <!-- Koli / Pcs -->
+                                        <div class="space-y-1.5">
+                                            <span data-i18n="calc_lbl_qty" class="text-[11px] font-bold text-slate-300 uppercase">Jumlah Koli</span>
+                                            <div class="relative">
+                                                <input type="number" id="calc-koli" value="1" min="1" step="1" class="w-full bg-[#0b1a30] border border-blue-700/60 rounded-xl px-3 py-2.5 text-sm font-semibold text-white focus:outline-none focus:ring-2 focus:ring-brand-orange pr-11">
+                                                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-blue-300 font-bold">koli</span>
+                                            </div>
+                                        </div>
+                                        <!-- Berat Total (Kg) -->
+                                        <div class="space-y-1.5 col-span-2 sm:col-span-1">
+                                            <span data-i18n="calc_lbl_weight" class="text-[11px] font-bold text-slate-300 uppercase">Berat Total</span>
+                                            <div class="relative">
+                                                <input type="number" id="calc-weight-dim" value="150" min="0.1" step="0.5" class="w-full bg-[#0b1a30] border border-blue-700/60 rounded-xl px-3 py-2.5 text-sm font-semibold text-white focus:outline-none focus:ring-2 focus:ring-brand-orange pr-9">
+                                                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-blue-300 font-bold">kg</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Live CBM Calculation Ribbon -->
+                                    <div class="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-blue-800/40 text-xs">
+                                        <div class="text-slate-400 font-mono flex items-center gap-2">
+                                            <i class="fa-solid fa-calculator text-brand-orange"></i>
+                                            <span data-i18n="calc_formula_hint">Rumus: (P × L × T / 1.000.000) × Koli</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 bg-[#0b1a30] px-3.5 py-1.5 rounded-xl border border-blue-700/40">
+                                            <span class="text-slate-400" data-i18n="calc_calculated_cbm">Hasil Volume:</span>
+                                            <span id="calc-dim-cbm-badge" class="font-bold text-brand-orange font-mono text-sm">1.00 CBM</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Container B: Mode CBM Langsung -->
+                                <div id="calc-cbm-container" class="bg-[#122848]/60 p-5 rounded-2xl border border-blue-800/60 space-y-4 hidden">
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        <div class="space-y-1.5">
+                                            <span data-i18n="calc_lbl_cbm" class="text-[11px] font-bold text-slate-300 uppercase">Volume (CBM / M³)</span>
+                                            <div class="relative">
+                                                <input type="number" id="calc-direct-cbm" value="1" min="0.01" step="0.01" class="w-full bg-[#0b1a30] border border-blue-700/60 rounded-xl px-4 py-3 text-sm font-semibold text-white focus:outline-none focus:ring-2 focus:ring-brand-orange pr-14">
+                                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-sm text-blue-300 font-bold">CBM</span>
+                                            </div>
+                                        </div>
+                                        <div class="space-y-1.5">
+                                            <span data-i18n="calc_lbl_weight" class="text-[11px] font-bold text-slate-300 uppercase">Berat Total (Kg)</span>
+                                            <div class="relative">
+                                                <input type="number" id="calc-direct-weight" value="150" min="0.1" step="0.5" class="w-full bg-[#0b1a30] border border-blue-700/60 rounded-xl px-4 py-3 text-sm font-semibold text-white focus:outline-none focus:ring-2 focus:ring-brand-orange pr-12">
+                                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-sm text-blue-300 font-bold">Kg</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Overweight Alert Box (Visible when weight > 600kg in 1 CBM) -->
+                                <div id="calc-overweight-alert" class="p-4 rounded-2xl bg-amber-950/40 border border-amber-500/50 space-y-2.5 transition-all hidden">
+                                    <div class="flex items-center gap-2.5 text-amber-300 font-bold text-xs sm:text-sm">
+                                        <span class="w-6 h-6 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
+                                            <i class="fa-solid fa-triangle-exclamation"></i>
+                                        </span>
+                                        <span data-i18n="calc_overweight_title">Perhatian: Kelebihan Berat (> 600 Kg / 1 CBM)</span>
+                                    </div>
+                                    <p id="calc-overweight-text" class="text-xs text-amber-200/90 leading-relaxed pl-8">
+                                        Berat kargo Anda melebihi rasio standar 600 Kg per 1 CBM. Muatan berat (heavy cargo) memerlukan penanganan dan penyesuaian tarif khusus, silakan hubungi CS kami.
+                                    </p>
+                                    <div class="pl-8 pt-1">
+                                        <a id="calc-overweight-cs-btn" href="https://wa.me/628816161244?text=Halo%20JABORKA,%20saya%20ingin%20konsultasi%20kargo%20kelebihan%20berat" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-black transition-all shadow-md">
+                                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                                            <span data-i18n="calc_overweight_btn">Konsultasi Kargo Berat via CS</span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1374,6 +1486,20 @@
                 calc_sub: "Get an indicative estimate based on your origin, shipment volume and route.",
                 calc_label_origin: "Origin Country / City",
                 calc_label_mode: "Shipping Mode",
+                calc_label_cargo_details: "Cargo Details",
+                calc_tab_dimensions: "Dimensions (L × W × H)",
+                calc_tab_direct_cbm: "Already Know CBM",
+                calc_lbl_length: "Length (L)",
+                calc_lbl_width: "Width (W)",
+                calc_lbl_height: "Height (H)",
+                calc_lbl_qty: "Quantity (Boxes / Pcs)",
+                calc_lbl_weight: "Total Weight",
+                calc_lbl_cbm: "Volume (CBM / M³)",
+                calc_formula_hint: "Formula: (L × W × H / 1,000,000) × Boxes",
+                calc_calculated_cbm: "Calculated Volume:",
+                calc_overweight_title: "Notice: Overweight Cargo (> 600 Kg / 1 CBM)",
+                calc_overweight_desc: "Your cargo weight exceeds the standard 600 Kg per 1 CBM threshold. Heavy cargo requires special handling and rate verification, please consult our CS team.",
+                calc_overweight_btn: "Consult Overweight Cargo via CS",
                 calc_label_amount: "Quantity / Volume",
                 calc_mode_sea: "Sea Freight (Per CBM)",
                 calc_mode_air: "Air Freight (Per Kg)",
@@ -1585,6 +1711,20 @@
                 calc_sub: "Dapatkan estimasi indikatif berdasarkan asal negara, volume pengiriman, dan rute.",
                 calc_label_origin: "Negara / Kota Asal",
                 calc_label_mode: "Jalur Pengiriman",
+                calc_label_cargo_details: "Detail Barang",
+                calc_tab_dimensions: "Baru Tahu Ukuran (Dimensi)",
+                calc_tab_direct_cbm: "Sudah Tahu CBM",
+                calc_lbl_length: "Panjang (P)",
+                calc_lbl_width: "Lebar (L)",
+                calc_lbl_height: "Tinggi (T)",
+                calc_lbl_qty: "Jumlah Koli",
+                calc_lbl_weight: "Total Berat",
+                calc_lbl_cbm: "Volume (CBM / M³)",
+                calc_formula_hint: "Rumus: (P × L × T / 1.000.000) × Koli",
+                calc_calculated_cbm: "Hasil Volume:",
+                calc_overweight_title: "Perhatian: Kelebihan Berat (> 600 Kg / 1 CBM)",
+                calc_overweight_desc: "Berat kargo Anda melebihi rasio standar 600 Kg per 1 CBM. Muatan berat (heavy cargo) memerlukan penanganan dan penyesuaian tarif khusus, silakan hubungi CS kami.",
+                calc_overweight_btn: "Konsultasi Kargo Berat via CS",
                 calc_label_amount: "Jumlah / Kuantitas",
                 calc_mode_sea: "Laut / Sea Freight (Per M³)",
                 calc_mode_air: "Udara / Air Freight (Per Kg)",
@@ -1957,45 +2097,168 @@
             `;
         }
 
-        // 5. CALCULATOR LOGIC
+        // 5. CALCULATOR LOGIC (Dimensions / Direct CBM & Overweight Detection)
+        let calcInputMode = 'dimensi'; // 'dimensi' | 'cbm'
+
         const calcOrigin = document.getElementById('calc-origin');
         const calcMode = document.getElementById('calc-mode');
-        const calcAmount = document.getElementById('calc-amount');
+        const calcLength = document.getElementById('calc-length');
+        const calcWidth = document.getElementById('calc-width');
+        const calcHeight = document.getElementById('calc-height');
+        const calcKoli = document.getElementById('calc-koli');
+        const calcWeightDim = document.getElementById('calc-weight-dim');
+        const calcDimCbmBadge = document.getElementById('calc-dim-cbm-badge');
+
+        const calcDirectCbm = document.getElementById('calc-direct-cbm');
+        const calcDirectWeight = document.getElementById('calc-direct-weight');
+
+        const calcDimContainer = document.getElementById('calc-dim-container');
+        const calcCbmContainer = document.getElementById('calc-cbm-container');
+        const btnModeDimensi = document.getElementById('btn-mode-dimensi');
+        const btnModeCbm = document.getElementById('btn-mode-cbm');
+
+        const calcOverweightAlert = document.getElementById('calc-overweight-alert');
+        const calcOverweightText = document.getElementById('calc-overweight-text');
+        const calcOverweightCsBtn = document.getElementById('calc-overweight-cs-btn');
+
         const calcResult = document.getElementById('calc-result');
-        const calcUnitLabel = document.getElementById('calc-unit-label');
         const calcWhatsapp = document.getElementById('calc-whatsapp');
 
-        function updateCalculator() {
-            const origin = calcOrigin.value;
-            const mode = calcMode.value;
-            const amount = parseFloat(calcAmount.value) || 0;
-            const t = translations[currentLang];
-            
-            calcUnitLabel.innerText = mode === 'udara' ? 'Kg' : (currentLang === 'en' ? 'CBM' : 'M³');
-            
-            const rate = pricingDB[origin]?.calcData ? pricingDB[origin].calcData[mode] : null;
-            
-            if (rate === 0 || !rate) {
-                calcResult.innerText = t.calc_custom_quote;
-                const waCustomMsg = currentLang === 'en'
-                    ? `Halo JABORKA, I would like to consult custom route for ${origin.toUpperCase()}`
-                    : `Halo JABORKA, saya ingin konsultasi rute khusus dari ${origin.toUpperCase()}`;
-                calcWhatsapp.href = `https://wa.me/628816161244?text=${encodeURIComponent(waCustomMsg)}`;
+        function setCalcInputMode(mode) {
+            calcInputMode = mode;
+            if (mode === 'dimensi') {
+                calcDimContainer?.classList.remove('hidden');
+                calcCbmContainer?.classList.add('hidden');
+                btnModeDimensi?.classList.add('bg-brand-orange', 'text-white', 'shadow-xs');
+                btnModeDimensi?.classList.remove('text-slate-300');
+                btnModeCbm?.classList.remove('bg-brand-orange', 'text-white', 'shadow-xs');
+                btnModeCbm?.classList.add('text-slate-300');
             } else {
-                const total = rate * amount;
+                calcDimContainer?.classList.add('hidden');
+                calcCbmContainer?.classList.remove('hidden');
+                btnModeCbm?.classList.add('bg-brand-orange', 'text-white', 'shadow-xs');
+                btnModeCbm?.classList.remove('text-slate-300');
+                btnModeDimensi?.classList.remove('bg-brand-orange', 'text-white', 'shadow-xs');
+                btnModeDimensi?.classList.add('text-slate-300');
+            }
+            updateCalculator();
+        }
+        window.setCalcInputMode = setCalcInputMode;
+
+        function updateCalculator() {
+            if (!calcOrigin || !calcMode) return;
+            const origin = calcOrigin.value;
+            const mode = calcMode.value; // 'laut' or 'udara'
+            const t = translations[currentLang] || translations.id;
+
+            let cbm = 0;
+            let weight = 0;
+            let koli = 1;
+            let p = 0, l = 0, h = 0;
+
+            if (calcInputMode === 'dimensi') {
+                p = parseFloat(calcLength?.value) || 0;
+                l = parseFloat(calcWidth?.value) || 0;
+                h = parseFloat(calcHeight?.value) || 0;
+                koli = parseFloat(calcKoli?.value) || 1;
+                weight = parseFloat(calcWeightDim?.value) || 0;
+
+                // Rumus CBM: (P x L x T / 1.000.000) * Koli
+                cbm = (p * l * h / 1000000) * koli;
+                if (cbm < 0) cbm = 0;
+
+                if (calcDimCbmBadge) {
+                    calcDimCbmBadge.innerText = `${cbm.toFixed(2)} CBM`;
+                }
+            } else {
+                cbm = parseFloat(calcDirectCbm?.value) || 0;
+                weight = parseFloat(calcDirectWeight?.value) || 0;
+            }
+
+            // Cek Rasio Kelebihan Berat: Berat / CBM > 600 Kg per 1 CBM
+            const weightRatio = cbm > 0 ? (weight / cbm) : 0;
+            const isOverweight = cbm > 0 && weightRatio > 600;
+
+            if (calcOverweightAlert) {
+                if (isOverweight) {
+                    calcOverweightAlert.classList.remove('hidden');
+                    const ratioRounded = Math.round(weightRatio);
+                    if (calcOverweightText) {
+                        calcOverweightText.innerHTML = currentLang === 'en'
+                            ? `Your cargo weight (<strong>${weight} Kg</strong> for <strong>${cbm.toFixed(2)} CBM</strong>, averaging <strong>${ratioRounded} Kg/CBM</strong>) exceeds the standard regular limit of 600 Kg per 1 CBM. Heavy cargo requires special handling and adjusted freight rates. Please consult our CS.`
+                            : `Berat kargo Anda (<strong>${weight} Kg</strong> untuk <strong>${cbm.toFixed(2)} CBM</strong>, rata-rata <strong>${ratioRounded} Kg/CBM</strong>) terdeteksi melebihi batas standar reguler 600 Kg per 1 CBM. Muatan berat (heavy cargo) memerlukan penanganan dan penyesuaian tarif khusus, silakan hubungi CS kami.`;
+                    }
+                    if (calcOverweightCsBtn) {
+                        const alertMsg = currentLang === 'en'
+                            ? `Halo JABORKA, I would like to consult overweight cargo from ${origin.toUpperCase()}: ${cbm.toFixed(2)} CBM, Weight: ${weight} Kg (Ratio: ${ratioRounded} Kg/CBM).`
+                            : `Halo JABORKA, saya ingin konsultasi pengiriman kargo kelebihan berat dari ${origin.toUpperCase()}: ${cbm.toFixed(2)} CBM, Berat: ${weight} Kg (Rata-rata: ${ratioRounded} Kg/CBM).`;
+                        calcOverweightCsBtn.href = `https://wa.me/628816161244?text=${encodeURIComponent(alertMsg)}`;
+                    }
+                } else {
+                    calcOverweightAlert.classList.add('hidden');
+                }
+            }
+
+            const originData = pricingDB[origin];
+            const rate = originData?.calcData ? originData.calcData[mode] : null;
+
+            if (!rate || rate === 0) {
+                if (calcResult) calcResult.innerText = t.calc_custom_quote;
+                const waCustomMsg = currentLang === 'en'
+                    ? `Halo JABORKA, I would like to consult custom route for ${origin.toUpperCase()} (${cbm.toFixed(2)} CBM, ${weight} Kg)`
+                    : `Halo JABORKA, saya ingin konsultasi rute khusus dari ${origin.toUpperCase()} (${cbm.toFixed(2)} CBM, ${weight} Kg)`;
+                if (calcWhatsapp) calcWhatsapp.href = `https://wa.me/628816161244?text=${encodeURIComponent(waCustomMsg)}`;
+                return;
+            }
+
+            // Kalkulasi Biaya sesuai Moda
+            let total = 0;
+            if (mode === 'udara') {
+                // Air Freight: Chargeable weight is max of actual weight or volumetric weight (CBM * 167 kg)
+                const volumetricWeight = Math.round(cbm * 167);
+                const chargeableWeight = Math.max(weight, volumetricWeight, 1);
+                total = rate * chargeableWeight;
+            } else {
+                // Sea Freight: Per CBM (standar minimum 0.1 CBM)
+                const billableCbm = Math.max(cbm, 0.1);
+                total = Math.round(rate * billableCbm);
+            }
+
+            if (calcResult) {
                 calcResult.innerText = 'Rp ' + total.toLocaleString('id-ID');
-                
-                const waBookingMsg = currentLang === 'en'
-                    ? `Halo JABORKA, I would like to book shipment from ${origin.toUpperCase()} via ${mode === 'udara' ? 'Air Freight' : 'Sea Freight'} for ${amount} ${calcUnitLabel.innerText}. Estimated cost Rp ${total.toLocaleString('id-ID')}.`
-                    : `Halo JABORKA, saya ingin booking pengiriman dari ${origin.toUpperCase()} via ${mode === 'udara' ? 'Udara' : 'Laut'} sebanyak ${amount} ${calcUnitLabel.innerText}. Estimasi biaya Rp ${total.toLocaleString('id-ID')}.`;
-                
+            }
+
+            // Format Pesan WhatsApp Lengkap
+            const originTitle = originData?.title || origin.toUpperCase();
+            let cargoSpecText = '';
+            if (calcInputMode === 'dimensi') {
+                cargoSpecText = `• Dimensi: ${p} x ${l} x ${h} cm (${koli} Koli)\n• Volume: ${cbm.toFixed(2)} CBM\n• Berat Total: ${weight} Kg`;
+            } else {
+                cargoSpecText = `• Volume: ${cbm.toFixed(2)} CBM\n• Berat Total: ${weight} Kg`;
+            }
+
+            if (isOverweight) {
+                cargoSpecText += `\n• Status: Overweight (${Math.round(weightRatio)} Kg/CBM > 600 Kg/CBM)`;
+            }
+
+            const waBookingMsg = currentLang === 'en'
+                ? `Halo JABORKA, I would like to check booking for import shipment:\n\n*RINCIAN ESTIMASI IMPOR*\n• Rute: ${originTitle}\n• Moda: ${mode === 'udara' ? 'Air Freight (Udara)' : 'Sea Freight (Laut)'}\n${cargoSpecText}\n• Estimasi Total: Rp ${total.toLocaleString('id-ID')}\n\nMohon informasi jadwal closing dan prosedur pengirimannya. Terima kasih.`
+                : `Halo JABORKA, saya ingin konsultasi dan booking pengiriman impor:\n\n*RINCIAN ESTIMASI IMPOR*\n• Rute: ${originTitle}\n• Moda: ${mode === 'udara' ? 'Air Freight (Udara)' : 'Sea Freight (Laut)'}\n${cargoSpecText}\n• Estimasi Total: Rp ${total.toLocaleString('id-ID')}\n\nMohon info jadwal closing gudang dan marking pengirimannya. Terima kasih.`;
+
+            if (calcWhatsapp) {
                 calcWhatsapp.href = `https://wa.me/628816161244?text=${encodeURIComponent(waBookingMsg)}`;
             }
         }
 
-        calcOrigin.addEventListener('change', updateCalculator);
-        calcMode.addEventListener('change', updateCalculator);
-        calcAmount.addEventListener('input', updateCalculator);
+        calcOrigin?.addEventListener('change', updateCalculator);
+        calcMode?.addEventListener('change', updateCalculator);
+        calcLength?.addEventListener('input', updateCalculator);
+        calcWidth?.addEventListener('input', updateCalculator);
+        calcHeight?.addEventListener('input', updateCalculator);
+        calcKoli?.addEventListener('input', updateCalculator);
+        calcWeightDim?.addEventListener('input', updateCalculator);
+        calcDirectCbm?.addEventListener('input', updateCalculator);
+        calcDirectWeight?.addEventListener('input', updateCalculator);
 
         // 6. LANGUAGE SWITCHER IMPLEMENTATION
         function setLanguage(lang) {
